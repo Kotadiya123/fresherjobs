@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- roth-ira-calculator.html  Tue, 06 Aug 2024 09:30:01 GMT -->
+
+
+
+<head>
+	<title>Roth IRA Calculator</title>
+	<meta name="description"
+		content="Free Roth IRA calculator to estimate growth, tax savings, total return, and balance at retirement with the option to contribute regularly." />
+	<link rel="stylesheet" href="style.css" />
+	<script src="../assets/js/common.js" async></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/icon-16x16.png">
+
+</head>
+
+<body>
+	<div id="headerout">
+		<div id="header">
+			<div id="logo"><a href="index.html"><img src="../public/img/logo.webp" width="100" height="100"
+						alt="Calculator.net"></a></div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="contentout">
+		<div id="content">
+			<div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span
+					itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html"
+						itemprop="item"><span itemprop="name">home</span></a>
+					<meta itemprop="position" content="1" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a>
+					<meta itemprop="position" content="2" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="roth-ira-calculator.html" itemprop="item"><span itemprop="name">roth ira
+							calculator</span></a>
+					<meta itemprop="position" content="3" />
+				</span></div>
+			<div id="printit"><a href="#"
+					onClick="document.calform.printit.value=1;document.calform.submit();return false;">Print</a></div>
+			<h1>Roth IRA Calculator</h1>
+
+			<p>This calculator estimates the balances of Roth IRA savings and compares them with regular taxable
+				account. It is mainly intended for use by U.S. residents. For calculations or more information
+				concerning other types of IRAs, please visit our <a href="ira-calculator.html">IRA Calculator</a>. </p>
+			<div id="insmdc"><img src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/insmm.svg" width="630" height="35"
+					alt="Modify the values and click the calculate button to use"></div>
+			<div class="leftinput panel">
+				<form name="calform" action="https://www.calculator.net/roth-ira-calculator.html#roth-ira-result">
+					<table align="center">
+						<tr>
+							<td>Current balance</td>
+							<td><input type="text" name="cstartingprinciple" id="cstartingprinciple" value="20000"
+									class="inhalf indollar"></td>
+						</tr>
+						<tr>
+							<td>Annual contribution<img class="ttimg" width="16" height="16" alt="?"
+									src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/help.svg"
+									onmouseover="tooltip.show('The amount you plan to contribute to the Roth IRA account each year. The maximum contribution limit is $7,000 for individuals under the age of 50 and increases to $8,000 for individuals aged 50 and above.', '');"
+									onmouseout="tooltip.hide();"></td>
+							<td>
+								<div id="annualcontinput"><input type="text" name="cannualaddition" id="cannualaddition"
+										value="7000" class="inhalf indollar"></div>
+								<div id="annualconttxt" style="display:none;">maxing out</div>
+							</td>
+						</tr>
+						<tr>
+							<td colspan="2">Maximize contributions?<img class="ttimg" width="16" height="16" alt="?"
+									src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/help.svg"
+									onmouseover="tooltip.show('Please select \'yes\' if you plan to contribute the maximum allowed amount each year. The maximum contribution limit is $6,500 before the age of 50 and increases to $7,500 after the age of 50.', '');"
+									onmouseout="tooltip.hide();">
+								<div style="text-align:center;">
+									<label for="cmax1" class="cbcontainer"><input type="radio" name="cmax" id="cmax1"
+											value="y" onclick="maxContribution('y');" /><span
+											class="rbmark"></span>Yes</label> &nbsp; &nbsp;
+									<label for="cmax2" class="cbcontainer"><input type="radio" name="cmax" id="cmax2"
+											value="n" checked onclick="maxContribution('n');" /><span
+											class="rbmark"></span>No</label>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>Expected rate of return<img class="ttimg" width="16" height="16" alt="?"
+									src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/help.svg"
+									onmouseover="tooltip.show('The expected average annual return you will earn on your money in the account.', '');"
+									onmouseout="tooltip.hide();"></td>
+							<td><input type="text" name="cinterestrate" id="cinterestrate" value="6"
+									class="inhalf inpct"></td>
+						</tr>
+						<tr>
+							<td>Current age</td>
+							<td><input type="text" name="ccurrentage" id="ccurrentage" value="30" class="inhalf"></td>
+						</tr>
+						<tr>
+							<td>Retirement age</td>
+							<td><input type="text" name="cretirementage" id="cretirementage" value="65" class="inhalf">
+							</td>
+						</tr>
+						<tr>
+							<td>Marginal tax rate<img class="ttimg" width="16" height="16" alt="?"
+									src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/help.svg"
+									onmouseover="tooltip.show('The tax rate you pay on additional income. Please includes the combined federal and state/local marginal tax rates, if applicable.', '');"
+									onmouseout="tooltip.hide();"></td>
+							<td><input type="text" name="ctaxtrate" id="ctaxtrate" value="25" class="inhalf inpct"></td>
+						</tr>
+						<tr>
+							<td colspan="2" align="center" style="padding-top:8px;">
+								<input name="printit" value="0" type="hidden">
+								<input type="submit" name="x" value="Calculate">
+								<input type="button" value="Clear" onClick="clearForm(document.calform);">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="rightresult"><a name="roth-ira-result"></a>
+				<div class="espaceforM">&nbsp;</div>
+				<h2 class="h2result">Result</h2>
+				<table class="cinfoT">
+					<tr valign="bottom">
+						<td>&nbsp;</td>
+						<td align="right"><b>Roth IRA</b></td>
+						<td align="right"><b>Taxable account</b></td>
+					</tr>
+					<tr bgcolor="#dddddd">
+						<td><b>Balance at age 65</b></td>
+						<td align="right"><b>$933,765</b></td>
+						<td align="right"><b>$663,823</b></td>
+					</tr>
+					<tr bgcolor="#dddddd">
+						<td>Total principal</td>
+						<td align="right">$265,000</td>
+						<td align="right">$265,000</td>
+					</tr>
+					<tr>
+						<td>Total interest</td>
+						<td align="right">$675,765</td>
+						<td align="right">$531,764</td>
+					</tr>
+					<tr bgcolor="#dddddd">
+						<td>Total tax</td>
+						<td align="right">$0</td>
+						<td align="right">$132,941</td>
+					</tr>
+				</table><br>
+				<p>According to provided information, the Roth IRA account can accumulate $269,942 more than a regular
+					taxable account by age 65.</p>
+			</div>
+			<div id="clear"></div>
+
+			<div style="max-width:500px;margin-left:auto;margin-right:auto;">
+				<g onclick="ttline2HideTT();"><svg viewBox="0 0 500 220">
+						<style>
+							.mclgrid {
+								stroke: #999;
+								stroke-width: 0.5;
+							}
+
+							.mcllegend {
+								font-size: 13;
+								font-family: arial, helvetica, sans-serif;
+								fill: #0d233a;
+							}
+
+							.mcltitle {
+								fill: #000;
+								font-family: arial, helvetica, sans-serif;
+								font-size: 15px;
+								dominant-baseline: middle;
+								text-anchor: middle;
+							}
+
+							.mcllabely {
+								fill: #666;
+								font-family: arial, helvetica, sans-serif;
+								font-size: 12px;
+								dominant-baseline: middle;
+								text-anchor: end;
+							}
+
+							.mcllabelx {
+								fill: #666;
+								font-family: arial, helvetica, sans-serif;
+								font-size: 12px;
+								dominant-baseline: hanging;
+								text-anchor: middle;
+							}
+
+							.mcldot:hover {
+								stroke-width: 10;
+							}
+
+							.mcldot {
+								stroke-width: 0;
+							}
+						</style><text x="49%" y="20"
+							style="font-size:18;font-weight:bold;font-family:arial,helvetica,sans-serif;"
+							dominant-baseline="middle" text-anchor="middle">Balance Accumulation Graph</text><text
+							x="265" y="212" class="mcltitle">Age</text>
+						<line x1="45" y1="181.115" x2="492" y2="181.115" class="mclgrid" /><text x="43" y="181.115"
+							class="mcllabely">$0</text>
+						<line x1="45" y1="143.31" x2="492" y2="143.31" class="mclgrid" /><text x="43" y="143.31"
+							class="mcllabely">$250K</text>
+						<line x1="45" y1="105.504" x2="492" y2="105.504" class="mclgrid" /><text x="43" y="105.504"
+							class="mcllabely">$500K</text>
+						<line x1="45" y1="67.699" x2="492" y2="67.699" class="mclgrid" /><text x="43" y="67.699"
+							class="mcllabely">$750K</text>
+						<line x1="48" y1="33" x2="48" y2="189" class="mclgrid" /><text x="48" y="190"
+							class="mcllabelx">30</text>
+						<line x1="174.857" y1="33" x2="174.857" y2="189" class="mclgrid" /><text x="174.857" y="190"
+							class="mcllabelx">40</text>
+						<line x1="301.714" y1="33" x2="301.714" y2="189" class="mclgrid" /><text x="301.714" y="190"
+							class="mcllabelx">50</text>
+						<line x1="428.571" y1="33" x2="428.571" y2="189" class="mclgrid" /><text x="428.571" y="190"
+							class="mcllabelx">60</text>
+						<path
+							d="M 48 178.091 L 60.686 176.851 L 73.371 175.536 L 86.057 174.143 L 98.743 172.666 L 111.429 171.101 L 124.114 169.441 L 136.8 167.682 L 149.486 165.818 L 162.171 163.841 L 174.857 161.746 L 187.543 159.526 L 200.229 157.172 L 212.914 154.677 L 225.6 152.032 L 238.286 149.228 L 250.971 146.256 L 263.657 143.106 L 276.343 139.767 L 289.029 136.228 L 301.714 132.476 L 314.4 128.499 L 327.086 124.283 L 339.771 119.815 L 352.457 115.078 L 365.143 110.058 L 377.829 104.736 L 390.514 99.094 L 403.2 93.114 L 415.886 86.776 L 428.571 80.057 L 441.257 72.935 L 453.943 65.385 L 466.629 57.383 L 479.314 48.901 L 492 39.909"
+							fill="none" stroke="#2b7ddb" stroke-width="3"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA ');" onmouseout="ttlineHideTT();" />
+						<path
+							d="M 48 178.091 L 60.686 176.896 L 73.371 175.648 L 86.057 174.343 L 98.743 172.98 L 111.429 171.555 L 124.114 170.067 L 136.8 168.511 L 149.486 166.885 L 162.171 165.186 L 174.857 163.411 L 187.543 161.555 L 200.229 159.617 L 212.914 157.591 L 225.6 155.474 L 238.286 153.261 L 250.971 150.949 L 263.657 148.533 L 276.343 146.008 L 289.029 143.37 L 301.714 140.613 L 314.4 137.732 L 327.086 134.721 L 339.771 131.574 L 352.457 128.287 L 365.143 124.851 L 377.829 121.26 L 390.514 117.508 L 403.2 113.587 L 415.886 109.49 L 428.571 105.208 L 441.257 100.734 L 453.943 96.058 L 466.629 91.172 L 479.314 86.066 L 492 80.73"
+							fill="none" stroke="#8bbc21" stroke-width="3"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account ');"
+							onmouseout="ttlineHideTT();" />
+						<path
+							d="M 48 178.091 L 60.686 177.032 L 73.371 175.974 L 86.057 174.915 L 98.743 173.857 L 111.429 172.798 L 124.114 171.74 L 136.8 170.681 L 149.486 169.622 L 162.171 168.564 L 174.857 167.505 L 187.543 166.447 L 200.229 165.388 L 212.914 164.33 L 225.6 163.271 L 238.286 162.213 L 250.971 161.154 L 263.657 160.095 L 276.343 159.037 L 289.029 157.978 L 301.714 156.92 L 314.4 155.861 L 327.086 154.803 L 339.771 153.744 L 352.457 152.686 L 365.143 151.627 L 377.829 150.568 L 390.514 149.51 L 403.2 148.451 L 415.886 147.393 L 428.571 146.334 L 441.257 145.276 L 453.943 144.217 L 466.629 143.159 L 479.314 142.1 L 492 141.041"
+							fill="none" stroke="#910000" stroke-width="3"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal ');" onmouseout="ttlineHideTT();" />
+						<circle cx="48" cy="178.091" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 30: $20,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="60.686" cy="176.851" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 31: $28,200');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="73.371" cy="175.536" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 32: $36,892');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="86.057" cy="174.143" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 33: $46,106');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="98.743" cy="172.666" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 34: $55,872');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="111.429" cy="171.101" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 35: $66,224');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="124.114" cy="169.441" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 36: $77,198');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="136.8" cy="167.682" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 37: $88,829');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="149.486" cy="165.818" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 38: $101,159');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="162.171" cy="163.841" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 39: $114,229');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="174.857" cy="161.746" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 40: $128,083');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="187.543" cy="159.526" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 41: $142,767');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="200.229" cy="157.172" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 42: $158,334');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="212.914" cy="154.677" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 43: $174,834');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="225.6" cy="152.032" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 44: $192,324');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="238.286" cy="149.228" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 45: $210,863');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="250.971" cy="146.256" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 46: $230,515');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="263.657" cy="143.106" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 47: $251,346');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="276.343" cy="139.767" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 48: $273,426');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="289.029" cy="136.228" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 49: $296,832');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="301.714" cy="132.476" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 50: $321,642');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="314.4" cy="128.499" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 51: $347,940');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="327.086" cy="124.283" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 52: $375,817');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="339.771" cy="119.815" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 53: $405,366');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="352.457" cy="115.078" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 54: $436,688');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="365.143" cy="110.058" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 55: $469,889');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="377.829" cy="104.736" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 56: $505,082');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="390.514" cy="99.094" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 57: $542,387');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="403.2" cy="93.114" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 58: $581,931');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="415.886" cy="86.776" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 59: $623,846');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="428.571" cy="80.057" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 60: $668,277');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="441.257" cy="72.935" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 61: $715,374');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="453.943" cy="65.385" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 62: $765,296');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="466.629" cy="57.383" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 63: $818,214');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="479.314" cy="48.901" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 64: $874,307');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="492" cy="39.909" r="1.5" class="mcldot" fill="#2b7ddb" stroke="#2b7ddb"
+							onmousemove="ttlineShowTT(evt, '#2b7ddb', 'Roth IRA <br>Age 65: $933,765');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="48" cy="178.091" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 30: $20,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="60.686" cy="176.896" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 31: $27,900');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="73.371" cy="175.648" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 32: $36,156');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="86.057" cy="174.343" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 33: $44,782');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="98.743" cy="172.98" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 34: $53,798');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="111.429" cy="171.555" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 35: $63,219');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="124.114" cy="170.067" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 36: $73,063');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="136.8" cy="168.511" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 37: $83,351');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="149.486" cy="166.885" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 38: $94,102');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="162.171" cy="165.186" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 39: $105,337');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="174.857" cy="163.411" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 40: $117,077');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="187.543" cy="161.555" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 41: $129,345');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="200.229" cy="159.617" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 42: $142,166');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="212.914" cy="157.591" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 43: $155,563');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="225.6" cy="155.474" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 44: $169,564');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="238.286" cy="153.261" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 45: $184,194');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="250.971" cy="150.949" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 46: $199,483');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="263.657" cy="148.533" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 47: $215,459');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="276.343" cy="146.008" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 48: $232,155');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="289.029" cy="143.37" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 49: $249,602');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="301.714" cy="140.613" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 50: $267,834');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="314.4" cy="137.732" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 51: $286,887');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="327.086" cy="134.721" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 52: $306,797');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="339.771" cy="131.574" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 53: $327,603');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="352.457" cy="128.287" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 54: $349,345');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="365.143" cy="124.851" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 55: $372,065');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="377.829" cy="121.26" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 56: $395,808');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="390.514" cy="117.508" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 57: $420,619');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="403.2" cy="113.587" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 58: $446,547');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="415.886" cy="109.49" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 59: $473,642');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="428.571" cy="105.208" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 60: $501,956');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="441.257" cy="100.734" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 61: $531,544');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="453.943" cy="96.058" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 62: $562,463');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="466.629" cy="91.172" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 63: $594,774');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="479.314" cy="86.066" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 64: $628,539');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="492" cy="80.73" r="1.5" class="mcldot" fill="#8bbc21" stroke="#8bbc21"
+							onmousemove="ttlineShowTT(evt, '#8bbc21', 'Taxable account <br>Age 65: $663,823');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="48" cy="178.091" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 30: $20,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="60.686" cy="177.032" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 31: $27,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="73.371" cy="175.974" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 32: $34,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="86.057" cy="174.915" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 33: $41,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="98.743" cy="173.857" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 34: $48,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="111.429" cy="172.798" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 35: $55,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="124.114" cy="171.74" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 36: $62,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="136.8" cy="170.681" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 37: $69,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="149.486" cy="169.622" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 38: $76,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="162.171" cy="168.564" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 39: $83,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="174.857" cy="167.505" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 40: $90,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="187.543" cy="166.447" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 41: $97,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="200.229" cy="165.388" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 42: $104,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="212.914" cy="164.33" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 43: $111,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="225.6" cy="163.271" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 44: $118,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="238.286" cy="162.213" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 45: $125,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="250.971" cy="161.154" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 46: $132,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="263.657" cy="160.095" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 47: $139,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="276.343" cy="159.037" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 48: $146,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="289.029" cy="157.978" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 49: $153,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="301.714" cy="156.92" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 50: $160,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="314.4" cy="155.861" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 51: $167,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="327.086" cy="154.803" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 52: $174,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="339.771" cy="153.744" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 53: $181,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="352.457" cy="152.686" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 54: $188,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="365.143" cy="151.627" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 55: $195,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="377.829" cy="150.568" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 56: $202,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="390.514" cy="149.51" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 57: $209,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="403.2" cy="148.451" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 58: $216,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="415.886" cy="147.393" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 59: $223,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="428.571" cy="146.334" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 60: $230,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="441.257" cy="145.276" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 61: $237,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="453.943" cy="144.217" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 62: $244,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="466.629" cy="143.159" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 63: $251,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="479.314" cy="142.1" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 64: $258,000');"
+							onmouseout="ttlineHideTT();" />
+						<circle cx="492" cy="141.041" r="1.5" class="mcldot" fill="#910000" stroke="#910000"
+							onmousemove="ttlineShowTT(evt, '#910000', 'Principal <br>Age 65: $265,000');"
+							onmouseout="ttlineHideTT();" />
+						<rect x="48" y="33" width="444" height="152" style="stroke:#666;stroke-width:0.5;fill:none;" />
+						<rect x="53" y="42" width="20" height="6" style="fill:#2b7ddb;" /><text x="78" y="49"
+							class="mcvsblegend">Roth IRA</text>
+						<rect x="53" y="60" width="20" height="6" style="fill:#8bbc21;" /><text x="78" y="67"
+							class="mcvsblegend">Taxable account</text>
+						<rect x="53" y="78" width="20" height="6" style="fill:#910000;" /><text x="78" y="85"
+							class="mcvsblegend">Principal</text>
+					</svg>
+					<script> function ttlineShowTT(evt, color, text) { let tooltip = document.getElementById("ttlinett"); tooltip.innerHTML = text; tooltip.style.display = "block"; if (evt.pageX > (window.innerWidth / 2)) { tooltip.style.left = evt.pageX - 2 - tooltip.offsetWidth + "px"; } else { tooltip.style.left = evt.pageX + 16 + "px"; } tooltip.style.top = evt.pageY + 0 + "px"; tooltip.style.backgroundColor = color; } function ttlineHideTT() { var tooltip = document.getElementById("ttlinett"); tooltip.style.display = "none"; }</script>
+					<style>
+						#ttlinett {
+							background: cornsilk;
+							opacity: 0.92;
+							border: 1px solid #11233a;
+							border-radius: 5px;
+							padding: 5px;
+							font-size: 13px;
+							font-family: arial, helvetica, sans-serif;
+							color: #fff;
+						}
+
+						#ttlinett div {
+							font-size: 13px;
+							color: #fff;
+						}
+					</style>
+					<div id="ttlinett" style="position: absolute; display: none;text-align:left;"></div>
+				</g>
+			</div>
+			<h2>Annual Schedule</h2>
+			<table width="100%" cellpadding="3">
+				<tr bgcolor="#E0F0FE" align="center">
+					<td>&nbsp;</td>
+					<td colspan="2"><b>Principal</b></td>
+					<td colspan="2"><b>Roth IRA</b></td>
+					<td colspan="2"><b>Taxable account</b></td>
+				</tr>
+				<tr bgcolor="#E0F0FE" align="center">
+					<td>Age</td>
+					<td><b>Start</b></td>
+					<td><b>End</b></td>
+					<td><b>Start</b></td>
+					<td><b>End</b></td>
+					<td><b>Start</b></td>
+					<td><b>End</b></td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>30</td>
+					<td>$20,000</td>
+					<td>$27,000</td>
+					<td>$20,000</td>
+					<td>$28,200</td>
+					<td>$20,000</td>
+					<td>$27,900</td>
+				</tr>
+				<tr align="right">
+					<td>31</td>
+					<td>$27,000</td>
+					<td>$34,000</td>
+					<td>$28,200</td>
+					<td>$36,892</td>
+					<td>$27,900</td>
+					<td>$36,156</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>32</td>
+					<td>$34,000</td>
+					<td>$41,000</td>
+					<td>$36,892</td>
+					<td>$46,106</td>
+					<td>$36,156</td>
+					<td>$44,782</td>
+				</tr>
+				<tr align="right">
+					<td>33</td>
+					<td>$41,000</td>
+					<td>$48,000</td>
+					<td>$46,106</td>
+					<td>$55,872</td>
+					<td>$44,782</td>
+					<td>$53,798</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>34</td>
+					<td>$48,000</td>
+					<td>$55,000</td>
+					<td>$55,872</td>
+					<td>$66,224</td>
+					<td>$53,798</td>
+					<td>$63,219</td>
+				</tr>
+				<tr align="right">
+					<td>35</td>
+					<td>$55,000</td>
+					<td>$62,000</td>
+					<td>$66,224</td>
+					<td>$77,198</td>
+					<td>$63,219</td>
+					<td>$73,063</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>36</td>
+					<td>$62,000</td>
+					<td>$69,000</td>
+					<td>$77,198</td>
+					<td>$88,829</td>
+					<td>$73,063</td>
+					<td>$83,351</td>
+				</tr>
+				<tr align="right">
+					<td>37</td>
+					<td>$69,000</td>
+					<td>$76,000</td>
+					<td>$88,829</td>
+					<td>$101,159</td>
+					<td>$83,351</td>
+					<td>$94,102</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>38</td>
+					<td>$76,000</td>
+					<td>$83,000</td>
+					<td>$101,159</td>
+					<td>$114,229</td>
+					<td>$94,102</td>
+					<td>$105,337</td>
+				</tr>
+				<tr align="right">
+					<td>39</td>
+					<td>$83,000</td>
+					<td>$90,000</td>
+					<td>$114,229</td>
+					<td>$128,083</td>
+					<td>$105,337</td>
+					<td>$117,077</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>40</td>
+					<td>$90,000</td>
+					<td>$97,000</td>
+					<td>$128,083</td>
+					<td>$142,767</td>
+					<td>$117,077</td>
+					<td>$129,345</td>
+				</tr>
+				<tr align="right">
+					<td>41</td>
+					<td>$97,000</td>
+					<td>$104,000</td>
+					<td>$142,767</td>
+					<td>$158,334</td>
+					<td>$129,345</td>
+					<td>$142,166</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>42</td>
+					<td>$104,000</td>
+					<td>$111,000</td>
+					<td>$158,334</td>
+					<td>$174,834</td>
+					<td>$142,166</td>
+					<td>$155,563</td>
+				</tr>
+				<tr align="right">
+					<td>43</td>
+					<td>$111,000</td>
+					<td>$118,000</td>
+					<td>$174,834</td>
+					<td>$192,324</td>
+					<td>$155,563</td>
+					<td>$169,564</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>44</td>
+					<td>$118,000</td>
+					<td>$125,000</td>
+					<td>$192,324</td>
+					<td>$210,863</td>
+					<td>$169,564</td>
+					<td>$184,194</td>
+				</tr>
+				<tr align="right">
+					<td>45</td>
+					<td>$125,000</td>
+					<td>$132,000</td>
+					<td>$210,863</td>
+					<td>$230,515</td>
+					<td>$184,194</td>
+					<td>$199,483</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>46</td>
+					<td>$132,000</td>
+					<td>$139,000</td>
+					<td>$230,515</td>
+					<td>$251,346</td>
+					<td>$199,483</td>
+					<td>$215,459</td>
+				</tr>
+				<tr align="right">
+					<td>47</td>
+					<td>$139,000</td>
+					<td>$146,000</td>
+					<td>$251,346</td>
+					<td>$273,426</td>
+					<td>$215,459</td>
+					<td>$232,155</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>48</td>
+					<td>$146,000</td>
+					<td>$153,000</td>
+					<td>$273,426</td>
+					<td>$296,832</td>
+					<td>$232,155</td>
+					<td>$249,602</td>
+				</tr>
+				<tr align="right">
+					<td>49</td>
+					<td>$153,000</td>
+					<td>$160,000</td>
+					<td>$296,832</td>
+					<td>$321,642</td>
+					<td>$249,602</td>
+					<td>$267,834</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>50</td>
+					<td>$160,000</td>
+					<td>$167,000</td>
+					<td>$321,642</td>
+					<td>$347,940</td>
+					<td>$267,834</td>
+					<td>$286,887</td>
+				</tr>
+				<tr align="right">
+					<td>51</td>
+					<td>$167,000</td>
+					<td>$174,000</td>
+					<td>$347,940</td>
+					<td>$375,817</td>
+					<td>$286,887</td>
+					<td>$306,797</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>52</td>
+					<td>$174,000</td>
+					<td>$181,000</td>
+					<td>$375,817</td>
+					<td>$405,366</td>
+					<td>$306,797</td>
+					<td>$327,603</td>
+				</tr>
+				<tr align="right">
+					<td>53</td>
+					<td>$181,000</td>
+					<td>$188,000</td>
+					<td>$405,366</td>
+					<td>$436,688</td>
+					<td>$327,603</td>
+					<td>$349,345</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>54</td>
+					<td>$188,000</td>
+					<td>$195,000</td>
+					<td>$436,688</td>
+					<td>$469,889</td>
+					<td>$349,345</td>
+					<td>$372,065</td>
+				</tr>
+				<tr align="right">
+					<td>55</td>
+					<td>$195,000</td>
+					<td>$202,000</td>
+					<td>$469,889</td>
+					<td>$505,082</td>
+					<td>$372,065</td>
+					<td>$395,808</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>56</td>
+					<td>$202,000</td>
+					<td>$209,000</td>
+					<td>$505,082</td>
+					<td>$542,387</td>
+					<td>$395,808</td>
+					<td>$420,619</td>
+				</tr>
+				<tr align="right">
+					<td>57</td>
+					<td>$209,000</td>
+					<td>$216,000</td>
+					<td>$542,387</td>
+					<td>$581,931</td>
+					<td>$420,619</td>
+					<td>$446,547</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>58</td>
+					<td>$216,000</td>
+					<td>$223,000</td>
+					<td>$581,931</td>
+					<td>$623,846</td>
+					<td>$446,547</td>
+					<td>$473,642</td>
+				</tr>
+				<tr align="right">
+					<td>59</td>
+					<td>$223,000</td>
+					<td>$230,000</td>
+					<td>$623,846</td>
+					<td>$668,277</td>
+					<td>$473,642</td>
+					<td>$501,956</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>60</td>
+					<td>$230,000</td>
+					<td>$237,000</td>
+					<td>$668,277</td>
+					<td>$715,374</td>
+					<td>$501,956</td>
+					<td>$531,544</td>
+				</tr>
+				<tr align="right">
+					<td>61</td>
+					<td>$237,000</td>
+					<td>$244,000</td>
+					<td>$715,374</td>
+					<td>$765,296</td>
+					<td>$531,544</td>
+					<td>$562,463</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>62</td>
+					<td>$244,000</td>
+					<td>$251,000</td>
+					<td>$765,296</td>
+					<td>$818,214</td>
+					<td>$562,463</td>
+					<td>$594,774</td>
+				</tr>
+				<tr align="right">
+					<td>63</td>
+					<td>$251,000</td>
+					<td>$258,000</td>
+					<td>$818,214</td>
+					<td>$874,307</td>
+					<td>$594,774</td>
+					<td>$628,539</td>
+				</tr>
+				<tr bgcolor="#dddddd" align="right">
+					<td>64</td>
+					<td>$258,000</td>
+					<td>$265,000</td>
+					<td>$874,307</td>
+					<td>$933,765</td>
+					<td>$628,539</td>
+					<td>$663,823</td>
+				</tr>
+			</table>
+			<script>
+				function maxContribution(mcIn) {
+					if ("y" == mcIn) {
+						document.getElementById("annualcontinput").style.display = "none";
+						document.getElementById("annualconttxt").style.display = "block";
+					} else {
+						document.getElementById("annualcontinput").style.display = "block";
+						document.getElementById("annualconttxt").style.display = "none";
+					}
+					return false;
+				}
+				maxContribution("n");
+
+				function insertComma2(t, l) { d = t.value.toString().replaceAll(",", ""), a = ""; if ("i" == l) a = (d = d.replace(/[^\d.-]/g, "")).toString().split(".")[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); else if ("d" == l) { let g = (d = d.replace(/[^\d.-]/g, "")).toString().split("."); a = g[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","), g.length > 1 && (a += "." + g[1]) } else "c" == l && (a = d.replace(/\B(?=(\d{3})+(?!\d))/g, ",")); t.value = a }
+				function proComma2(p) { let m = document.getElementById(p); m.onblur = function () { insertComma2(m, 'd'); }; insertComma2(m, 'd'); }
+				proComma2("cstartingprinciple");
+				proComma2("cannualaddition");
+			</script>
+			<p>
+			<fieldset>
+				<legend>Related</legend><a href="retirement-calculator.html">Retirement Calculator</a> | <a
+					href="investment-calculator.html">Investment Calculator</a> | <a
+					href="annuity-payout-calculator.html">Annuity Payout Calculator</a>
+			</fieldset>
+			</p>
+
+			<br>
+
+			<p>A Roth IRA is a type of Individual Retirement Arrangement (IRA) that provides tax-free growth and
+				tax-free income in retirement. The major difference between Roth IRAs and traditional IRAs is that
+				contributions to the former are not tax-deductible, and contributions (not earnings) may be withdrawn
+				tax-free at any time without penalty. Roth IRA was first introduced and established by the Taxpayer
+				Relief Act of 1997 and is named after Senator William Roth.</p>
+			<p>Roth IRA accounts can be opened at many different institutions, from the largest, most well-known
+				financial companies, to online-only investment companies and financial service firms. The IRS regulates
+				all of these institutions, and all of them must meet certain requirements, but each can still have its
+				own differentiating perks.</p>
+
+			<h3>Roth IRA Contributions</h3>
+			<ul>
+				<li>Made using after-tax dollars.
+				<li>Not tax-deductible. However, there is a tax credit, the Saver's Tax Credit, on IRS Form 8880 that
+					can be claimed for up to 50% on the first $2,000 in contributions.
+				<li>Contributions can be withdrawn tax-free at any time without penalty. However, earnings withdrawn may
+					be subject to tax and/or penalty if withdrawn before the account holder is 59&#189; years old or if
+					the account is less than five years old.
+				<li>People with incomes above certain thresholds cannot qualify to make Roth IRA contributions. For the
+					2024 tax year, the threshold is anything above an adjusted gross income of $161,000 (up from
+					$153,000 in 2023) for those filing as single or head-of-household. For those who are married and
+					filing jointly, the amount is increased to an adjusted gross income of $240,000 (up from $228,000 in
+					2023). Furthermore, to qualify to make Roth IRA contributions, filers must have earned income (i.e.
+					wages, tips, bonuses, self-employment income) in the year contributions are made.
+				<li>The contribution limit in 2024 for those aged 49 and below is $7,000. For those aged 50 and above,
+					the limit is $8,000.
+				<li>Contributions for a given tax year can be made to a Roth IRA up until taxes are filed in April of
+					the next year.
+			</ul>
+
+			<h3>Roth IRA Distribution Details</h3>
+			<ul>
+				<li>Direct contributions can be withdrawn tax-free and penalty-free anytime.</li>
+				<li>Concerning Roth IRAs five years or older, tax-free and penalty-free withdrawal on earnings can occur
+					after the age of 59 &#189;.</li>
+				<li>Withdrawals on earnings from Roth IRAs that are less than five years old are subject to both taxes
+					and penalties. However, given a number of situations (listed below), it is possible to avoid a
+					penalty, but not the taxes, on accounts less than five years old as long as any one (or more) of the
+					conditions below is met. For accounts older than five years old, these same conditions apply and
+					result in a tax only if none of the conditions are met, or neither a tax nor a penalty if any one of
+					the conditions is met.
+					<ul>
+						<li>The account holder is 59 &#189; or older.</li>
+						<li>The account holder becomes disabled.</li>
+						<li>The money is being used
+							<ul>
+								<li>for a first-time home purchase up to a $10,000 lifetime maximum.</li>
+								<li>to pay for qualified education expenses.</li>
+								<li>to pay the beneficiary after the death of the account holder.</li>
+								<li>to pay for unreimbursed medical expenses or health insurance during unemployment.
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>There is no required minimum distribution (RMD) for Roth IRAs (unlike those required for traditional
+					IRAs or 401(k)s). Roth IRAs are the only tax-sheltered retirement plans that do not impose RMDs.
+				</li>
+			</ul>
+
+			<h3>Pros of Roth IRA</h3>
+			<p><b>Free withdrawals on contributions</b>&ndash;Common retirement plans such as 401(k)s and traditional
+				IRAs do not allow tax-free or penalty-free withdrawals until retirement, which for many, is usually
+				decades in the future. However, because contributions to Roth IRAs are made using after-tax dollars, the
+				contributions (but not the earnings) can be withdrawn at any time tax-free and penalty-free.</p>
+			<p><b>Liquidity</b>&ndash;account holders can use their Roth IRA accounts as a source of emergency funds.
+				Because withdrawals on contributions are tax-free and penalty-free, money can be withdrawn at will.
+				However, if an account holder decides to withdraw their contribution after the annual contribution limit
+				has been met, they cannot re-contribute that same amount within the same tax year. Under these
+				circumstances, any contributed amount would be treated as a regular investment in addition to, rather
+				than as part of the Roth IRA.</p>
+			<p><b>Tax-Free Retirement Income</b>&ndash;Distributions or withdrawals during retirement are not taxed
+				because the taxes were already paid upfront.</p>
+			<p><b>Many investment options</b>&ndash;Roth IRAs are available from most large financial institutions.
+				Most, if not all, investment options are only limited by what is offered through each financial
+				institution.</p>
+			<p><b>Not reported on FAFSA</b>&ndash;For parents, an advantage of the Roth IRA is that the funds are not
+				subject to reporting on the Free Application for Federal Student Aid, or FAFSA. This is highly
+				beneficial because it does not reduce the federal aid that their children can receive for higher
+				education. In addition, contributions can be withdrawn later to pay for qualified education expenses
+				without it being counted as a reportable asset on the FAFSA form.</p>
+			<p><b>Heir-friendly</b>&ndash;Because contributions are already taxed, when an heir inherits a Roth IRA,
+				required distributions will not be taxed. Surviving spouses receive the same benefit, but they are not
+				required to take distributions immediately. Also, because there are no taxes owed on Roth IRA
+				contributions, setting aside as much as possible in a Roth IRA can help reduce the size of a taxable
+				estate, leaving more money for heirs.</p>
+			<p><b>Tax diversification in retirement</b>&ndash;Retirees are required to pay taxes on distributions from
+				retirement plans such as a 401(k) or traditional IRA, as well as for Social Security. Retirees can
+				strategize just how much they take from these taxable income sources. Roth IRA distributions can also be
+				used in cases where the use of other income sources would bump a person into a higher tax bracket
+				(because they don't count as taxable income).</p>
+
+			<h3>Cons of Roth IRA</h3>
+			<p><b>Taxes are paid upfront</b>&ndash;Contributions are made with after-tax dollars.</p>
+			<p><b>Low contribution limit</b>&ndash;The annual IRA contribution limit for the 2024 tax year is $7,000 for
+				those under the age of 50 or $8,000 for those 50 and older. In comparison, the 401(k) contribution limit
+				is $23,000 a year.</p>
+			<p><b>Income limit</b>&ndash;The income limit disqualifies high income earners from participating in Roth
+				IRAs. As mentioned before, the limits are adjusted gross incomes of $161,000 for individuals or $240,000
+				for married couples filing jointly in 2024. Anyone with earnings above these figures cannot contribute
+				to Roth IRA accounts. It is possible, though not simple, for these individuals to contribute to a
+				traditional IRA and then convert it to a Roth IRA.</p>
+			<p><b>Does not reduce taxable income</b>&ndash;Because only after-tax dollars go into Roth IRAs, there is no
+				initial taxes reduction on taxable income. However, low- and middle-income taxpayers can use the Saver's
+				Credit for tax savings between 10% and 50% of the first $2,000 contributed to a Roth IRA. This tax
+				credit is non-refundable.</p>
+			<p><b>Minimum holding period</b>&ndash;Tax-free withdrawals on earnings in retirement cannot be made unless
+				funds in the account have been held for at least five years, though this only applies to people who
+				start Roth IRAs near retirement. The point at which this period begins is largely dependent on whether
+				the distributions are qualified or non-qualified. For qualified distributions, this period begins the
+				first day of the first year in which the Roth IRA was funded. For non-qualified distributions, there are
+				separate five-year periods for each Roth IRA conversion. Each begins the first day of the year in which
+				the conversion is made.</p>
+			<p><b>Charitable donations</b>&ndash;Account holders that plan on leaving their assets to charitable
+				organizations would benefit less if most of their funds were placed in a Roth IRA. Because charities are
+				tax-sheltered entities, contributions with after-tax dollars will be lower than contributions from
+				tax-deferred retirement plans such as traditional IRAs or 401(k)s.</p>
+
+			<h3>Converting Traditional IRAs into Roth IRAs</h3>
+			<p>The IRS allows people to convert a traditional IRA into a Roth IRA, which a person may want to do under
+				certain circumstances.</p>
+			<ul>
+				<li>People who can't directly contribute to a Roth IRA due to the income limits can move funds they have
+					in a Traditional IRA into a Roth IRA, regardless of income.
+				<li>Traditional IRA account holders can roll as much money as they want from an existing traditional IRA
+					into a Roth IRA, ignoring the yearly contribution limits.
+				<li>Similar to choosing between a tax-deferred or tax-sheltered account, if there is reason to believe
+					that income tax will increase in the future, converting a traditional IRA to a Roth IRA will relieve
+					the payment of high future taxes.
+				<li>While traditional IRAs have required minimum distributions starting at 73 years old or later when
+					they officially retire, Roth IRAs don't. Therefore, a person who expects to live longer may want to
+					convert their existing traditional IRA into a Roth IRA in order to start distributions at a later
+					age.
+			</ul>
+			<p>This is sometimes referred to as a "backdoor Roth IRA." Fortunately, there are no income limits regarding
+				conversions. There are three different ways to go about a conversion. The following are some conversion
+				methods:</p>
+			<p><b>Method 1 &ndash; Same trustees</b></p>
+			<p>The easiest method will be to make a transfer from a traditional to a Roth IRA within the same financial
+				institution that holds the funds.</p>
+			<p><b>Method 2 &ndash; Different trustees</b></p>
+			<p>There are many reasons why using the same financial institution may not be ideal, such as the
+				availability of different mutual funds, perks of different financial institutions (unrelated to federal
+				Roth IRA rules and regulations), better customer service, or more intuitive software. In most cases, the
+				receiving institution handles the details of the transfer, as they are required to request the funds
+				from the current institution, which sends a check. If the traditional IRA account consists of individual
+				stocks that the account holder doesn't want to sell, the current institution will send stock
+				certificates to the new one, which will then credit assets to the IRA account.</p>
+			<p><b>Method 3 &ndash; 60-day rollover</b></p>
+			<p>Another method is to do a 60-day rollover, which directly delivers the funds inside a traditional IRA by
+				check, then rolls it into a Roth IRA account. However, this course of action has to be completed within
+				60 days of the traditional IRA distribution. If not, the amount of the distribution, minus any
+				non-deductible contributions, will be taxable in the year received. On top of that, the IRS will assess
+				a 10% early distribution tax penalty, and the conversion will ultimately not take place. The IRS may
+				waive the 60-day requirement if the failure to meet the time limit is due to events such as casualty,
+				disaster, or anything beyond reasonable control.</p>
+
+			<p><b>Considerations before Making a Conversion</b></p>
+			<ul>
+				<li>Make sure there are sufficient funds outside of an IRA to pay income tax on the conversion. Using
+					any IRA money instead to pay taxes will result in a loss of tax-free gains.
+				<li>Make sure there is sufficient income from non-retirement account sources to support the desired
+					lifestyle in retirement.
+				<li>Generally, the younger a person is, the more they have to benefit from the tax-free growth in
+					retirement plans. However, if contributing near or in retirement, make sure that funds have enough
+					time to grow to offset the initial payment of taxes. Keep in mind that the account must mature at
+					least five years to avoid taxation on earnings.
+				<li>Paying the income tax on a conversion with money from the sale of appreciated assets can result in
+					having to pay a capital gains tax.
+				<li>Required Minimum Distributions, or RMDs, cannot be converted into Roth IRA funds.
+				<li>The IRS limits rollovers to once per year per IRA account.
+			</ul>
+
+
+		</div>
+		<div id="right">
+
+			<form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off">
+				<table align="center" id="searchbox">
+					<tr>
+						<td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest"
+								onkeyup="return calcSearch();"></td>
+						<td><span id="bluebtn" onClick="return calcSearch();">Search</span></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div id="calcSearchOut"></div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div id="othercalc">
+				<div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div>
+				<div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a
+						href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a
+						href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a
+						href="retirement-calculator.html">Retirement</a><a
+						href="investment-calculator.html">Investment</a><a
+						href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a
+						href="finance-calculator.html">Finance</a><a href="tax-calculator.html">Income Tax</a><a
+						href="compound-interest-calculator.html">Compound Interest</a><a
+						href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a
+						href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales
+						Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div>
+				<div id="ocother"><a href="financial-calculator.html">Financial</a> | <a
+						href="fitness-and-health-calculator.html">Fitness and Health</a> | <a
+						href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="footer">
+		<div id="footerin">
+			<div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a
+					href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a>
+				&nbsp; &copy; 2024 <a href="index.html">fresherjobs.agency</a></div>
+		</div>
+	</div>
+	<div class="topNavAbs">
+		<a href="index.html">Home</a>
+		<a href="financial-calculator.html">Financial</a>
+		<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+		<a href="math-calculator.html">Math</a>
+		<a href="other-calculator.html">Other</a>
+	</div>
+</body>
+
+<!-- roth-ira-calculator.html  Tue, 06 Aug 2024 09:30:01 GMT -->
+
+</html>

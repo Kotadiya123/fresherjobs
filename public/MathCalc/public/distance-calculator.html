@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- distance-calculator.html  Tue, 06 Aug 2024 09:49:32 GMT -->
+
+
+
+<head>
+	<title>Distance Calculator</title>
+	<meta name="description"
+		content="Free calculators to compute the distance between two coordinates on a 2D plane or 3D space. Distance calculators for two points on a map are also provided." />
+	<link rel="stylesheet" href="style.css" />
+	<script src="../assets/js/common.js" async></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/icon-16x16.png">
+
+</head>
+
+<body>
+	<div id="headerout">
+		<div id="header">
+			<div id="logo"><a href="index.html"><img src="../public/img/logo.webp" width="100" height="100"
+						alt="Calculator.net"></a></div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="contentout">
+		<div id="content">
+			<div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span
+					itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html"
+						itemprop="item"><span itemprop="name">home</span></a>
+					<meta itemprop="position" content="1" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="math-calculator.html" itemprop="item"><span itemprop="name">math</span></a>
+					<meta itemprop="position" content="2" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="distance-calculator.html" itemprop="item"><span itemprop="name">distance
+							calculator</span></a>
+					<meta itemprop="position" content="3" />
+				</span></div>
+			<h1>Distance Calculator</h1>
+			<p>The calculators below can be used to find the distance between two points on a 2D plane or 3D space. They
+				can also be used to find the distance between two pairs of latitude and longitude, or two chosen points
+				on a map.</p>
+
+			<h2>2D Distance Calculator</h2>
+			<p>Use this calculator to find the distance between two points on a 2D coordinate plane.</p>
+			<div class="clefthalf">
+				<form action="https://www.calculator.net/distance-calculator.html" name="calform">
+					<table cellpadding="0" cellspacing="0" align="center" class="panel">
+						<tr class="bigtext">
+							<td>&nbsp;</td>
+							<td align="center">X<sub>1</sub></td>
+							<td align="center">Y<sub>1</sub></td>
+						</tr>
+						<tr>
+							<td>Point 1: &nbsp;</td>
+							<td align="center">(&nbsp;<input type="text" name="x11" value="1" class="inlong"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center"><input type="text" name="y11" value="1" class="inlong"
+									style="text-align:left;">&nbsp;)</td>
+						</tr>
+						<tr>
+							<td colspan="3" style="padding-top:10px;"></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="center">X<sub>2</sub></td>
+							<td align="center">Y<sub>2</sub></td>
+						</tr>
+						<tr>
+							<td>Point 2: &nbsp;</td>
+							<td align="center">(&nbsp;<input type="text" name="x12" value="4" class="inlong"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center"><input type="text" name="y12" value="5" class="inlong"
+									style="text-align:left;">&nbsp;)</td>
+						</tr>
+						<tr>
+							<td colspan="3" align="center" style="padding: 12px 0px 6px 0px;">
+								<input type="hidden" name="type" value="1">
+								<input type="submit" name="x" value="Calculate">
+								<input type="button" value="Clear" onClick="clearForm(document.calform);">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="crighthalf" style="text-align: center;">
+				<img src="../assets/img/distance/2d-distance.png" width="158" height="155" alt="2d distance">
+			</div>
+			<div id="clear"></div>
+
+			<a name="threed"></a>
+			<br>
+			<h2>3D Distance Calculator</h2>
+			<p>Use this calculator to find the distance between two points on a 3D coordinate space.</p>
+
+			<div class="clefthalf">
+				<form action="https://www.calculator.net/distance-calculator.html#threed" name="calform2">
+					<table cellpadding="0" cellspacing="0" align="center" class="panel">
+						<tr class="bigtext">
+							<td>&nbsp;</td>
+							<td align="center">X<sub>1</sub></td>
+							<td align="center">Y<sub>1</sub></td>
+							<td align="center">Z<sub>1</sub></td>
+						</tr>
+						<tr>
+							<td nowrap>Point 1: &nbsp;</td>
+							<td align="center" nowrap>(&nbsp;<input type="text" name="x21" value="1" class="innormal"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center" nowrap><input type="text" name="y21" value="1" class="innormal"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center" nowrap><input type="text" name="z21" value="1" class="innormal"
+									style="text-align:left;">&nbsp;)</td>
+						</tr>
+						<tr>
+							<td colspan="4" style="padding-top:10px;"></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td align="center">X<sub>2</sub></td>
+							<td align="center">Y<sub>2</sub></td>
+							<td align="center">Z<sub>2</sub></td>
+						</tr>
+						<tr>
+							<td nowrap>Point 2: &nbsp;</td>
+							<td align="center" nowrap>(&nbsp;<input type="text" name="x22" value="2" class="innormal"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center" nowrap><input type="text" name="y22" value="2" class="innormal"
+									style="text-align:left;">&nbsp;</td>
+							<td align="center" nowrap><input type="text" name="z22" value="2" class="innormal"
+									style="text-align:left;">&nbsp;)</td>
+						</tr>
+						<tr>
+							<td colspan="4" align="center" style="padding: 12px 0px 6px 0px;">
+								<input type="hidden" name="type" value="2">
+								<input type="submit" name="x" value="Calculate">
+								<input type="button" value="Clear" onClick="clearForm(document.calform2);">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+			<div class="crighthalf" style="text-align: center;">
+				<img src="../assets/img/distance/3d-distance.png" width="234" height="202" alt="3d distance">
+			</div>
+			<div id="clear"></div>
+
+
+
+			<a name="latlog"></a>
+			<br>
+			<h2>Distance Based on Latitude and Longitude</h2>
+			<p>Use this calculator to find the shortest distance (great circle/air distance) between two points on the
+				Earth's surface.</p>
+
+			<div class="clefthalf">
+				<form action="https://www.calculator.net/distance-calculator.html#latlog" name="calform3">
+
+					<div id="topmenu" class="topmenucenter">
+						<ul>
+							<li id='menuon'><a href="#" onclick="popMenu('dec');">Decimal</a></li>
+							<li><a href="#" onclick="popMenu('dms');">Degree-Minute-Second</a></li>
+						</ul>
+					</div>
+					<div class="panel2">
+						<table align="center">
+							<tr>
+								<td>
+									<table id="decimalunit">
+										<tr class="bigtext">
+											<td>&nbsp;</td>
+											<td align="center">Latitude 1</td>
+											<td align="center">Longitude 1</td>
+										</tr>
+										<tr>
+											<td>Point 1:</td>
+											<td align="center"><input type="text" name="la1" value="38.8976"
+													class="inlong" style="text-align:left;"></td>
+											<td align="center"><input type="text" name="lo1" value="-77.0366"
+													class="inlong" style="text-align:left;"></td>
+										</tr>
+										<tr>
+											<td colspan="3" style="padding-top:10px;"></td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td align="center">Latitude 2</td>
+											<td align="center">Longitude 2</td>
+										</tr>
+										<tr>
+											<td>Point 2:</td>
+											<td align="center"><input type="text" name="la2" value="39.9496"
+													class="inlong" style="text-align:left;"></td>
+											<td align="center"><input type="text" name="lo2" value="-75.1503"
+													class="inlong" style="text-align:left;"></td>
+										</tr>
+									</table>
+
+									<table id="dmsunit">
+										<tr>
+											<td colspan="5" id="sectitle">Point 1:</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td align="center">Degree</td>
+											<td align="center">Minute</td>
+											<td align="center">Second</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>Latitude:</td>
+											<td><input type="text" name="lad1" value="38" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="lam1" value="53" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="las1" value="51.36" class="in4char"
+													style="text-align:left;"></td>
+											<td><select name="lau1">
+													<option value="n" selected>N</option>
+													<option value="s">S</option>
+												</select></td>
+										</tr>
+										<tr>
+											<td>Longitude:</td>
+											<td><input type="text" name="lod1" value="77" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="lom1" value="2" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="los1" value="11.76" class="in4char"
+													style="text-align:left;"></td>
+											<td><select name="lou1">
+													<option value="e">E</option>
+													<option value="w" selected>W</option>
+												</select></td>
+										</tr>
+										<tr>
+											<td colspan="5" id="sectitle">Point 2:</td>
+										</tr>
+										<tr>
+											<td>&nbsp;</td>
+											<td align="center">Degree</td>
+											<td align="center">Minute</td>
+											<td align="center">Second</td>
+											<td>&nbsp;</td>
+										</tr>
+										<tr>
+											<td>Latitude:</td>
+											<td><input type="text" name="lad2" value="39" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="lam2" value="56" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="las2" value="58.56" class="in4char"
+													style="text-align:left;"></td>
+											<td><select name="lau2">
+													<option value="n" selected>N</option>
+													<option value="s">S</option>
+												</select></td>
+										</tr>
+										<tr>
+											<td>Longitude:</td>
+											<td><input type="text" name="lod2" value="75" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="lom2" value="9" class="in4char"
+													style="text-align:left;"></td>
+											<td><input type="text" name="los2" value="1.08" class="in4char"
+													style="text-align:left;"></td>
+											<td><select name="lou2">
+													<option value="e">E</option>
+													<option value="w" selected>W</option>
+												</select></td>
+										</tr>
+									</table>
+
+									<div style="padding: 12px 0px 3px 0px;text-align:center;">
+										<input type="hidden" name="type" value="3">
+										<input type="hidden" name="ctype" id="ctype" value="dec">
+										<input type="submit" name="x" value="Calculate">
+										<input type="button" value="Clear" onClick="clearForm(document.calform3);">
+									</div>
+								</td>
+							</tr>
+						</table>
+					</div>
+				</form>
+			</div>
+			<div class="crighthalf" style="text-align: center;padding: 8px;" width="150" height="150" alt="earth">
+				<img src="../assets/img/distance/earth.png">
+			</div>
+			<div id="clear"></div>
+			<script>
+				function popMenu(inval) {
+					htmlVal = "";
+					if (inval == "dec") {
+						htmlVal = htmlVal + "<li id='menuon'><a href=\"#\" onclick=\"popMenu('dec');return false;\">Decimal</a></li> <li><a href=\"#\" onclick=\"popMenu('dms');return false;\">Degree-Minute-Second</a></li>";
+						document.getElementById("ctype").value = "dec";
+						document.getElementById("decimalunit").style.display = 'block';
+						document.getElementById("dmsunit").style.display = 'none';
+						htmlVal = "<ul>" + htmlVal + "</ul>";
+					} else {
+						htmlVal = htmlVal + "<li><a href=\"#\" onclick=\"popMenu('dec');return false;\">Decimal</a></li> <li id='menuon'><a href=\"#\" onclick=\"popMenu('dms');return false;\">Degree-Minute-Second</a></li>";
+						document.getElementById("ctype").value = "standard";
+						document.getElementById("decimalunit").style.display = 'none';
+						document.getElementById("dmsunit").style.display = 'block';
+						htmlVal = "<ul>" + htmlVal + "</ul>";
+					}
+					document.getElementById("topmenu").innerHTML = htmlVal;
+				}
+				popMenu("dec");
+			</script>
+
+			<br>
+			<h2>Distance on Map</h2>
+			<p>Click the map below to set two points on the map and find the shortest distance (great circle/air
+				distance) between them. Once created, the marker(s) can be repositioned by clicking and holding, then
+				dragging them.</p>
+
+
+
+
+
+			<br>
+			<h3>Distance in a coordinate system</h3>
+			<p><b>Distance in a 2D coordinate plane:</b></p>
+			<p>The distance between two points on a 2D coordinate plane can be found using the following distance
+				formula</p>
+			<p style="text-align:center;">d = &radic;<span style="border-top: 1px solid;padding-top:3px;">(x<sub>2</sub>
+					- x<sub>1</sub>)<sup>2</sup> + (y<sub>2</sub> - y<sub>1</sub>)<sup>2</sup></span></p>
+			<p>where (x<sub>1</sub>, y<sub>1</sub>) and (x<sub>2</sub>, y<sub>2</sub>) are the coordinates of the two
+				points involved. The order of the points does not matter for the formula as long as the points chosen
+				are consistent. For example, given the two points (1, 5) and (3, 2), either 3 or 1 could be designated
+				as x<sub>1</sub> or x<sub>2</sub> as long as the corresponding y-values are used:</p>
+			<p>Using (1, 5) as (x<sub>1</sub>, y<sub>1</sub>) and (3, 2) as (x<sub>2</sub>, y<sub>2</sub>):</p>
+			<table align="center">
+				<tr>
+					<td>d =</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">(3 - 1)<sup>2</sup> + (2 -
+							5)<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">2<sup>2</sup> +
+							(-3)<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="text-decoration:overline;">4 + 9</span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="text-decoration:overline;">13</span></td>
+				</tr>
+			</table>
+			<p>Using (3, 2) as (x<sub>1</sub>, y<sub>1</sub>) and (1, 5) as (x<sub>2</sub>, y<sub>2</sub>):</p>
+			<table align="center">
+				<tr>
+					<td>d =</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">(1 - 3)<sup>2</sup> + (5 -
+							2)<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">(-2)<sup>2</sup> +
+							3<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="text-decoration:overline;">4 + 9</span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="text-decoration:overline;">13</span></td>
+				</tr>
+			</table>
+			<p>In either case, the result is the same.</p>
+			<p><b>Distance in a 3D coordinate space:</b></p>
+			<p>The distance between two points on a 3D coordinate plane can be found using the following distance
+				formula</p>
+			<p style="text-align:center;">d = &radic;<span style="border-top: 1px solid;padding-top:3px;">(x<sub>2</sub>
+					- x<sub>1</sub>)<sup>2</sup> + (y<sub>2</sub> - y<sub>1</sub>)<sup>2</sup> + (z<sub>2</sub> -
+					z<sub>1</sub>)<sup>2</sup></span></p>
+			<p>where (x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>) and (x<sub>2</sub>, y<sub>2</sub>, z<sub>2</sub>) are
+				the 3D coordinates of the two points involved. Like the 2D version of the formula, it does not matter
+				which of two points is designated (x<sub>1</sub>, y<sub>1</sub>, z<sub>1</sub>) or (x<sub>2</sub>,
+				y<sub>2</sub>, z<sub>2</sub>), as long as the corresponding points are used in the formula. Given the
+				two points (1, 3, 7) and (2, 4, 8), the distance between the points can be found as follows:</p>
+			<table align="center">
+				<tr>
+					<td>d =</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">(2 - 1)<sup>2</sup> + (4 -
+							3)<sup>2</sup> + (8 - 7)<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="border-top: 1px solid;padding-top:3px;">1<sup>2</sup> + 1<sup>2</sup> +
+							1<sup>2</sup></span></td>
+				</tr>
+				<tr>
+					<td align="right">=</td>
+					<td>&radic;<span style="text-decoration:overline;">3</span></td>
+				</tr>
+			</table>
+
+			<h3>Distance between two points on Earth's surface</h3>
+			<p>There are a number of ways to find the distance between two points along the Earth's surface. The
+				following are two common formulas.</p>
+
+			<p><b>Haversine formula:</b></p>
+			<p>The haversine formula can be used to find the distance between two points on a sphere given their
+				latitude and longitude:</p>
+			<p style="text-align:center;"><img src="../assets/img/distance/haversine-formula.png" width="415"
+					height="59" alt="haversine formula" class="scaleimg"></p>
+			<p>In the haversine formula, d is the distance between two points along a great circle, r is the radius of
+				the sphere, &straightphi;<sub>1</sub> and &straightphi;<sub>2</sub> are the latitudes of the two points,
+				and &lambda;<sub>1</sub> and &lambda;<sub>2</sub> are the longitudes of the two points, all in radians.
+			</p>
+			<p>The haversine formula works by finding the great-circle distance between points of latitude and longitude
+				on a sphere, which can be used to approximate distance on the Earth (since it is mostly spherical). A
+				great circle (also orthodrome) of a sphere is the largest circle that can be drawn on any given sphere.
+				It is formed by the intersection of a plane and the sphere through the center point of the sphere. The
+				great-circle distance is the shortest distance between two points along the surface of a sphere.</p>
+			<p>Results using the haversine formula may have an error of up to 0.5% because the Earth is not a perfect
+				sphere, but an ellipsoid with a radius of 6,378 km (3,963 mi) at the equator and a radius of 6,357 km
+				(3,950 mi) at a pole. Because of this, Lambert's formula (an ellipsoidal-surface formula), more
+				precisely approximates the surface of the Earth than the haversine formula (a spherical-surface formula)
+				can.</p>
+
+			<p><b>Lambert's formula:</b></p>
+			<p>Lambert's formula (the formula used by the calculators above) is the method used to calculate the
+				shortest distance along the surface of an ellipsoid. When used to approximate the Earth and calculate
+				the distance on the Earth surface, it has an accuracy on the order of 10 meters over thousands of
+				kilometers, which is more precise than the haversine formula.</p>
+			<p>Lambert's formula is as follows:</p>
+			<p style="text-align:center;"><img src="../assets/img/distance/lambert-formula.png" width="136" height="34"
+					alt="lambert formula" class="scaleimg"></p>
+			<p>where a is the equatorial radius of the ellipsoid (in this case the Earth), &sigma; is the central angle
+				in radians between the points of latitude and longitude (found using a method such as the haversine
+				formula), f is the flattening of the Earth, and X and Y are expanded below.</p>
+			<p style="text-align:center;"><img src="../assets/img/distance/x-y-value.png" width="214" height="114"
+					alt="x,y of lambert formula" class="scaleimg"></p>
+			<p>Where P = (&beta;<sub>1</sub> + &beta;<sub>2</sub>)/2 and Q = (&beta;<sub>2</sub> - &beta;<sub>1</sub>)/2
+			</p>
+			<p>In the expressions above, &beta;<sub>1</sub> and &beta;<sub>1</sub> are reduced latitudes using the
+				equation below:</p>
+			<p style="text-align:center;">tan(&beta;) = (1 - f)tan(&straightphi;)</p>
+			<p>where &straightphi; is the latitude of a point.</p>
+			<p>Note that neither the haversine formula nor Lambert's formula provides an exact distance because it is
+				not possible to account for every irregularity on the surface of the Earth.</p>
+
+
+		</div>
+		<div id="right">
+
+			<form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off">
+				<table align="center" id="searchbox">
+					<tr>
+						<td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest"
+								onkeyup="return calcSearch();"></td>
+						<td><span id="bluebtn" onClick="return calcSearch();">Search</span></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div id="calcSearchOut"></div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div id="othercalc">
+				<div id="octitle"><a href="math-calculator.html">Math Calculators</a></div>
+				<div id="occontent"><a href="scientific-calculator.html">Scientific</a><a
+						href="fraction-calculator.html">Fraction</a><a href="percent-calculator.html">Percentage</a><a
+						href="triangle-calculator.html">Triangle</a><a href="volume-calculator.html">Volume</a><a
+						href="standard-deviation-calculator.html">Standard Deviation</a><a
+						href="random-number-generator.html">Random Number Generator</a><a
+						href="math-calculator.html">More Math Calculators</a></div>
+				<div id="ocother"><a href="financial-calculator.html">Financial</a> | <a
+						href="fitness-and-health-calculator.html">Fitness and Health</a> | <a
+						href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="footer">
+		<div id="footerin">
+			<div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a
+					href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a>
+				&nbsp; &copy; 2024 <a href="index.html">fresherjobs.agency</a></div>
+		</div>
+	</div>
+	<div class="topNavAbs">
+		<a href="index.html">Home</a>
+		<a href="financial-calculator.html">Financial</a>
+		<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+		<a href="math-calculator.html">Math</a>
+		<a href="other-calculator.html">Other</a>
+	</div>
+</body>
+
+<!-- distance-calculator.html  Tue, 06 Aug 2024 09:52:21 GMT -->
+
+</html>

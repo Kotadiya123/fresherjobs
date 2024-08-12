@@ -1,0 +1,1943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- average-return-calculator.html  Tue, 06 Aug 2024 09:30:01 GMT -->
+
+
+
+<head>
+	<title>Average Return Calculator</title>
+	<meta name="description"
+		content="Free calculator to find the average return of an investment considering all deposits and withdrawals or the average return of different holding lengths." />
+	<link rel="stylesheet" href="style.css" />
+	<script src="../assets/js/common.js" async></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="../assets/icon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="../assets/icon-16x16.png">
+
+</head>
+
+<body>
+	<div id="headerout">
+		<div id="header">
+			<div id="logo"><a href="index.html"><img src="../public/img/logo.webp" width="100" height="100"
+						alt="Calculator.net"></a></div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="contentout">
+		<div id="content">
+			<div id="breadcrumbs" itemscope itemtype="https://schema.org/BreadcrumbList"><span
+					itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html"
+						itemprop="item"><span itemprop="name">home</span></a>
+					<meta itemprop="position" content="1" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="financial-calculator.html" itemprop="item"><span itemprop="name">financial</span></a>
+					<meta itemprop="position" content="2" />
+				</span> / <span itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a
+						href="average-return-calculator.html" itemprop="item"><span itemprop="name">average return
+							calculator</span></a>
+					<meta itemprop="position" content="3" />
+				</span></div>
+			<h1>Average Return Calculator</h1>
+			<p>The Average Return Calculator can calculate an average return for two different scenarios. The first is
+				based on cash flows, and the second calculates a cumulative and average return of multiple investment
+				returns with different holding periods. </p>
+			<div id="insmdc"><img src="https://d26tpo4cm8sb6k.cloudfront.net/img/svg/insmm.svg" width="630" height="35"
+					alt="Modify the values and click the calculate button to use"></div><a name="avgcashflow"></a>
+			<h2 class="h2red">Average Return Based on Cash Flow</h2>
+			<p>This calculator estimates the average annual return of an entire account based on the starting and ending
+				balances as well as the dates and amounts of deposits or withdrawals.</p>
+			<div class="panel">
+				<form name="calform" method="post"
+					action="https://www.calculator.net/average-return-calculator.html#avgcashflow">
+					<table>
+						<tr>
+							<td>&nbsp;</td>
+							<td><b>Activity</b></td>
+							<td><b>Amount</b></td>
+							<td><b>Date</b></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>Starting Balance</td>
+							<td align="right"><input type="text" name="beginbalance" id="beginbalance" value="5600"
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, 'r', 'n');"></td>
+							<td><input type="date" name="beginbalanceday" value="2021-01-01"></td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+							<td>Ending Balance</td>
+							<td align="right"><input type="text" name="endbalance" id="endbalance" value="18000"
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, 'r', 'n');"></td>
+							<td><input type="date" name="endbalanceday" value="2024-08-06"></td>
+						</tr>
+						<tr>
+							<td>1.</td>
+							<td><select name="act1">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt1" id="amt1" value="5000"
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date1" value="2022-01-15"></td>
+						</tr>
+						<tr>
+							<td>2.</td>
+							<td><select name="act2">
+									<option value="deposit">Deposit</option>
+									<option value="withdraw" selected>Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt2" id="amt2" value="1500"
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date2" value="2022-06-01"></td>
+						</tr>
+						<tr>
+							<td>3.</td>
+							<td><select name="act3">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt3" id="amt3" value="3800"
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date3" value="2023-01-18"></td>
+						</tr>
+						<tr>
+							<td>4.</td>
+							<td><select name="act4">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt4" id="amt4" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date4" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>5.</td>
+							<td><select name="act5">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt5" id="amt5" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date5" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>6.</td>
+							<td><select name="act6">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt6" id="amt6" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date6" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>7.</td>
+							<td><select name="act7">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt7" id="amt7" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date7" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>8.</td>
+							<td><select name="act8">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt8" id="amt8" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date8" value="2022-01-01"></td>
+						</tr>
+					</table>
+					<div style="padding: 5px 50px;" id="ccfmoredesc"><a href="#"
+							onClick="return showHideMoreFields('ccfmore', 'show');">Show More Input Fields</a></div>
+					<table id="ccfmore" style="display:none;" border="0">
+						<tr>
+							<td>9.</td>
+							<td><select name="act9">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt9" id="amt9" value="" class="inlong indollar"
+									onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date9" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>10.</td>
+							<td><select name="act10">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt10" id="amt10" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date10" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>11.</td>
+							<td><select name="act11">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt11" id="amt11" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date11" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>12.</td>
+							<td><select name="act12">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt12" id="amt12" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date12" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>13.</td>
+							<td><select name="act13">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt13" id="amt13" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date13" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>14.</td>
+							<td><select name="act14">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt14" id="amt14" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date14" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>15.</td>
+							<td><select name="act15">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt15" id="amt15" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date15" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>16.</td>
+							<td><select name="act16">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt16" id="amt16" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date16" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>17.</td>
+							<td><select name="act17">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt17" id="amt17" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date17" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>18.</td>
+							<td><select name="act18">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt18" id="amt18" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date18" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>19.</td>
+							<td><select name="act19">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt19" id="amt19" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date19" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>20.</td>
+							<td><select name="act20">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt20" id="amt20" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date20" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>21.</td>
+							<td><select name="act21">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt21" id="amt21" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date21" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>22.</td>
+							<td><select name="act22">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt22" id="amt22" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date22" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>23.</td>
+							<td><select name="act23">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt23" id="amt23" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date23" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>24.</td>
+							<td><select name="act24">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt24" id="amt24" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date24" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>25.</td>
+							<td><select name="act25">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt25" id="amt25" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date25" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>26.</td>
+							<td><select name="act26">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt26" id="amt26" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date26" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>27.</td>
+							<td><select name="act27">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt27" id="amt27" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date27" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>28.</td>
+							<td><select name="act28">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt28" id="amt28" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date28" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>29.</td>
+							<td><select name="act29">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt29" id="amt29" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date29" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>30.</td>
+							<td><select name="act30">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt30" id="amt30" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date30" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>31.</td>
+							<td><select name="act31">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt31" id="amt31" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date31" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>32.</td>
+							<td><select name="act32">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt32" id="amt32" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date32" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>33.</td>
+							<td><select name="act33">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt33" id="amt33" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date33" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>34.</td>
+							<td><select name="act34">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt34" id="amt34" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date34" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>35.</td>
+							<td><select name="act35">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt35" id="amt35" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date35" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>36.</td>
+							<td><select name="act36">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt36" id="amt36" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date36" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>37.</td>
+							<td><select name="act37">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt37" id="amt37" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date37" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>38.</td>
+							<td><select name="act38">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt38" id="amt38" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date38" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>39.</td>
+							<td><select name="act39">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt39" id="amt39" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date39" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>40.</td>
+							<td><select name="act40">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt40" id="amt40" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date40" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>41.</td>
+							<td><select name="act41">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt41" id="amt41" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date41" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>42.</td>
+							<td><select name="act42">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt42" id="amt42" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date42" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>43.</td>
+							<td><select name="act43">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt43" id="amt43" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date43" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>44.</td>
+							<td><select name="act44">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt44" id="amt44" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date44" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>45.</td>
+							<td><select name="act45">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt45" id="amt45" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date45" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>46.</td>
+							<td><select name="act46">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt46" id="amt46" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date46" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>47.</td>
+							<td><select name="act47">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt47" id="amt47" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date47" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>48.</td>
+							<td><select name="act48">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt48" id="amt48" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date48" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>49.</td>
+							<td><select name="act49">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt49" id="amt49" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date49" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>50.</td>
+							<td><select name="act50">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt50" id="amt50" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date50" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>51.</td>
+							<td><select name="act51">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt51" id="amt51" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date51" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>52.</td>
+							<td><select name="act52">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt52" id="amt52" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date52" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>53.</td>
+							<td><select name="act53">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt53" id="amt53" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date53" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>54.</td>
+							<td><select name="act54">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt54" id="amt54" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date54" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>55.</td>
+							<td><select name="act55">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt55" id="amt55" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date55" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>56.</td>
+							<td><select name="act56">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt56" id="amt56" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date56" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>57.</td>
+							<td><select name="act57">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt57" id="amt57" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date57" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>58.</td>
+							<td><select name="act58">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt58" id="amt58" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date58" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>59.</td>
+							<td><select name="act59">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt59" id="amt59" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date59" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>60.</td>
+							<td><select name="act60">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt60" id="amt60" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date60" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>61.</td>
+							<td><select name="act61">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt61" id="amt61" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date61" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>62.</td>
+							<td><select name="act62">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt62" id="amt62" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date62" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>63.</td>
+							<td><select name="act63">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt63" id="amt63" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date63" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>64.</td>
+							<td><select name="act64">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt64" id="amt64" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date64" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>65.</td>
+							<td><select name="act65">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt65" id="amt65" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date65" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>66.</td>
+							<td><select name="act66">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt66" id="amt66" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date66" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>67.</td>
+							<td><select name="act67">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt67" id="amt67" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date67" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>68.</td>
+							<td><select name="act68">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt68" id="amt68" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date68" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>69.</td>
+							<td><select name="act69">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt69" id="amt69" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date69" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>70.</td>
+							<td><select name="act70">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt70" id="amt70" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date70" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>71.</td>
+							<td><select name="act71">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt71" id="amt71" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date71" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>72.</td>
+							<td><select name="act72">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt72" id="amt72" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date72" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>73.</td>
+							<td><select name="act73">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt73" id="amt73" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date73" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>74.</td>
+							<td><select name="act74">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt74" id="amt74" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date74" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>75.</td>
+							<td><select name="act75">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt75" id="amt75" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date75" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>76.</td>
+							<td><select name="act76">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt76" id="amt76" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date76" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>77.</td>
+							<td><select name="act77">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt77" id="amt77" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date77" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>78.</td>
+							<td><select name="act78">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt78" id="amt78" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date78" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>79.</td>
+							<td><select name="act79">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt79" id="amt79" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date79" value="2022-01-01"></td>
+						</tr>
+						<tr>
+							<td>80.</td>
+							<td><select name="act80">
+									<option value="deposit" selected>Deposit</option>
+									<option value="withdraw">Withdraw</option>
+								</select></td>
+							<td align="right"><input type="text" name="amt80" id="amt80" value=""
+									class="inlong indollar" onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							<td><input type="date" name="date80" value="2022-01-01"></td>
+						</tr>
+					</table>
+					<div style="padding-left:50px;">
+						<input type="hidden" name="ctype" id="ctype" value="1">
+						<input type="submit" name="x" value="Calculate">
+						<input type="button" value="Clear" onClick="clearForm(document.calform);">
+					</div>
+				</form>
+				<script>
+					function insertComma2(t, l) { d = t.value.toString().replaceAll(",", ""), a = ""; if ("i" == l) a = (d = d.replace(/[^\d.-]/g, "")).toString().split(".")[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); else if ("d" == l) { let g = (d = d.replace(/[^\d.-]/g, "")).toString().split("."); a = g[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","), g.length > 1 && (a += "." + g[1]) } else "c" == l && (a = d.replace(/\B(?=(\d{3})+(?!\d))/g, ",")); t.value = a }
+					function proComma2(p) { let m = document.getElementById(p); m.onblur = function () { insertComma2(m, 'd'); }; insertComma2(m, 'd'); }
+					proComma2("beginbalance");
+					proComma2("endbalance");
+					for (let i = 1; i <= 80; i++) proComma2("amt" + i);
+				</script>
+			</div>
+
+
+			<h2 class="h2red"><br>Average and Cumulative Return</h2>
+			<p>This calculator estimates the average annual return as well as the cumulative return for different
+				investment returns with different holding periods.</p>
+			<div class="leftinput">
+				<div class="panel">
+					<form name="calform2" method="post"
+						action="https://www.calculator.net/average-return-calculator.html#avgcumulative">
+						<table>
+							<tr>
+								<td colspan="2">&nbsp;</td>
+								<td colspan="2" style="padding-left:10px;"><b>Holding Length</b></td>
+							</tr>
+							<tr>
+								<td width="30">&nbsp;</td>
+								<td><b>Return</b></td>
+								<td><b>Years</b></td>
+								<td><b>Months</b></td>
+							</tr>
+							<tr>
+								<td width="30">1.</td>
+								<td><input type="text" name="rt1" size="5" value="10" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr1" size="5" value="1" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn1" size="5" value="2" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">2.</td>
+								<td><input type="text" name="rt2" size="5" value="-2" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr2" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn2" size="5" value="5" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">3.</td>
+								<td><input type="text" name="rt3" size="5" value="15" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr3" size="5" value="2" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn3" size="5" value="3" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">4.</td>
+								<td><input type="text" name="rt4" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr4" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn4" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">5.</td>
+								<td><input type="text" name="rt5" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr5" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn5" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">6.</td>
+								<td><input type="text" name="rt6" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr6" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn6" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">7.</td>
+								<td><input type="text" name="rt7" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr7" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn7" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">8.</td>
+								<td><input type="text" name="rt8" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr8" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn8" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+						</table>
+						<div style="padding: 5px 0px 5px 50px;" id="cacrmoredesc"><a href="#"
+								onClick="return showHideMoreFields('cacrmore', 'show')">Show More Input Fields</a></div>
+						<table id="cacrmore" style="display:none;">
+							<tr>
+								<td width="30">9.</td>
+								<td><input type="text" name="rt9" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr9" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn9" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">10.</td>
+								<td><input type="text" name="rt10" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr10" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn10" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">11.</td>
+								<td><input type="text" name="rt11" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr11" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn11" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">12.</td>
+								<td><input type="text" name="rt12" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr12" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn12" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">13.</td>
+								<td><input type="text" name="rt13" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr13" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn13" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">14.</td>
+								<td><input type="text" name="rt14" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr14" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn14" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">15.</td>
+								<td><input type="text" name="rt15" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr15" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn15" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">16.</td>
+								<td><input type="text" name="rt16" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr16" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn16" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">17.</td>
+								<td><input type="text" name="rt17" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr17" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn17" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">18.</td>
+								<td><input type="text" name="rt18" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr18" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn18" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">19.</td>
+								<td><input type="text" name="rt19" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr19" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn19" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">20.</td>
+								<td><input type="text" name="rt20" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr20" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn20" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">21.</td>
+								<td><input type="text" name="rt21" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr21" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn21" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">22.</td>
+								<td><input type="text" name="rt22" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr22" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn22" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">23.</td>
+								<td><input type="text" name="rt23" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr23" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn23" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">24.</td>
+								<td><input type="text" name="rt24" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr24" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn24" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">25.</td>
+								<td><input type="text" name="rt25" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr25" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn25" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">26.</td>
+								<td><input type="text" name="rt26" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr26" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn26" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">27.</td>
+								<td><input type="text" name="rt27" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr27" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn27" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">28.</td>
+								<td><input type="text" name="rt28" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr28" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn28" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">29.</td>
+								<td><input type="text" name="rt29" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr29" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn29" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">30.</td>
+								<td><input type="text" name="rt30" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr30" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn30" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">31.</td>
+								<td><input type="text" name="rt31" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr31" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn31" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">32.</td>
+								<td><input type="text" name="rt32" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr32" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn32" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">33.</td>
+								<td><input type="text" name="rt33" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr33" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn33" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">34.</td>
+								<td><input type="text" name="rt34" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr34" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn34" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">35.</td>
+								<td><input type="text" name="rt35" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr35" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn35" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">36.</td>
+								<td><input type="text" name="rt36" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr36" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn36" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">37.</td>
+								<td><input type="text" name="rt37" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr37" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn37" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">38.</td>
+								<td><input type="text" name="rt38" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr38" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn38" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">39.</td>
+								<td><input type="text" name="rt39" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr39" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn39" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">40.</td>
+								<td><input type="text" name="rt40" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr40" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn40" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">41.</td>
+								<td><input type="text" name="rt41" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr41" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn41" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">42.</td>
+								<td><input type="text" name="rt42" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr42" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn42" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">43.</td>
+								<td><input type="text" name="rt43" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr43" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn43" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">44.</td>
+								<td><input type="text" name="rt44" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr44" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn44" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">45.</td>
+								<td><input type="text" name="rt45" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr45" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn45" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">46.</td>
+								<td><input type="text" name="rt46" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr46" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn46" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">47.</td>
+								<td><input type="text" name="rt47" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr47" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn47" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">48.</td>
+								<td><input type="text" name="rt48" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr48" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn48" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">49.</td>
+								<td><input type="text" name="rt49" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr49" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn49" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">50.</td>
+								<td><input type="text" name="rt50" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr50" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn50" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">51.</td>
+								<td><input type="text" name="rt51" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr51" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn51" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">52.</td>
+								<td><input type="text" name="rt52" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr52" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn52" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">53.</td>
+								<td><input type="text" name="rt53" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr53" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn53" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">54.</td>
+								<td><input type="text" name="rt54" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr54" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn54" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">55.</td>
+								<td><input type="text" name="rt55" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr55" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn55" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">56.</td>
+								<td><input type="text" name="rt56" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr56" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn56" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">57.</td>
+								<td><input type="text" name="rt57" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr57" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn57" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">58.</td>
+								<td><input type="text" name="rt58" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr58" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn58" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">59.</td>
+								<td><input type="text" name="rt59" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr59" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn59" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">60.</td>
+								<td><input type="text" name="rt60" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr60" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn60" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">61.</td>
+								<td><input type="text" name="rt61" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr61" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn61" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">62.</td>
+								<td><input type="text" name="rt62" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr62" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn62" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">63.</td>
+								<td><input type="text" name="rt63" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr63" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn63" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">64.</td>
+								<td><input type="text" name="rt64" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr64" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn64" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">65.</td>
+								<td><input type="text" name="rt65" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr65" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn65" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">66.</td>
+								<td><input type="text" name="rt66" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr66" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn66" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">67.</td>
+								<td><input type="text" name="rt67" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr67" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn67" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">68.</td>
+								<td><input type="text" name="rt68" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr68" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn68" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">69.</td>
+								<td><input type="text" name="rt69" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr69" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn69" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">70.</td>
+								<td><input type="text" name="rt70" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr70" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn70" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">71.</td>
+								<td><input type="text" name="rt71" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr71" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn71" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">72.</td>
+								<td><input type="text" name="rt72" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr72" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn72" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">73.</td>
+								<td><input type="text" name="rt73" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr73" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn73" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">74.</td>
+								<td><input type="text" name="rt74" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr74" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn74" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">75.</td>
+								<td><input type="text" name="rt75" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr75" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn75" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">76.</td>
+								<td><input type="text" name="rt76" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr76" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn76" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">77.</td>
+								<td><input type="text" name="rt77" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr77" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn77" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">78.</td>
+								<td><input type="text" name="rt78" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr78" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn78" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">79.</td>
+								<td><input type="text" name="rt79" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr79" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn79" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">80.</td>
+								<td><input type="text" name="rt80" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr80" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn80" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">81.</td>
+								<td><input type="text" name="rt81" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr81" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn81" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">82.</td>
+								<td><input type="text" name="rt82" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr82" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn82" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">83.</td>
+								<td><input type="text" name="rt83" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr83" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn83" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">84.</td>
+								<td><input type="text" name="rt84" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr84" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn84" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">85.</td>
+								<td><input type="text" name="rt85" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr85" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn85" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">86.</td>
+								<td><input type="text" name="rt86" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr86" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn86" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">87.</td>
+								<td><input type="text" name="rt87" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr87" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn87" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">88.</td>
+								<td><input type="text" name="rt88" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr88" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn88" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">89.</td>
+								<td><input type="text" name="rt89" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr89" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn89" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">90.</td>
+								<td><input type="text" name="rt90" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr90" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn90" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">91.</td>
+								<td><input type="text" name="rt91" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr91" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn91" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">92.</td>
+								<td><input type="text" name="rt92" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr92" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn92" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">93.</td>
+								<td><input type="text" name="rt93" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr93" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn93" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">94.</td>
+								<td><input type="text" name="rt94" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr94" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn94" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">95.</td>
+								<td><input type="text" name="rt95" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr95" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn95" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">96.</td>
+								<td><input type="text" name="rt96" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr96" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn96" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">97.</td>
+								<td><input type="text" name="rt97" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr97" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn97" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">98.</td>
+								<td><input type="text" name="rt98" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr98" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn98" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">99.</td>
+								<td><input type="text" name="rt99" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr99" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn99" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+							<tr>
+								<td width="30">100.</td>
+								<td><input type="text" name="rt100" size="5" value="" class="innormal inpct"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="yr100" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+								<td><input type="text" name="mn100" size="5" value="" class="innormal"
+										onKeyUp="iptfieldCheck(this, '', 'n');"></td>
+							</tr>
+						</table>
+						<table width="300">
+							<tr>
+								<td align="center">
+									<input type="hidden" name="ctype" id="ctype" value="2">
+									<input type="submit" name="x" value="Calculate">
+									<input type="button" value="Clear" onClick="clearForm(document.calform2);">
+								</td>
+							</tr>
+						</table>
+					</form>
+				</div>
+			</div>
+			<div class="rightresult"><a name="avgcumulative"></a>
+				<div class="espaceforM">&nbsp;</div>
+			</div>
+			<div id="clear"></div>
+			<p>
+			<fieldset>
+				<legend>Related</legend><a href="investment-calculator.html">Investment Calculator</a> | <a
+					href="interest-calculator.html">Interest Calculator</a>
+			</fieldset>
+			</p>
+			<script>
+				function showHideMoreFields(shmfFieldName, shmfValue) {
+					if (shmfValue == 'show') {
+						document.getElementById(shmfFieldName).style.display = 'block';
+						document.getElementById(shmfFieldName + "desc").innerHTML = '<a href="#" onClick="return showHideMoreFields(\'' + shmfFieldName + '\', \'hide\')">Hide Fields Below</a>';
+					} else {
+						document.getElementById(shmfFieldName).style.display = 'none';
+						document.getElementById(shmfFieldName + "desc").innerHTML = '<a href="#" onClick="return showHideMoreFields(\'' + shmfFieldName + '\', \'show\')">Show More Input Fields</a>';
+					}
+					return false;
+				}
+
+
+
+			</script>
+
+
+			<br>
+			<h3>Average Return</h3>
+			<p>The average return is defined as the mathematical average of a series of returns generated over a period
+				of time. In regards to the calculator, the average return for the first calculation is the rate at which
+				the beginning balance concludes as the ending balance, based on deposits and withdrawals that are made
+				in-between over time. The time value of money is accounted for, which is a theory that states that a
+				dollar today is worth more than a dollar tomorrow. For the second calculation, the average return is the
+				total return of the entire period (for all returns involved) divided by the number of periods. The time
+				value of money is also accounted for here.</p>
+
+			<h3>Average Rate of Return</h3>
+			<p>The average rate of return (ARR), also known as the accounting rate of return, is the average amount
+				(usually annualized) of cash flow generated over the life of an investment. ARR does not account for the
+				time value of money. As a result, it is best to use ARR in conjunction with other metrics when
+				considering large financial decisions. </p>
+			<p>Both calculations above take into account the time value of money when computing the average return. Both
+				average return and ARR are commonly used methods of determining relative performance levels.</p>
+
+			<h3>Cumulative Return</h3>
+			<p>Cumulative return refers to the aggregate amount an investment gains or loses irrespective of time, and
+				can be presented as either a numerical sum total or as a percentage rate. It is generally contrasted
+				with annual return, which is the return (or loss) of an investment in a single year only. The cumulative
+				return should also be distinguished from the average annual return, which is the total of all the
+				returns in a given period normalized annually.</p>
+			<p>Because most financial formulas revolve around and are presented in annualized figures, cumulative return
+				as a metric is less commonly useful due to the lack of meaningful comparisons. Similar to ARR,
+				cumulative return is best used in conjunction with other measures of performance. </p>
+
+
+		</div>
+		<div id="right">
+
+			<form name="calcSearchForm" onsubmit="calcSearch(); return false;" autocomplete="off">
+				<table align="center" id="searchbox">
+					<tr>
+						<td><input type="text" name="calcSearchTerm" id="calcSearchTerm" class="inlongest"
+								onkeyup="return calcSearch();"></td>
+						<td><span id="bluebtn" onClick="return calcSearch();">Search</span></td>
+					</tr>
+					<tr>
+						<td colspan="2">
+							<div id="calcSearchOut"></div>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<div id="othercalc">
+				<div id="octitle"><a href="financial-calculator.html">Financial Calculators</a></div>
+				<div id="occontent"><a href="mortgage-calculator.html">Mortgage</a><a
+						href="loan-calculator.html">Loan</a><a href="auto-loan-calculator.html">Auto Loan</a><a
+						href="interest-calculator.html">Interest</a><a href="payment-calculator.html">Payment</a><a
+						href="retirement-calculator.html">Retirement</a><a
+						href="investment-calculator.html">Investment</a><a
+						href="currency-calculator.html">Currency</a><a href="inflation-calculator.html">Inflation</a><a
+						href="finance-calculator.html">Finance</a><a href="tax-calculator.html">Income Tax</a><a
+						href="compound-interest-calculator.html">Compound Interest</a><a
+						href="salary-calculator.html">Salary</a><a href="401k-calculator.html">401K</a><a
+						href="interest-rate-calculator.html">Interest Rate</a><a href="sales-tax-calculator.html">Sales
+						Tax</a><a href="financial-calculator.html">More Financial Calculators</a></div>
+				<div id="ocother"><a href="financial-calculator.html">Financial</a> | <a
+						href="fitness-and-health-calculator.html">Fitness and Health</a> | <a
+						href="math-calculator.html">Math</a> | <a href="other-calculator.html">Other</a></div>
+			</div>
+		</div>
+	</div>
+	<div id="clear"></div>
+	<div id="footer">
+		<div id="footerin">
+			<div id="footernav"><a href="about-us.html">about us</a> | <a href="sitemap.html">sitemap</a> | <a
+					href="about-us.html#terms">terms of use</a> | <a href="about-us.html#privacy">privacy policy</a>
+				&nbsp; &copy; 2024 <a href="index.html">fresherjobs.agency</a></div>
+		</div>
+	</div>
+	<div class="topNavAbs">
+		<a href="index.html">Home</a>
+		<a href="financial-calculator.html">Financial</a>
+		<a href="fitness-and-health-calculator.html">Fitness &amp; Health</a>
+		<a href="math-calculator.html">Math</a>
+		<a href="other-calculator.html">Other</a>
+	</div>
+</body>
+
+<!-- average-return-calculator.html  Tue, 06 Aug 2024 09:30:01 GMT -->
+
+</html>
