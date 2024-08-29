@@ -1,0 +1,188 @@
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: #f5f9fe
+}
+
+main {
+    margin-top: 0
+}
+
+.calc_top_banner {
+    background: radial-gradient(circle, #F6F9FE 0, #F6F9FE 100%);
+    border-bottom: 5px solid #000000;
+    padding: 150px 0 180px;
+    position: relative;
+    overflow: hidden
+}
+
+.calc_top_banner::after {
+    position: absolute;
+    content: '';
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(180deg, #F6F9FE 0, #F6F9FE 100%);
+    mix-blend-mode: hard-light;
+    opacity: .3
+}
+
+.calc_top_banner .banner_header {
+    font-weight: 700;
+    font-size: 50px;
+    line-height: 70px;
+    color: #000000
+}
+
+.calc_top_banner .banner_subtext {
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 40px;
+    color: #000000;
+    width: 80%;
+    margin: auto
+}
+
+.calc_list_section {
+    position: relative;
+    margin-top: -60px;
+    padding-bottom: 70px
+}
+
+.calc_list_section .cals_box_wrapper {
+    background: linear-gradient(#fff, #fff) padding-box, linear-gradient(to bottom, #bcdefc, rgba(255, 141, 33, .58)) border-box;
+    box-shadow: 0 5px 10px rgba(29, 69, 138, .1);
+    border: 2px solid transparent;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    overflow: hidden;
+    display: block;
+    width: 100%
+}
+
+.calc_list_section .cals_box_wrapper .cals_inner_box {
+    background: #fff;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center
+}
+
+.calc_list_section .cals_box_wrapper .cals_inner_box .calc_img_box {
+    height: 100px
+}
+
+.calc_list_section .cals_box_wrapper .cals_inner_box .calc_img_box img {
+    height: 100%
+}
+
+.calc_list_section .cals_box_wrapper .cals_inner_box .cals_name {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 30px;
+    color: #12274b;
+    text-align: center;
+    margin-top: 28px;
+    margin-bottom: 12px;
+    overflow: hidden
+}
+
+.calc_list_section .cals_box_wrapper .cals_inner_box .cals_details {
+    color: #404040;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    height: 78px;
+    overflow: hidden
+}
+
+.use_now_button {
+    text-align: center;
+    font-weight: 500;
+    line-height: 18px;
+    color: #1d458a !important;
+    text-decoration: none;
+    border: 1px solid #f9f9f9;
+    position: relative;
+    font-size: 13px;
+    margin-top: 20px;
+    background: #eaf6ff;
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 4px
+}
+
+.use_now_button svg {
+    margin-bottom: 2px;
+    margin-left: 2px;
+    display: inline-block;
+    width: 12px
+}
+
+.use_now_button span {
+    display: inline-block;
+    position: relative
+}
+
+.use_now_button span::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 0;
+    content: '';
+    background-color: #12274b !important;
+    transition: .4s
+}
+
+.use_now_button:hover.use_now_button span::after {
+    width: calc(100% - 16px);
+    transition: .4s
+}
+
+.kotak_zero_broker_section {
+    margin-top: 30px
+}
+
+@media (min-width:200px) and (max-width:768px) {
+    .calc_top_banner {
+        padding-top: 70px;
+        padding-bottom: 110px
+    }
+
+    .calc_top_banner .banner_header {
+        font-size: 28px;
+        line-height: 36px;
+        text-align: center
+    }
+
+    .calc_top_banner .banner_subtext {
+        font-size: 16px;
+        line-height: 26px;
+        text-align: center;
+        width: 100%
+    }
+
+    .calc_list_section .cals_box_wrapper .cals_inner_box .cals_details {
+        height: auto;
+        overflow: visible
+    }
+
+    .kotak_zero_broker_section {
+        margin-top: 4px
+    }
+
+    .calc_list_section {
+        padding-bottom: 40px
+    }
+}
+
+@media (min-width:769px) and (max-width:1200px) {
+    .calc_top_banner {
+        padding-top: 100px;
+        padding-bottom: 130px
+    }
+}

@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <title>Online CAGR Calculator: Compound Annual Growth Rate Formula</title>
+    <meta name="keywords"
+        content="cagr, cagr formula, online cagr, sip, cagr calculator, Compounded Annual Growth Rate, cagr calculator online, compound annual growth rate calculator, compound annual growth rate calculator online" />
+    <meta name="description"
+        content="Easily calculate CAGR online with our Compound Annual Growth Rate (CAGR) Calculator. Use the CAGR formula to find your investment's Compound Annual Growth Rate" />
+
+    <link rel="canonical" href="cagr-calculator.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+
+    <link rel="stylesheet" href="site/css/rzslider.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/calculator_cagr.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/custom_slider_v2.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Financial
+                                    Calculator</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">CAGR
+                                    Calculator</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-app="cagrcalculatorApp" ng-controller="cagrcalculatorController">
+            <div class="calculator_screen" data-ng-init="changehomeLoanRateTenure()">
+                <div class="custom_container">
+                    <div class="row">
+                        <div class="col-lg-3">
+                            <style>
+                                .calculator_left_menu_bg {
+                                    background: linear-gradient(white, #fff) padding-box, linear-gradient(to bottom, #bcdefc, rgba(255, 141, 33, .58)) border-box;
+                                    border: 2px solid transparent;
+                                    border-radius: 20px;
+                                    overflow: hidden
+                                }
+
+                                .calculator_left_menu {
+                                    padding: 18px 0
+                                }
+
+                                .calculator_left_menu .Calculator-list {
+                                    list-style: none;
+                                    padding: 0;
+                                    margin: 0
+                                }
+
+                                .calculator_left_menu .Calculator-list li .Calculator-side-menu {
+                                    color: #404040 !important;
+                                    font-size: 14px;
+                                    font-weight: 400;
+                                    line-height: 50px;
+                                    display: block;
+                                    position: relative;
+                                    padding: 0 28px;
+                                    margin: 0
+                                }
+
+                                .calculator_left_menu .Calculator-list li .Calculator-side-menu svg {
+                                    position: absolute;
+                                    right: 25px;
+                                    top: 50%;
+                                    transform: translateY(-50%)
+                                }
+
+                                .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu svg path {
+                                    fill: #EE9949
+                                }
+
+                                .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu {
+                                    background: #f9f9fd;
+                                    color: #1d458a !important;
+                                    font-weight: 500
+                                }
+
+                                .calculator_left_menu .left_menu_header {
+                                    color: #12274b;
+                                    font-size: 18px;
+                                    font-weight: 600;
+                                    line-height: 40px;
+                                    text-transform: capitalize;
+                                    margin-bottom: 6px;
+                                    padding: 0 28px
+                                }
+
+                                .calc_menu_show_btn,
+                                .calculator_left_menu .close_btn {
+                                    display: none
+                                }
+
+                                @media (min-width:200px) and (max-width:768px) {
+                                    .calculator_left_menu_bg {
+                                        position: fixed;
+                                        z-index: 99;
+                                        margin: 0;
+                                        width: 100%;
+                                        left: 0;
+                                        bottom: -400%;
+                                        height: auto;
+                                        top: auto;
+                                        border-radius: 0;
+                                        transition: .7s;
+                                        overflow: visible
+                                    }
+
+                                    .calculator_left_menu_bg.show {
+                                        bottom: 0;
+                                        transition: .7s;
+                                        top: 50%;
+                                        border-left: none;
+                                        border-right: none
+                                    }
+
+                                    .calculator_left_menu .close_btn {
+                                        display: inline-block;
+                                        position: absolute;
+                                        top: -16px;
+                                        right: 8px;
+                                        border: 2px solid #bcddfb;
+                                        border-radius: 100px;
+                                        background: #fff;
+                                        color: #000;
+                                        font-size: 18px;
+                                        width: 30px;
+                                        height: 30px;
+                                        line-height: 24px;
+                                        padding: 0;
+                                        z-index: 9
+                                    }
+
+                                    .calc_menu_show_btn {
+                                        display: block;
+                                        left: 0;
+                                        right: 0;
+                                        position: fixed;
+                                        bottom: 0;
+                                        background: #fff;
+                                        border: none;
+                                        font-size: 14px;
+                                        z-index: 9;
+                                        box-shadow: 0 -3px 3px rgba(0, 0, 0, .11);
+                                        color: #1d458a;
+                                        font-weight: 500;
+                                        line-height: 50px
+                                    }
+
+                                    .calc_menu_show_btn svg {
+                                        margin-bottom: 2px
+                                    }
+
+                                    .calculator_left_menu .Calculator-list {
+                                        height: 300px;
+                                        overflow-x: scroll
+                                    }
+                                }
+                            </style>
+                            <button class="calc_menu_show_btn" onclick=showCalculatorMenu()>
+                                Financial Calculators
+                                <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path
+                                        d="M11.3906 5.73713C11.3906 5.92577 11.3186 6.11439 11.1748 6.25822L6.64894 10.7841C6.36104 11.072 5.89425 11.072 5.60647 10.7841C5.31868 10.4963 5.31868 10.0296 5.60647 9.74167L9.61123 5.73713L5.6066 1.73257C5.31882 1.44467 5.31882 0.978024 5.6066 0.69026C5.89439 0.402217 6.36118 0.402217 6.64908 0.69026L11.175 5.21604C11.3188 5.35994 11.3906 5.54856 11.3906 5.73713Z"
+                                        fill="#EE9949" />
+                                    <path
+                                        d="M6.39062 5.73713C6.39062 5.92577 6.3186 6.11439 6.17484 6.25822L1.64894 10.7841C1.36104 11.072 0.894252 11.072 0.606465 10.7841C0.318678 10.4963 0.318678 10.0296 0.606465 9.74167L4.61123 5.73713L0.606605 1.73257C0.318818 1.44467 0.318818 0.978024 0.606605 0.69026C0.894392 0.402217 1.36118 0.402217 1.64908 0.69026L6.17498 5.21604C6.31876 5.35994 6.39062 5.54856 6.39062 5.73713Z"
+                                        fill="#EE9949" />
+                                </svg>
+                            </button>
+                            <div class="calculator_left_menu_bg">
+                                <div class="calculator_left_menu">
+                                    <button class="close_btn" onclick=showCalculatorMenu()>
+                                        <span aria-hidden="true">×</span>
+                                    </button>
+                                    <p class="left_menu_header">Financial Calculators</p>
+                                    <ul class="Calculator-list">
+                                        <li>
+                                            <a href="sip-calculator.html" class="Calculator-side-menu ">SIP
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="step-up-calculator.html" class="Calculator-side-menu ">
+                                                Step Up SIP
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="future-value-calculator.html" class="Calculator-side-menu "> Future
+                                                Value Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="javascript:void(0)" class="Calculator-side-menu active-side-menu">
+                                                CAGR
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="cost-of-delay-calculator.html" class="Calculator-side-menu "> Cost
+                                                Of
+                                                Delay Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="present-value-calculator.html" class="Calculator-side-menu ">
+                                                Present
+                                                Value Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="become-crorepati-calculator.html" class="Calculator-side-menu ">
+                                                Become
+                                                a Crorepati Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="emi-calculator.html" class="Calculator-side-menu "> EMI
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="apy-calculator.html" class="Calculator-side-menu "> Atal
+                                                Pension Yojana Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="tds-calculator.html" class="Calculator-side-menu ">TDS
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="retirement-calculator.html"
+                                                class="Calculator-side-menu ">Retirement
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="home-loan-calculator.html" class="Calculator-side-menu ">
+                                                Home Loan Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="ppf-calculator.html" class="Calculator-side-menu "> PPF
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="car-loan-calculator.html" class="Calculator-side-menu ">
+                                                Car Loan EMI Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="inflation-calculator.html" class="Calculator-side-menu ">
+                                                Inflation Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+
+                                        <li>
+                                            <a href="gst-calculator.html" class="Calculator-side-menu "> GST
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="nps-calculator.html" class="Calculator-side-menu "> NPS
+                                                Calculator
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="sukanya-samriddhi-yojana-calculator.html"
+                                                class="Calculator-side-menu ">
+                                                Sukanya Samriddhi Yojana
+                                                <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                        fill="#1D458A" />
+                                                </svg>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <script>
+                                const showCalculatorMenu = () => {
+                                    document.querySelector('.calculator_left_menu_bg').classList.toggle("show");
+                                }
+                            </script>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="calculator_function_box">
+                                <div class="calculator_function_banner">
+                                    <div class="row align-items-center">
+                                        <div class="col-lg-7 col-md-8">
+                                            <div class="about_calc">
+                                                <h1 class="calculator_name">
+                                                    {{CalculatorName}}
+                                                </h1>
+                                                <p class="calc_description">
+                                                    This calculator helps you to calculate the compounded annual growth
+                                                    rate
+                                                    (CAGR) of your investment over a given period.
+                                                </p>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-5 col-md-4">
+                                            <div class="calc_banner_img">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/cagr_banner.webp"
+                                                    class="img-fluid"
+                                                    alt="CAGR Calculator - Compute Compound Annual Growth Rate"
+                                                    height="211px" weight="398px">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row calc_variables_graph">
+                                    <div class="col-md-6">
+                                        <div class="calc_variables">
+                                            <div class="row" style="position:relative;">
+                                                <div class="col-lg-8 col-md-8 col-8">
+                                                    <p class="topic_name">
+                                                        Initial investment
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                    <div class="input_value">
+                                                        <svg width="10" height="14" viewBox="0 0 10 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg" class="rupee_value">
+                                                            <path
+                                                                d="M9.37058 3.17182C9.311 3.11216 9.23473 3.08238 9.14202 3.08238H7.44181C7.32905 2.53238 7.11692 2.05495 6.8054 1.65062H9.12203C9.21498 1.65062 9.29104 1.6208 9.35084 1.56129C9.41018 1.50166 9.43999 1.42536 9.43999 1.33258V0.318171C9.43999 0.225325 9.41022 0.14916 9.35084 0.0894681C9.29097 0.0299156 9.21491 0 9.12196 0H0.849386C0.75654 0 0.680375 0.0299156 0.620683 0.0894333C0.561166 0.149125 0.53125 0.22529 0.53125 0.318136V1.64055C0.53125 1.72671 0.562733 1.80127 0.625698 1.86424C0.688664 1.9272 0.763226 1.95869 0.849386 1.95869H2.29115C3.68973 1.95869 4.578 2.3331 4.95579 3.08221H0.849386C0.75654 3.08221 0.680271 3.11199 0.620683 3.17164C0.561166 3.23137 0.53125 3.3075 0.53125 3.40035V4.41462C0.53125 4.5074 0.561026 4.58367 0.620683 4.64318C0.680375 4.70291 0.756679 4.73262 0.849386 4.73262H5.0952C4.94935 5.27632 4.60959 5.69054 4.07591 5.97559C3.5422 6.26068 2.83806 6.40322 1.96302 6.40322H0.849386C0.763226 6.40322 0.688664 6.43474 0.625698 6.49767C0.562698 6.56067 0.53125 6.63527 0.53125 6.72136V7.98426C0.53125 8.07055 0.561026 8.14345 0.620683 8.20303C1.89333 9.55526 3.54395 11.4476 5.57232 13.8805C5.63204 13.9602 5.71486 13.9999 5.82094 13.9999H7.75978C7.89912 13.9999 7.99531 13.9404 8.04817 13.8208C8.11444 13.7015 8.10145 13.5888 8.00836 13.4827C6.07301 11.1096 4.5516 9.3331 3.44459 8.15323C4.57149 8.02068 5.48626 7.65602 6.18895 7.05955C6.89153 6.46302 7.31902 5.6873 7.47159 4.73279H9.14202C9.23473 4.73279 9.31103 4.70305 9.37058 4.64336C9.43031 4.58384 9.46019 4.50757 9.46019 4.41479V3.40062C9.46019 3.30767 9.43031 3.23151 9.37058 3.17182Z"
+                                                                fill="#64757C"></path>
+                                                        </svg>
+                                                        <input type="number" step="1" ng-model="initialAmount_num"
+                                                            ng-class="showErrorInitial === true? 'calculter_input error_input': 'calculter_input'"
+                                                            class="calculter_input"
+                                                            ng-keyup="changeValueForRangeInitial()" placeholder="0" />
+                                                    </div>
+                                                </div>
+                                                <p class="type_wrong_value" ng-show="showErrorInitial">
+                                                    Minimum value should be ₹500 (without decimal).
+                                                </p>
+                                            </div>
+                                            <div class="row mb-2">
+                                                <div class="col-lg-12">
+                                                    <div style="position:relative;overflow:hidden;">
+                                                        <div class="slider_bg"></div>
+                                                        <input class="custom-slider input_range_slider"
+                                                            id="initial_value_range" type="range"
+                                                            ng-model="initialAmount" min="500" max="10000000" step="500"
+                                                            ng-change="changeSliderInitial()" />
+                                                    </div>
+
+
+                                                </div>
+                                            </div>
+
+                                            <div class="row" style="position:relative;">
+                                                <div class="col-lg-8 col-md-8 col-8">
+                                                    <p class="topic_name">
+                                                        Final value of Investment
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                    <div class="input_value">
+                                                        <svg width="10" height="14" viewBox="0 0 10 14" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg" class="rupee_value">
+                                                            <path
+                                                                d="M9.37058 3.17182C9.311 3.11216 9.23473 3.08238 9.14202 3.08238H7.44181C7.32905 2.53238 7.11692 2.05495 6.8054 1.65062H9.12203C9.21498 1.65062 9.29104 1.6208 9.35084 1.56129C9.41018 1.50166 9.43999 1.42536 9.43999 1.33258V0.318171C9.43999 0.225325 9.41022 0.14916 9.35084 0.0894681C9.29097 0.0299156 9.21491 0 9.12196 0H0.849386C0.75654 0 0.680375 0.0299156 0.620683 0.0894333C0.561166 0.149125 0.53125 0.22529 0.53125 0.318136V1.64055C0.53125 1.72671 0.562733 1.80127 0.625698 1.86424C0.688664 1.9272 0.763226 1.95869 0.849386 1.95869H2.29115C3.68973 1.95869 4.578 2.3331 4.95579 3.08221H0.849386C0.75654 3.08221 0.680271 3.11199 0.620683 3.17164C0.561166 3.23137 0.53125 3.3075 0.53125 3.40035V4.41462C0.53125 4.5074 0.561026 4.58367 0.620683 4.64318C0.680375 4.70291 0.756679 4.73262 0.849386 4.73262H5.0952C4.94935 5.27632 4.60959 5.69054 4.07591 5.97559C3.5422 6.26068 2.83806 6.40322 1.96302 6.40322H0.849386C0.763226 6.40322 0.688664 6.43474 0.625698 6.49767C0.562698 6.56067 0.53125 6.63527 0.53125 6.72136V7.98426C0.53125 8.07055 0.561026 8.14345 0.620683 8.20303C1.89333 9.55526 3.54395 11.4476 5.57232 13.8805C5.63204 13.9602 5.71486 13.9999 5.82094 13.9999H7.75978C7.89912 13.9999 7.99531 13.9404 8.04817 13.8208C8.11444 13.7015 8.10145 13.5888 8.00836 13.4827C6.07301 11.1096 4.5516 9.3331 3.44459 8.15323C4.57149 8.02068 5.48626 7.65602 6.18895 7.05955C6.89153 6.46302 7.31902 5.6873 7.47159 4.73279H9.14202C9.23473 4.73279 9.31103 4.70305 9.37058 4.64336C9.43031 4.58384 9.46019 4.50757 9.46019 4.41479V3.40062C9.46019 3.30767 9.43031 3.23151 9.37058 3.17182Z"
+                                                                fill="#64757C"></path>
+                                                        </svg>
+                                                        <input type="number" step="1" ng-model="presentValueAmount_num"
+                                                            ng-class="showErrorPresent === true? 'calculter_input error_input': 'calculter_input'"
+                                                            class="calculter_input"
+                                                            ng-keyup="changeValueForRangePresent()" placeholder="0" />
+                                                    </div>
+                                                </div>
+                                                <p class="type_wrong_value" ng-show="showErrorPresent">
+                                                    Minimum value should be ₹500.
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div style="position:relative;overflow:hidden;">
+                                                        <div class="slider_bg"></div>
+                                                        <input class="custom-slider input_range_slider"
+                                                            id="present_value_range" type="range"
+                                                            ng-model="presentValueAmount" min="500" max="10000000"
+                                                            step="500" ng-change="changeSliderPresent()" />
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                            <div class="row" style="position:relative;">
+                                                <div class="col-lg-8 col-md-8 col-8">
+                                                    <p class="topic_name">
+                                                        Investment period
+                                                    </p>
+                                                </div>
+                                                <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                    <div class="input_value text-right">
+                                                        <input type="text"
+                                                            ng-class="showErrorYear === true? 'calculter_input small_input error_input' : 'calculter_input small_input'"
+                                                            ng-model="totalYear" ng-change="manageYear()">
+                                                        <span class="year_value">Yr</span>
+                                                    </div>
+
+                                                </div>
+                                                <p class="type_wrong_value" ng-show="showErrorYear && totalYear < 1">
+                                                    Minimum value should be 1.
+                                                </p>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <rzslider class="custom-slider" rz-slider-model="totalYear"
+                                                        rz-slider-options="priceSlider.options_yrs"></rzslider>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="inner_calculate_box">
+                                            <div class="show-value-inner-box">
+                                                <p class="calculate_value_details">
+                                                    Your investment will grow from <span class="calculate_value_small">
+                                                        <svg width="9" height="11" viewBox="0 0 9 11" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            style="margin-bottom:1px;">
+                                                            <path
+                                                                d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                fill="#12274B"></path>
+                                                        </svg>{{initialAmount | customcurrency}}</span> to <span
+                                                        class="calculate_value_small">
+                                                        <svg width="9" height="11" viewBox="0 0 9 11" fill="none"
+                                                            xmlns="http://www.w3.org/2000/svg"
+                                                            style="margin-bottom:1px;">
+                                                            <path
+                                                                d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                fill="#12274B"></path>
+                                                        </svg>{{presentValueAmount | customcurrency}}</span> in
+                                                    <span class="calculate_value_small">{{totalYear < 1 ? 0: totalYear}}
+                                                            {{totalYear> 1? 'years':'year'}}</span> at a
+                                                    compounded annual growth rate of
+                                                    <span class="calculate_value_small">{{calculateCagr()}}%</span>.
+                                                </p>
+                                            </div>
+
+                                            <div id="summary-box">
+                                                <div class="canvas_graph">
+                                                    <div class="text-center">
+                                                        <canvas id="myChart" chart-data="chartData" width="200"
+                                                            height="200"></canvas>
+                                                    </div>
+                                                    <div class="chart_data">CAGR <br>
+                                                        <span>
+                                                            {{calculateCagr()}}%
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="chart_key">
+                                                <p class="chart_key1">
+                                                    <span></span> Initial Investment
+                                                </p>
+                                                <p class="chart_key2">
+                                                    <span></span> Future Value
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="calculator_text">
+                                <style>
+                                    .calculator_text {
+                                        margin-top: 50px;
+                                    }
+
+                                    .calculator_text h3 {
+                                        margin: 48px 0 20px;
+                                        color: #12274B;
+                                        font-weight: 700;
+                                        font-size: 24px;
+                                    }
+
+                                    .calculator_text h4 {
+                                        margin: 48px 0 20px;
+                                        color: #12274B;
+                                        font-weight: 600;
+                                    }
+
+                                    .calculator_text img {
+                                        max-width: 100%;
+                                        height: auto;
+                                    }
+
+                                    .calculator_text a {
+                                        font-weight: 700;
+                                        color: #155bd3 !important;
+                                    }
+
+                                    .calculator_text p,
+                                    .calculator_text ul {
+                                        font-size: 14px;
+                                        line-height: 24px;
+                                        margin-bottom: 16px;
+                                    }
+
+                                    @media (min-width:200px) and (max-width:768px) {
+                                        .calculator_text h3 {
+                                            margin: 28px 0 10px;
+                                            color: #12274B;
+                                            font-size: 22px;
+                                            line-height: 33px;
+                                            font-weight: 700;
+                                        }
+
+                                        .calculator_text h4 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 600;
+                                        }
+
+                                        .calculator_text h4 {
+                                            font-size: 20px;
+                                        }
+
+                                        .calculator_text p,
+                                        .calculator_text ul {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                        }
+                                    }
+                                </style>
+
+
+                                <div class="calculator_text">
+                                    <h2>
+                                        CAGR Calculator- Compound Annual Growth Rate Calculator Online with CAGR Formula
+                                    </h2>
+                                    <p>
+                                        If you're interested in investing in financial markets, you may be wondering how
+                                        much return you'll get on your
+                                        investment. This is where the Compound Annual Growth Rate (CAGR) comes in handy.
+                                        But, you might be thinking that
+                                        it
+                                        involves complicated mathematical formulas. Fortunately, there are various CAGR
+                                        calculators available online that
+                                        can help you determine your return on investment.
+                                    </p>
+                                    <p>
+                                        So, before calculating your investment returns, it's essential to understand the
+                                        basics of this concept. Let's
+                                        dive
+                                        in.
+                                    </p>
+                                    <h3>
+                                        What is Compound Interest?
+                                    </h3>
+                                    <p>
+                                        Compound interest is
+                                        a type of interest that is calculated on the principal amount invested as well
+                                        as the interest earned on it over a period of time. Unlike simple interest which
+                                        only considers the original investment, compound interest takes into account the
+                                        accumulated interest over time. The longer you hold an investment or a financial
+                                        product, the greater the potential benefit from compound interest.
+                                    </p>
+                                    <h3>
+                                        What is CAGR and how can a CAGR Calculator help you?
+                                    </h3>
+                                    <p>
+                                        CAGR measures how much you have earned on your investment annually during a
+                                        specific period. This allows you to
+                                        determine whether your investment returns have increased or decreased during
+                                        that period. For business owners,
+                                        CAGR
+                                        helps to identify whether the business is growing, and profits are being
+                                        reinvested. With the help of a CAGR
+                                        calculator you can determine your true investment returns annually.
+                                    </p>
+
+                                    <p>
+                                        Using a CAGR calculator can help you in several ways, including:
+                                    </p>
+                                    <ul>
+                                        <li>
+                                            Determining whether your business is growing over time and whether the
+                                            profits are being invested effectively.
+                                        </li>
+                                        <li>
+                                            Evaluating investment options based on their respective CAGR indices. For
+                                            example, if Stock A is underperforming
+                                            compared to Stock B, you may consider investing in Stock B instead.
+                                        </li>
+                                        <li>
+                                            Understanding the relative growth of your organization in comparison to the
+                                            market leaders in your business
+                                            segment.
+
+                                        </li>
+                                    </ul>
+                                    <h3>What is the difference between Simple Growth Rate and Compound Annual Growth
+                                        Rate?</h3>
+
+                                    <p>
+                                        The Simple Growth Rate describes the performance of an investment throughout its
+                                        entire time horizon. On the other hand, the Compound Annual Growth Rate
+                                        indicates the average annual rate of return an investment needs to achieve to
+                                        grow from its starting balance to its final balance.
+                                    </p>
+                                    <p>
+                                        This calculation can be applied to any investment duration and is not restricted
+                                        to a specific time frame. Additionally, the Compound Annual Growth Rate enables
+                                        investors to compare the performance of investments across various time periods.
+                                    </p>
+                                    <h3>
+                                        What is the formula for Simple Growth Rate?
+                                    </h3>
+                                    <p>
+                                        The formula for Simple Growth Rate is:
+                                        Simple Growth Rate = (Future Value - Present Value) / Present Value * 100
+
+                                    </p>
+                                    <p>
+                                        An example of Simple Growth Rate-
+                                    </p>
+                                    <p>
+                                        If you invested Rs. 15,000 in 2019 and received Rs. 20,000 in 2022, the Simple
+                                        Growth Rate would be (20,000 -
+                                        15,000) / 15,000 * 100 = 33.33%.
+                                    </p>
+                                    <h3>
+                                        How do you calculate using the CAGR Calculator?
+                                    </h3>
+                                    <p>
+                                        The CAGR is calculated using this formula-
+                                    </p>
+                                    <p>
+                                        CAGR = (Future Value / Present Value) ^1/t - 1, where t represents the annual
+                                        time period.
+                                    </p>
+                                    <p>
+                                        An example of CAGR calculation-
+                                    </p>
+                                    <p>
+                                        Considering the same investment scenario as before, then CAGR would be {(20,000
+                                        / 15,000) ^1/3} - 1 = 10.06%.
+                                    </p>
+                                    <p>
+                                        Although this calculation can be quite complex, you can easily use our online
+                                        CAGR calculator above to make the
+                                        process simpler.
+                                    </p>
+                                    <h3>
+                                        How to use our Online CAGR Calculator?
+                                    </h3>
+                                    <p>
+                                        With our CAGR calculator online, calculating CAGR is easy and free. You only
+                                        need to follow these three steps:
+
+                                    </p>
+                                    <p>
+                                        Enter the value of your initial investment.
+                                    </p>
+                                    <p>
+                                        Enter the future value of your investment.
+                                    </p>
+                                    <p>
+                                        Enter the investment period and click on "Calculate now."
+                                    </p>
+                                    <p>
+                                        The result will appear like this-
+                                    </p>
+                                    <p>
+                                        <img src="d24uab5gycr2uz.cloudfront.net/uploads/other_pic/CCiacrsGlx.html"
+                                            alt="Online CAGR Calculator">
+                                    </p>
+                                    <p>
+                                        Although there are several CAGR calculators online, it's important to use the
+                                        one which is user-friendly for
+                                        accurate calculations. With Easy Earnings online CAGR calculator, you can
+                                        easily and accurately calculate your
+                                        business's CAGR using an organized and efficient approach.
+                                    </p>
+                                    <h3>
+                                        Reverse CAGR Calculator
+                                    </h3>
+                                    <p>
+                                        In addition to regular CAGR calculations, you can also use a reverse CAGR
+                                        calculator to determine the initial
+                                        investment required to reach a specific target value. Simply enter the target
+                                        value, the investment period, and
+                                        the
+                                        desired CAGR, and the calculator will determine the required initial investment.
+                                    </p>
+                                    <h3>
+                                        CAGR Return Calculator
+                                    </h3>
+                                    <p>
+                                        Another type of CAGR calculator is a CAGR Return calculator. It helps you
+                                        calculate the CAGR return on your
+                                        Systematic Investment Plan (SIP) investments over a specific period.
+
+                                    </p>
+                                    <p>
+                                        In conclusion, an online CAGR calculator is an essential tool for investors.
+                                        With the help of this tool, you can
+                                        easily calculate your investment returns and make informed decisions.
+                                    </p>
+                                    <h2>
+                                        CAGR Calculator- FAQs
+                                    </h2>
+                                    <h3>
+                                        What percentage of CAGR is good?
+                                    </h3>
+                                    <p>
+                                        When it comes to defining a good CAGR (Compound Annual Growth Rate), there is no
+                                        clear standard. However,
+                                        typically,
+                                        a CAGR of 15% to 25% over five years can be considered a good rate of return
+                                        when investing in stocks or <a href="https://web.stockedge.com/app/mutual-funds"
+                                            target="_blank">mutual
+                                            funds</a>.
+                                        On the other hand, if the CAGR is lower than 12%, other investment options such
+                                        as real estate, debentures,
+                                        or other securities may be more attractive.
+                                    </p>
+                                    <h3>
+                                        What is CAGR returns in Mutual Funds?
+                                    </h3>
+                                    <p>
+                                        CAGR (Compound Annual Growth Rate) is a measure used to determine the average
+                                        annual growth rate of an investment over a specific period of time. In the case
+                                        of mutual funds, CAGR is used to evaluate the fund's average growth rate over
+                                        periods of 1 year, 3 years, 5 years, or since inception.
+
+                                    </p>
+                                    <p>
+                                        To calculate CAGR for mutual funds, the starting and ending values of the fund
+                                        are considered, and the growth rate required to achieve the ending value from
+                                        the starting value over the given period is calculated, taking into account the
+                                        effect of compounding.
+                                    </p>
+                                    <p>
+                                        For instance, assume a mutual fund has a starting value of Rs. 100 and an ending
+                                        value of Rs. 150 over a period of time. The total return would be 50%, but to
+                                        determine the average annual growth rate, the CAGR formula is applied.
+                                    </p>
+                                    <p>
+                                        To figure that out, we would use the CAGR formula:
+                                    </p>
+                                    <p>
+                                        CAGR = (Ending Value / Beginning Value) ^1/t - 1
+                                    </p>
+                                    <p>
+                                        For a 5-year period, the CAGR would be:
+                                    </p>
+                                    <p>
+                                        CAGR = (150 / 100)^(1/5) - 1
+
+                                        CAGR = 0.1072 or 10.72%
+                                    </p>
+                                    <p>
+                                        This indicates that the mutual fund's average annual growth rate was 10.72% over
+                                        the 5-year period.
+                                    </p>
+                                    <p>
+                                        It's important to note that past performance is not a guarantee of future
+                                        results, and mutual fund investors
+                                        should
+                                        always consider other factors such as the fund manager's track record,
+                                        investment objective, and risk profile before
+                                        making an investment decision. Here is a <a
+                                            href="https://web.stockedge.com/mutual-fund-managers" target="_blank">list
+                                            of fund managers</a> with their detailed information and the schemes
+                                        managed by them.
+                                    </p>
+                                    <h3>
+                                        What does a CAGR tell you?
+                                    </h3>
+                                    <p>
+                                        CAGR (Compound Annual Growth Rate) is an important tool used by companies to
+                                        evaluate the value of their products
+                                        and services based on their performance and CAGR percentage. Calculating CAGRs
+                                        is one of the most precise ways to
+                                        determine the return on investment, and it can also provide insight into a
+                                        company's average performance over a
+                                        specific period of time. This information can be highly valuable in helping you
+                                        decide whether to invest in a
+                                        particular stock and whether the company has potential for future growth.
+
+                                    </p>
+                                    <p>
+                                        You can calculate a company’s CAGR by using our online CAGR Calculator.
+                                    </p>
+                                    <h3>
+                                        What does 10% CAGR mean?
+                                    </h3>
+                                    <p>
+                                        CAGR is a metric that provides insight into the average rate at which an
+                                        investment has grown over a specific
+                                        period. A CAGR of 10% means that the 10% interest you earn annually is added to
+                                        your initial investment. Then, on
+                                        the total amount, you again receive a 10% return.
+
+                                    </p>
+                                    <p>
+                                        To illustrate, suppose you invest Rs 1 lakh. With a CAGR of 10%, the investment
+                                        will grow to Rs 1.1 lakh in the
+                                        first year. In the second year, it will be Rs. 1.21 lakh, and so forth.
+                                    </p>
+                                    <h3>
+                                        What does 3-year CAGR mean?
+                                    </h3>
+                                    <p>
+                                        A 3-year CAGR is a way to measure the average rate of growth of an investment
+                                        over a 3-year period. It takes into
+                                        account any ups and downs in the investment's value during that time.
+
+                                    </p>
+                                    <p>
+                                        To calculate the 3-year CAGR, you need to know the investment's starting value
+                                        and ending value over the
+                                        three-year
+                                        period. You then use a formula to calculate the average annual growth rate of
+                                        the investment over that time.
+                                    </p>
+                                    <p>
+                                        For example, if an investment started with a value of ?10,000 and ended with a
+                                        value of ?15,000 after three years,
+                                        the 3-year CAGR would be 12.25%. This means that on average, the investment grew
+                                        at a rate of 12.25% per year over
+                                        the three-year period.
+                                    </p>
+                                    <p>
+                                        You can check the <a
+                                            href="https://web.stockedge.com/mutual-fund-class/equity-large-cap-fund/10?periodType=3Y"
+                                            target="_blank">returns generated in last 3 years by Equity Large Cap
+                                            funds</a> to view the top performing
+                                        funds.
+                                    </p>
+                                    <h3>
+                                        Is CAGR better higher or lower?
+                                    </h3>
+                                    <p>
+                                        Any CAGR below 8% is not considered good, and a company that offers a 7%
+                                        compound annual growth rate may be less
+                                        attractive to investors. In other words, if you are wondering whether a 7% CAGR
+                                        is good, it suggests that your
+                                        company may be taking on additional risk with its new offerings.
+
+                                    </p>
+                                    <p>
+                                        Investors seeking stable returns by investing in strong and large companies in
+                                        the financial market should aim for
+                                        a
+                                        CAGR percentage of 8% to 12%. On the other hand, for those willing to take
+                                        moderate to high risks with their
+                                        investments, a CAGR percentage of 15% to 25% may be considered a good target.
+                                    </p>
+                                </div>
+                                <h3>Difference between Annual Return and CAGR</h3>
+                                <p>An annualised return considered to be a standardised return computed as a percentage
+                                    per annum.
+                                    Annualised Return = (End Value – Beginning Value) / (Beginning Value) * 100 *
+                                    (1/holding period of the investment)</p>
+                                <p>Annualised return is concluded as a return for the entire year. CAGR shows the
+                                    average yearly growth of your investments.</p>
+                                <p>In short, while annual return focuses on year-by-year changes in value, CAGR provides
+                                    an annualized growth rate over a specified period, taking into account the effects
+                                    of compounding.</p>
+                                <h3> Example of a CAGR</h3>
+                                <p>To calculate the Compound Annual Growth Rate (CAGR), Use the formula: CAGR = (Ending
+                                    Value / Starting Value)^(1 / Number of Years) – 1</p>
+
+                                <p>Here’s an example for this calculation:</p>
+
+                                <p>Let’s say you invested ₹5,000 in any mutual fund and after 5 years, it grew to Rs
+                                    10,000.</p>
+
+                                <p> Starting Value: ₹5,000</p>
+
+                                <p> Ending Value: ₹10,000</p>
+
+                                <p> Number of Years: 5</p>
+
+                                <p> CAGR = (₹10,000 /₹5,000)^(1 / 5) – 1</p>
+
+                                <p> CAGR = 14.87%</p>
+
+                                <p>That means your investment will grow from ₹5,000 to ₹10,000 in 5 years at a
+                                    compounded annual growth rate of 14.87%.</p>
+                                <h3>Can we calculate CAGR for SIP?</h3>
+                                <p>The CAGR for SIP investments is calculated by the total amount of money invested at
+                                    the end and the time duration of it.
+                                    In the case of SIPs, it does not take periodic investments into account as it only
+                                    considers the first and final values for its calculation. </p>
+
+                                <p>Investors prefer SIPs for their disciplined approach to investing irrespective of its
+                                    volatile nature. CAGR steps in as a tool to provide a realistic growth estimate.
+                                </p>
+
+                                <p>Let’s understand the CAGR with an example: If we invest ₹500 for 12 months, you may
+                                    receive ₹6500 at the time of maturity. </p>
+                                <h3>Can CAGR be negative?</h3>
+                                <p>Yes. The CAGR (Compound Annual Growth Rate) can be negative. A negative CAGR
+                                    basically indicates that an investment decreases over a given period of time rather
+                                    than increases. </p>
+                                <h3>Can you use CAGR for profit?</h3>
+                                <p>CAGR is one of the most popular variables used to determine the profitability of an
+                                    investment plan, as it demonstrates the average performance of the same over a
+                                    period of time.</p>
+                                <h3> What does 5% CAGR mean?</h3>
+
+                                <p>CAGR is a metric that provides insight into the average rate at which an investment
+                                    has grown over a specific period. A CAGR of 5% means that the 5% interest you earn
+                                    annually is added to your initial investment. Then, on the total amount, you again
+                                    receive a 10% return.</p>
+
+                                <p>To illustrate, suppose you invest ₹1 lakh. With a CAGR of 5%, the investment will
+                                    grow to ₹1.05 lakh in the first year. In the second year, it will be ₹1.10 lakh, and
+                                    so forth.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/cagr_calculator_v2.js"></script>
+</body>
+
+
+</html>

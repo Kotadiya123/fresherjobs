@@ -1,0 +1,687 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<!-- Basic Page Needs
+	================================================== -->
+	<title>Job Details |Fresher Jobs</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7513233271674477"
+	crossorigin="anonymous"></script>
+	<meta name="google-adsense-account" content="ca-pub-7513233271674477">
+
+	<!-- CSS
+	================================================== -->
+	<link rel="shortcut icon" type="image/png" href="assets/resources/assets/img/favicon.png">
+	<link rel="stylesheet" href="assets/resources/assets/plugins/css/plugins.css">
+
+	<!-- Custom style -->
+	<link href="assets/resources/assets/css/style.css" rel="stylesheet">
+	<link type="tex/css" rel="stylesheet" id="jssDefault" href="assets/resources/assets/css/colors/green-style.css">
+	<link href="../cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.css" rel="stylesheet" type="text/css" />
+	<link rel="shortcut icon" type="image/jpg" href="favicon.jpg" />
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-LBTM3JXEM9"></script>
+	<script>
+	  window.dataLayer = window.dataLayer || [];
+	  function gtag(){dataLayer.push(arguments);}
+	  gtag('js', new Date());
+	
+	  gtag('config', 'G-LBTM3JXEM9');
+	</script>
+	<style>
+		.detail-desc {
+			margin-top: 144px;
+		}
+
+		@media screen and (max-width: 767px) {
+			.detail-desc {
+				margin-top: 50px;
+			}
+		}
+	</style>
+	<script>// Function to retrieve job data from localStorage and display it
+		function displayJobData() {
+			// Retrieve the job data from localStorage
+			const jobDataString = localStorage.getItem('selectedJob');
+
+			if (jobDataString) {
+				const jobData = JSON.parse(jobDataString);
+
+				document.getElementById('jobTitle').textContent = jobData.title || 'Job Title not specified';
+				document.getElementById('jobSalary').textContent = `${jobData.salary.currency} ${jobData.salary.min} - ${jobData.salary.max}` || 'Salary not specified';
+				document.getElementById('jobType').textContent = jobData.job_type.join(', ') || 'Type not specified';
+			} else {
+				console.error('No job data found in localStorage.');
+			}
+		}
+
+		// Call the function to display job data on page load
+		document.addEventListener('DOMContentLoaded', displayJobData);
+	</script>
+</head>
+
+<body>
+	<div class="Loader"></div>
+	<div class="wrapper">
+		<!-- Start Navigation -->
+
+		<style>
+			.bootstrap-tagsinput {
+				width: 100%;
+				line-height: 36px;
+			}
+
+			.xqq {
+				display: none;
+			}
+
+			ul.ui-autocomplete {
+				color: #000000 !important;
+				-moz-border-radius: 0px;
+				border-radius: 0px;
+			}
+
+			.ui-autocomplete {
+				list-style: none outside none;
+				border: 1px solid #123456;
+				cursor: pointer;
+				padding: 5px;
+				margin: 0px;
+				z-index: 10000 !important;
+			}
+
+			@media only screen and (max-width: 600px) {
+
+				.nav-tabs.modern-tabs>li>a:hover,
+				.nav-tabs.modern-tabs>li>a {
+					border: none !important;
+					margin: 0 5px !important;
+					border-radius: 30px;
+					line-height: 1 !important;
+					padding: 1.7rem 2rem;
+				}
+
+				.xqq {
+					display: block;
+				}
+
+				.xqqs {
+					display: none;
+				}
+
+			}
+
+			.b {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: clip;
+			}
+		</style>
+
+		<!--start -->
+		<!-- <nav class="navbar navbar-default navbar-fixed navbar-light white bootsnav">
+			<div class="container">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+					<i class="fa fa-bars"></i>
+				</button>
+				<div class="navbar-header">
+					<a class="navbar-brand" href="index.html">
+						<img src="assets/resources/assets/img/logo.png" class="logo logo-display" alt="">
+						<img src="assets/resources/assets/img/logo.png" class="logo logo-scrolled" alt="">
+					</a>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-menu">
+					<ul class="nav navbar-nav navbar-left" data-in="fadeInDown" data-out="fadeOutUp">
+
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Search Jobs</a>
+							<ul class="dropdown-menu animated fadeOutUp">
+								<li class="dropdown">
+									<a
+										href="browse-jobs.html?url=https://api.npoint.io/1a90a1ac84177b731792&title=All Jobs">All
+										Jobs</a>
+
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/40821667bb44ad0a4f26&title=Jobs 
+											For You">Jobs
+										For You</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/7121c3734dc5666ded3d&title=Jobs 
+											For Freshers">Jobs
+										For Freshers</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/0f8c4551a83c29b15c89&title=Jobs 
+											For Work From Home">Jobs
+										For Work From Home</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/556c526e3ed99c952bbb&title=Jobs 
+											For Women">Jobs
+										For Women</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/82f25a5964faee219dc0&title=Jobs  
+											For College Students">Jobs
+										For College Students</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/2795ee844ccbb53ba96e&title=Part 
+											Time Jobs">Part
+										Time Jobs</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/2b8c75290547b25010db&title=IT 
+											Jobs">IT
+										Jobs</a>
+								</li>
+								<li class="dropdown">
+									<a
+										href="browse-jobs.html?url=https://api.npoint.io/70f7afa75487cc44fc70&title=Engineering Jobs">Engineering
+										Jobs</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/aa8819b29ca0eff8e074&title=Walk-in 
+											Jobs">Walk-in
+										Jobs</a>
+								</li>
+								<li class="dropdown">
+									<a href="browse-jobs.html?url=https://api.npoint.io/1258a3b78aa0625ef3db&title=Remote 
+											Jobs">Remote
+										Jobs</a>
+								</li>
+							</ul>
+						<li>
+							<a href="browse-jobs.html?url=https://api.npoint.io/0f8c4551a83c29b15c89&title=Work 
+									From Home">Work
+								From Home</a>
+						</li>
+						<li>
+							<a href="browse-jobs.html?url=https://api.npoint.io/7121c3734dc5666ded3d&title=FRESHER JOB">FRESHER
+								JOB</a>
+						</li>
+						<li>
+							<a href="privacy-policy.html">Privacy Policy</a>
+						</li>
+					</ul>
+					<ul class="nav navbar-nav navbar-right" data-in="fadeInDown" data-out="fadeOutUp">
+						<li class="left-br"><a href="contact-us.html" class="signin">Contact US</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav> -->
+
+		<!-- End Navigation -->
+		<div class="clearfix"></div>
+		<section class="detail-desc">
+			<div class="container">
+				<!-- <div class="ur-detail-wrap top-lay">
+					<div class="ur-detail-box">
+						<div class="ur-thumb">
+							<img src="assets/resources/assets/img/emp-2.jpg" class="img-responsive" alt="">
+						</div>
+						<div class="ur-caption">
+							<h4 class="ur-title" id="jobTitle">Front End Developer</h4>
+							<p class="ur-salary"><span id="jobSalary">₹ 15000 - 75000</span></p>
+							<p class="ur-job-type"><span id="jobType">Remote, Experience - 1 - 6 Year, HTML, CSS,
+									JavaScript, React .js,
+									Knowledge in next js , Responsive design principles, Google meet interview ,
+									Bengaluru</span></p>
+						</div>
+
+					</div>
+
+					<div class="ur-detail-btn">
+
+
+						<a href="job-application.html" class="btn btn-warning mrg-bot-10 full-width signin"><i
+								class="ti-star mrg-r-5"></i> Apply
+							Job</a><br>
+
+
+					</div>
+				</div> -->
+				<!-- <div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; overflow: hidden;"> -->
+					<!-- <div id='div-gpt-ad-1723457064522-0' style='min-width: 240px; min-height: 66px;'>
+						<script>
+						  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723457064522-0'); });
+						</script>
+					  </div> -->
+					<!-- <div id='div-gpt-ad-1723182925212-0' style='text-align: center; min-width: 728px; min-height: 90px;'>
+						<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
+						<script>
+						  window.googletag = window.googletag || {cmd: []};
+						  googletag.cmd.push(function() {
+							googletag.defineSlot('/22682527587/moneyquizx.online/LB-728x90', [728, 90], 'div-gpt-ad-1723182925212-0').addService(googletag.pubads());
+							googletag.pubads().enableSingleRequest();
+							googletag.enableServices();
+						  });
+						</script> 
+						<script>
+						  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723182925212-0'); });
+						</script>
+				</div> -->
+				<div style="text-align: center;">
+					<!-- <img src="assets/resources/assets/img/Apply-Now-1.jpg"></img> -->
+				</div>
+				<div class="ur-detail-wrap top-lay">
+					<h2>Applying Job </h2>
+				</div>
+			</div>
+		</section>
+		<!-- Job full detail Start -->
+		 
+		<section class="full-detail-description full-detail">
+			<div class="container">
+				<!-- Job Description -->
+				<div class="col-sm-12">
+					<div class="full-card">
+
+						<div class="row row-bottom mrg-0">
+							<h2 class="detail-title">1. Access Job Application Form
+							</h2>
+							<ul class="job-detail-des">
+								<li>Applicants must navigate to the job listing and access the online application form directly.
+								</li>
+							</ul>
+						</div>
+
+						<div class="row row-bottom mrg-0">
+							<h2 class="detail-title">2. Submit Personal Information
+							</h2>
+							<ul class="job-detail-des">
+								<li>Applicants must fill out their personal details such as full name, email address, phone number, and location.
+								</li>
+							</ul>
+							
+						</div>
+						<div class="row row-bottom mrg-0">
+							<h2 class="detail-title">3. Upload Resume/CV
+							</h2>
+							<ul class="job-detail-des">
+								<li>Applicants are required to upload an up-to-date resume or CV. This document should include relevant work experience, education, and skills.
+								</li>
+							</ul>
+							
+							<div style="display: flex; align-items: center; justify-content: center; flex-wrap: wrap; overflow: hidden;">
+								<!-- <div id='div-gpt-ad-1723184323719-0' style='min-width: 300px; min-height: 250px;'>
+									<script>
+									  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723184323719-0'); });
+									</script>
+								  </div> -->
+								</div>
+						</div>
+						<div class="row row-bottom mrg-0">
+							<h2 class="detail-title">4. Answer Job-Specific Questions
+							</h2>
+							<ul class="job-detail-des">
+								<li>The form may include job-specific questions, such as availability, salary expectations, and additional qualifications. These questions help determine if the applicant is a suitable match for the position.
+								</li>
+							</ul>
+							
+						</div>
+						<div class="row row-bottom mrg-0">
+							<h2 class="detail-title">5. Submit Application
+							</h2>
+							<ul class="job-detail-des">
+								<li>Once all fields are completed and documents uploaded, the applicant submits the form. They will receive a confirmation email or message verifying that their application has been received.
+								</li>
+							</ul>
+							
+						</div>
+					</div>
+				
+					<!-- /22682527587/moneyquizx.online/MB-300x50 -->
+					<!-- <div id='div-gpt-ad-1723457064522-0' style='min-width: 240px; min-height: 66px;'>
+						<script>
+						  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723457064522-0'); });
+						</script>
+					  </div> -->
+					<section class="theme-bg call-to-act-wrap">
+						<div class="" style="text-align: center;">
+							<a href="job-application.html" class="btn btn-call-to-act">Apply Today</a>
+						</div>
+					</section>
+
+				</div>
+				<!-- <div id='div-gpt-ad-1723457064522-0' style='min-width: 240px; min-height: 66px;'>
+					<script>
+					  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723457064522-0'); });
+					</script>
+				  </div> -->
+				<!-- End Job Description -->
+
+				<!-- Start Sidebar -->
+				<!-- <div class="col-md-4 col-sm-12">
+					<div class="sidebar right-sidebar">
+						 -->
+						<!-- <div class="statistic-item flex-middle">
+							<div id='div-gpt-ad-1723183674467-0' style='min-width: 336px; min-height: 280px;'>
+								<script>
+								  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723183674467-0'); });
+								</script>
+							  </div>
+						</div> -->
+
+						
+					<!-- </div>
+				</div> -->
+				<!-- End Sidebar -->
+				<!-- <div id='div-gpt-ad-1723457064522-0' style='min-width: 240px; min-height: 66px;'>
+					<script>
+					  googletag.cmd.push(function() { googletag.display('div-gpt-ad-1723457064522-0'); });
+					</script>
+				  </div> -->
+			</div>
+		</section>
+		<!-- Job full detail End -->
+		<!-- More Jobs -->
+		<section class="padd-top-20">
+			<div class="container">
+
+				<div class="row mrg-0">
+					<div class="col-md-12 col-sm-12">
+						<h3>Apply Related Jobs</h3>
+					</div>
+				</div>
+
+				<!--Browse Job In Grid-->
+				<div class="row mrg-0">
+
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="" />
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Students/ Freshers</h3>
+									<p><span>Work From Home</span></p>
+								</div>
+								<div class="job-position"><span class="job-num">10 Position</span></div>
+								<div class="brows-job-type"><span class="">Part-Time Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Nagpur</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹15000
+												-₹20000</span>
+										</p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="" />
+								</div>
+								<div class="brows-job-position">
+									<h3>Project Manager</h3>
+									<p><span>Citibank</span></p>
+								</div>
+								<div class="job-position"><span class="job-num">19 Position</span></div>
+								<div class="brows-job-type"><span class="full-time">Full-Time</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Ahmadabad</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹800000
+												-₹1000000</span></p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="" />
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Human resource executive</h3>
+									<p><span>Phillips</span></p>
+								</div>
+								<div class="job-position"><span class="job-num">20 Position</span></div>
+								<div class="brows-job-type"><span class="full-time">Full-Time</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Udaipur</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹600000
+												-₹800000</span></p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="" />
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Bpo telecaller</h3>
+									<p><span>Hire hub consultancy</span></p>
+								</div>
+								<div class="job-position"><span class="job-num">50 Position</span></div>
+								<div class="brows-job-type"><span class="part-time">Work From Home Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;"></span>
+											</p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹15000
+												-₹25000</span>
+										</p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="row mrg-0">
+
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="">
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Work from home for freshers </h3>
+									<p><span>ACHIEVER'S CLUB </span></p>
+								</div>
+								<div class="job-position"><span class="job-num">35 Position</span></div>
+								<div class="brows-job-type"><span class="">Part-Time Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Mumbai</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹35000
+												-₹45000</span>
+										</p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="">
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Digital project for freshers </h3>
+									<p><span>ACHIEVER'S CLUB </span></p>
+								</div>
+								<div class="job-position"><span class="job-num">8 Position</span></div>
+								<div class="brows-job-type"><span class="part-time">Work From Home Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Dehradun</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹35000
+												-₹45000</span>
+										</p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="assets/resources/assets/img/com-1.jpg" class="img-responsive" alt="">
+
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Fresher </h3>
+									<p><span>Workanado </span></p>
+								</div>
+								<div class="job-position"><span class="job-num">48 Position</span></div>
+								<div class="brows-job-type"><span class="part-time">Work From Home Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>India, <span
+													style="font-size:12px;">Jaipur</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹15000
+												-₹35000</span>
+										</p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+					<div class="col-md-3 col-sm-6">
+						<a href="job-application.html">
+							<div class="grid-view brows-job-list">
+								<div class="brows-job-company-img">
+									<img src="uploads/employer/company_logo/1711967299-FB-IMG-1711961409068.jpg"
+										class="img-responsive" alt="">
+
+								</div>
+								<div class="brows-job-position">
+									<h3>Food delivery</h3>
+									<p><span>Food</span></p>
+								</div>
+								<div class="job-position"><span class="job-num">27 Position</span></div>
+								<div class="brows-job-type"><span class="part-time">Work From Home Jobs</span></div>
+								<ul class="grid-view-caption">
+									<li>
+										<div class="brows-job-location">
+											<p><i class="fa fa-map-marker"></i>Malaysia, <span
+													style="font-size:12px;">Shimla</span></p>
+										</div>
+									</li>
+									<li>
+										<p><span class="brows-job-sallery"><i class="fa fa-money"></i>₹800000
+												-₹800000</span></p>
+									</li>
+								</ul>
+								<!---<span class="tg-themetag tg-featuretag">Premium</span>--->
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- More Jobs End -->
+
+		<section class="theme-bg call-to-act-wrap">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-12">
+						<div class="call-to-act">
+							<div class="call-to-act-head">
+								<h3>Want to Become a Success Employers?</h3>
+								<span>We'll help you to grow your career and growth.</span>
+							</div>
+							<a href="job-application.html" class="btn btn-call-to-act">Apply Today</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/jquery.min.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/viewportchecker.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/bootsnav.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/select2.min.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/loader.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/slick.min.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/gmap3.min.js"></script>
+		<!-- Custom Js -->
+		<script src="assets/resources/assets/js/custom.js"></script>
+		<script type="text/javascript" src="assets/resources/assets/plugins/js/counterup.min.js"></script>
+
+		<script src="../cdn.jsdelivr.net/npm/jquery-validation%401.17.0/dist/jquery.validate.min.js"></script>
+		<script src="../cdn.jsdelivr.net/jquery.validation/1.15.0/additional-methods.min.js"></script>
+		<script src="assets/resources/assets/js/login.js"></script>
+		<script src="assets/resources/assets/js/jQuery.style.switcher.js"></script>
+
+		<script type="text/javascript"
+			src="../cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+		<script src="assets/resources/assets/js/autocomplete.js"></script>
+	</div>
+</body>
+
+</html>

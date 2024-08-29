@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <link rel="canonical" href="index-2.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <title>Online Financial Calculator</title>
+    <meta name="keywords"
+        content="financial calculator, emi calculator, sip calculator, emi calculator online, sip return calculator" />
+    <meta name="description"
+        content="Online Financial calculator to help you get your EMI Amount, SIP Investment, Pension Amount & much more in an effortless and trouble free way" />
+    <link rel="stylesheet" href="../stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style">
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/theme_v15e1f.css?v=2" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="site/assets/white_theme/css/calculator_listing.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main">
+        <section ng-app="apyApp" ng-controller="apyController">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="index-2.html">Financial
+                                        Calculator</a></li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <section class="calc_top_banner">
+                <div class="container text-center">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <h1 class="banner_header">
+                                Financial Calculators
+                            </h1>
+                            <p class="banner_subtext">
+                                Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                Amount
+                                & much
+                                more in an effortless and trouble-free way.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="calc_list_section">
+                <div class="container">
+                    <div class="row justify-content-center">
+                        <div class="col-lg-11 col-md-11">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="sip-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/sip_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt="SIP Calculator - Calculate Systematic Investment Plan returns"
+                                                    width="54px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                SIP Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Estimate the future value of your Systematic Investment Plan (SIP).
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="step-up-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/step_up_calculator_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="Step-Up SIP Calculator - Calculate Systematic Investment Plan returns"
+                                                    width="125px" height="100px">
+
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Step Up SIP
+                                            </h2>
+                                            <p class="cals_details">
+                                                Calculate your future wealth and plan your investments effectively.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="future-value-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/future_value_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="Future Value Calculator - Predict the future worth of investments"
+                                                    width="40px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Future Value Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Predict the future value of an investment for a given period.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="cagr-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/cagr_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="CAGR Calculator - Compute Compound Annual Growth Rate"
+                                                    width="116px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                CAGR Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Calculate the average rate of return of a fund or an investment.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="cost-of-delay-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/cost_of_delay_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="Cost of Delay Calculator - Calculate the extra amount you need to invest in case of delay in investment"
+                                                    width="98px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Cost Of Delay
+                                            </h2>
+                                            <p class="cals_details">
+                                                Discover the real cost of delaying investments or projects.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="present-value-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/present_value_listing.webp"
+                                                    class="img-fluid"
+                                                    alt=" Present Value Calculator - Calculate the current worth of investments"
+                                                    width="143px" height="100px" />
+
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Present Value
+                                            </h2>
+                                            <p class="cals_details">
+                                                Find out the current value of an asset or an investment for a given
+                                                period.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="become-crorepati-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/crorepati_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="Become a Crorepati Calculator - Plan your path to one crore rupees"
+                                                    width="112px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Become Crorepati
+                                            </h2>
+                                            <p class="cals_details">
+                                                Check out how long it will take for you to achieve your dream of
+                                                becoming a crorepati.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="emi-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/emi_listing.webp"
+                                                    class="img-fluid"
+                                                    alt="EMI Calculator- Calculate your Monthly Loan Installments"
+                                                    width="94px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Emi Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Determine the fixed monthly payment to be made against a loan.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="apy-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/atal_pension_listing.webp"
+                                                    class="img-fluid"
+                                                    alt=" Atal Pension Yojana Calculator - Plan your pension under APY scheme"
+                                                    width="132px" height="100px" />
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Atal Pension Yojana
+                                            </h2>
+                                            <p class="cals_details">
+                                                Plan your pension scheme using the Atal Pension Yojana Calculator.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="tds-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/tds_listing_page.webp"
+                                                    class="img-fluid" alt="" width="86px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                TDS Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Simplify tax compliance using our TDS Calculator to swiftly
+                                                calculate
+                                                deductions for various payments.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="retirement-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/retirement_listing_page.webp"
+                                                    class="img-fluid" alt="" width="97px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Retirement Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Secure your retirement dreams by discovering tailored savings goals
+                                                through our Retirement Calculator.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="home-loan-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/homeloan_listing.webp"
+                                                    class="img-fluid"
+                                                    alt=" Illustration of a house with a calculator symbolizing home loan calculations"
+                                                    width="118px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Home loan Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Estimate your home loan affordability and EMIs effortlessly with our
+                                                Home Loan Calculator.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="ppf-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/ppf_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt="Visual representation of a piggy bank with a PPF account passbook"
+                                                    width="73px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                PPF Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Plan your long-term savings effectively with our PPF Calculator,
+                                                designed for Public Provident Fund investments.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="car-loan-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/carloan_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt=" Car icon with EMI text, depicting car loan calculations"
+                                                    width="117px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Car Loan EMI
+                                            </h2>
+                                            <p class="cals_details">
+                                                Calculate your monthly car loan payments easily using our Car Loan
+                                                EMI
+                                                Calculator for hassle-free vehicle financing.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="inflation-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/nflation_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt="Graph chart illustrating inflation trends and its impact on finances"
+                                                    width="94px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Inflation Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Assess the impact of inflation on your finances over time with our
+                                                Inflation Calculator, guiding your investment decisions.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="gst-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/gst_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt="GST calculator icon with tax percentages and currency symbols"
+                                                    width="94px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                GST Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Quickly compute Goods and Services Tax (GST) amounts for your
+                                                transactions with our user-friendly GST Calculator.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="nps-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/nps_listing_page.webp"
+                                                    class="img-fluid"
+                                                    alt="NPS calculator with retirement fund icon and financial chart"
+                                                    width="125px" height="100px">
+                                            </div>
+                                            <h2 class="cals_name">
+                                                NPS Calculator
+                                            </h2>
+                                            <p class="cals_details">
+                                                Optimize your retirement planning with precision through our NPS
+                                                Calculator, securing your financial future.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                <div class="col-lg-4 col-md-6 col-11">
+                                    <a href="sukanya-samriddhi-yojana-calculator.html" class="cals_box_wrapper">
+                                        <div class="cals_inner_box">
+                                            <div class="calc_img_box">
+                                                <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/sukanya_samriddhi_listing.webp"
+                                                    class="img-fluid"
+                                                    alt=" Sukanya Samriddhi Yojana calculator with child education and savings"
+                                                    width="125px" height="100px">
+
+                                            </div>
+                                            <h2 class="cals_name">
+                                                Sukanya Samriddhi Yojana
+                                            </h2>
+                                            <p class="cals_details">
+                                                Secure your daughter's future with the Sukanya Samriddhi Yojana
+                                                Calculator, ensuring financial well-being.
+                                            </p>
+                                            <p class="use_now_button">
+                                                <span>Use Now
+                                                    <svg width="13" height="11" viewBox="0 0 13 11" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M12.3943 5.73713C12.3943 5.92577 12.3223 6.11439 12.1785 6.25822L7.6526 10.7841C7.3647 11.072 6.89791 11.072 6.61013 10.7841C6.32234 10.4963 6.32234 10.0296 6.61013 9.74167L10.6149 5.73713L6.61027 1.73257C6.32248 1.44467 6.32248 0.978024 6.61027 0.69026C6.89805 0.402217 7.36484 0.402217 7.65274 0.69026L12.1786 5.21604C12.3224 5.35994 12.3943 5.54856 12.3943 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                        <path
+                                                            d="M6.39429 5.73713C6.39429 5.92577 6.32226 6.11439 6.17851 6.25822L1.6526 10.7841C1.3647 11.072 0.897914 11.072 0.610127 10.7841C0.32234 10.4963 0.32234 10.0296 0.610127 9.74167L4.6149 5.73713L0.610267 1.73257C0.32248 1.44467 0.32248 0.978024 0.610267 0.69026C0.898054 0.402217 1.36484 0.402217 1.65274 0.69026L6.17864 5.21604C6.32242 5.35994 6.39429 5.54856 6.39429 5.73713Z"
+                                                            fill="#EE9949"></path>
+                                                    </svg>
+                                                </span>
+                                            </p>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/apy_calculator.js"></script>
+
+
+    <script src="site/js/library/zingchart.min.js"></script>
+</body>
+
+
+</html>

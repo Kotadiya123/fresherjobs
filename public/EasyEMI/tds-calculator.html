@@ -1,0 +1,829 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <title>TDS Calculator - To Ensure Hassle-Free Tax Management</title>
+    <meta name="keywords" content="TDS Calculator" />
+    <meta name="description"
+        content="Calculate your Tax deduction at source for salaries and stay tax compliant using our TDS Calculator online at Easy Emi." />
+
+    <link rel="canonical" href="tds-calculator.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+
+    <link rel="stylesheet" href="site/css/rzslider.html" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/tds_calculator.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/custom_slider_v2.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Financial Calculator</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">TDS calculator</a></li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-app="tdsApp" ng-controller="tdsController">
+
+            <div ng-show="sipStep == 1">
+                {{goalcalculateTds()}}
+                <section class="calculator_screen">
+                    <div class="custom_container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <style>
+                                    .calculator_left_menu_bg {
+                                        background: linear-gradient(white, #fff) padding-box, linear-gradient(to bottom, #bcdefc, rgba(255, 141, 33, .58)) border-box;
+                                        border: 2px solid transparent;
+                                        border-radius: 20px;
+                                        overflow: hidden
+                                    }
+
+                                    .calculator_left_menu {
+                                        padding: 18px 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list {
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu {
+                                        color: #404040 !important;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        line-height: 50px;
+                                        display: block;
+                                        position: relative;
+                                        padding: 0 28px;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu svg {
+                                        position: absolute;
+                                        right: 25px;
+                                        top: 50%;
+                                        transform: translateY(-50%)
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu svg path {
+                                        fill: #EE9949
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu {
+                                        background: #f9f9fd;
+                                        color: #1d458a !important;
+                                        font-weight: 500
+                                    }
+
+                                    .calculator_left_menu .left_menu_header {
+                                        color: #12274b;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        line-height: 40px;
+                                        text-transform: capitalize;
+                                        margin-bottom: 6px;
+                                        padding: 0 28px
+                                    }
+
+                                    .calc_menu_show_btn,
+                                    .calculator_left_menu .close_btn {
+                                        display: none
+                                    }
+
+                                    @media (min-width:200px) and (max-width:768px) {
+                                        .calculator_left_menu_bg {
+                                            position: fixed;
+                                            z-index: 99;
+                                            margin: 0;
+                                            width: 100%;
+                                            left: 0;
+                                            bottom: -400%;
+                                            height: auto;
+                                            top: auto;
+                                            border-radius: 0;
+                                            transition: .7s;
+                                            overflow: visible
+                                        }
+
+                                        .calculator_left_menu_bg.show {
+                                            bottom: 0;
+                                            transition: .7s;
+                                            top: 50%;
+                                            border-left: none;
+                                            border-right: none
+                                        }
+
+                                        .calculator_left_menu .close_btn {
+                                            display: inline-block;
+                                            position: absolute;
+                                            top: -16px;
+                                            right: 8px;
+                                            border: 2px solid #bcddfb;
+                                            border-radius: 100px;
+                                            background: #fff;
+                                            color: #000;
+                                            font-size: 18px;
+                                            width: 30px;
+                                            height: 30px;
+                                            line-height: 24px;
+                                            padding: 0;
+                                            z-index: 9
+                                        }
+
+                                        .calc_menu_show_btn {
+                                            display: block;
+                                            left: 0;
+                                            right: 0;
+                                            position: fixed;
+                                            bottom: 0;
+                                            background: #fff;
+                                            border: none;
+                                            font-size: 14px;
+                                            z-index: 9;
+                                            box-shadow: 0 -3px 3px rgba(0, 0, 0, .11);
+                                            color: #1d458a;
+                                            font-weight: 500;
+                                            line-height: 50px
+                                        }
+
+                                        .calc_menu_show_btn svg {
+                                            margin-bottom: 2px
+                                        }
+
+                                        .calculator_left_menu .Calculator-list {
+                                            height: 300px;
+                                            overflow-x: scroll
+                                        }
+                                    }
+                                </style>
+                                <button class="calc_menu_show_btn" onclick=showCalculatorMenu()>
+                                    Financial Calculators
+                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.3906 5.73713C11.3906 5.92577 11.3186 6.11439 11.1748 6.25822L6.64894 10.7841C6.36104 11.072 5.89425 11.072 5.60647 10.7841C5.31868 10.4963 5.31868 10.0296 5.60647 9.74167L9.61123 5.73713L5.6066 1.73257C5.31882 1.44467 5.31882 0.978024 5.6066 0.69026C5.89439 0.402217 6.36118 0.402217 6.64908 0.69026L11.175 5.21604C11.3188 5.35994 11.3906 5.54856 11.3906 5.73713Z"
+                                            fill="#EE9949" />
+                                        <path
+                                            d="M6.39062 5.73713C6.39062 5.92577 6.3186 6.11439 6.17484 6.25822L1.64894 10.7841C1.36104 11.072 0.894252 11.072 0.606465 10.7841C0.318678 10.4963 0.318678 10.0296 0.606465 9.74167L4.61123 5.73713L0.606605 1.73257C0.318818 1.44467 0.318818 0.978024 0.606605 0.69026C0.894392 0.402217 1.36118 0.402217 1.64908 0.69026L6.17498 5.21604C6.31876 5.35994 6.39062 5.54856 6.39062 5.73713Z"
+                                            fill="#EE9949" />
+                                    </svg>
+                                </button>
+                                <div class="calculator_left_menu_bg">
+                                    <div class="calculator_left_menu">
+                                        <button class="close_btn" onclick=showCalculatorMenu()>
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <p class="left_menu_header">Financial Calculators</p>
+                                        <ul class="Calculator-list">
+                                            <li>
+                                                <a href="sip-calculator.html" class="Calculator-side-menu ">SIP
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="step-up-calculator.html" class="Calculator-side-menu ">
+                                                    Step Up SIP
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="future-value-calculator.html" class="Calculator-side-menu ">
+                                                    Future
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cagr-calculator.html" class="Calculator-side-menu "> CAGR
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cost-of-delay-calculator.html" class="Calculator-side-menu ">
+                                                    Cost
+                                                    Of
+                                                    Delay Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="present-value-calculator.html" class="Calculator-side-menu ">
+                                                    Present
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="become-crorepati-calculator.html"
+                                                    class="Calculator-side-menu ">
+                                                    Become
+                                                    a Crorepati Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="emi-calculator.html" class="Calculator-side-menu "> EMI
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="apy-calculator.html" class="Calculator-side-menu "> Atal
+                                                    Pension Yojana Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)"
+                                                    class="Calculator-side-menu active-side-menu">TDS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="retirement-calculator.html"
+                                                    class="Calculator-side-menu ">Retirement
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="home-loan-calculator.html" class="Calculator-side-menu ">
+                                                    Home Loan Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="ppf-calculator.html" class="Calculator-side-menu "> PPF
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="car-loan-calculator.html" class="Calculator-side-menu ">
+                                                    Car Loan EMI Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="inflation-calculator.html" class="Calculator-side-menu ">
+                                                    Inflation Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="gst-calculator.html" class="Calculator-side-menu "> GST
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="nps-calculator.html" class="Calculator-side-menu "> NPS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="sukanya-samriddhi-yojana-calculator.html"
+                                                    class="Calculator-side-menu ">
+                                                    Sukanya Samriddhi Yojana
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <script>
+                                    const showCalculatorMenu = () => {
+                                        document.querySelector('.calculator_left_menu_bg').classList.toggle("show");
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="calculator_function_box">
+                                    <div class="calculator_function_banner">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-7 col-md-8">
+                                                <div class="about_calc">
+                                                    <h1 class="calculator_name">
+                                                        {{CalculatorName}}
+                                                    </h1>
+                                                    <p class="calc_description">
+                                                        Stay tax compliant using our TDS Calculator. Quickly determine
+                                                        the accurate Tax Deducted at Source for salaries, rent, or other
+                                                        payments. Ensure hassle-free transactions and proper tax
+                                                        management.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-md-4">
+                                                <div class="calc_banner_img">
+                                                    <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/tds_cals_banner.webp"
+                                                        class="img-fluid" alt="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row calc_variables_graph">
+                                        <div class="col-md-6">
+                                            <div class="calc_variables">
+                                                <div class="row mb-5">
+                                                    <div class="col-lg-2 col-md-12 col-12">
+                                                        <p class="topic_name">
+                                                            Recipient
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-10 col-md-12 col-12 m-auto">
+                                                        <div class="tds_redio_btn">
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="flexRadioDefault" id="flexRadioDefault1"
+                                                                    ng-click="otherStatus(false)"
+                                                                    ng-checked="checkedOthers==false? true : false">
+                                                                <label class="form-check-label" for="flexRadioDefault1">
+                                                                    Individual/HUF/Sole Proprietor
+                                                                </label>
+                                                            </div>
+                                                            <div class="form-check">
+                                                                <input class="form-check-input" type="radio"
+                                                                    name="flexRadioDefault" id="flexRadioDefault2"
+                                                                    ng-click="otherStatus(true)"
+                                                                    ng-checked="checkedOthers==true? true : false">
+                                                                <label class="form-check-label" for="flexRadioDefault2">
+                                                                    Others
+                                                                </label>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-lg-12 col-12">
+                                                        <p class="topic_name">
+                                                            PAN of recipient is available
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <form>
+                                                            <div class="form-group custom_select_box">
+                                                                <select class="form-control" id="panAvailableSelect"
+                                                                    ng-model="isPanAvailable"
+                                                                    ng-change="changePANStatus(this.value)">
+                                                                    <option ng-repeat="p in panDetails"
+                                                                        ng-selected="isPanAvailable == p"
+                                                                        ng-init="isPanAvailable = p">{{p}}</option>
+                                                                </select>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-5">
+                                                    <div class="col-lg-12 col-12">
+                                                        <p class="topic_name">
+                                                            Nature of payment
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-12">
+                                                        <form>
+                                                            <div
+                                                                class="form-group custom_select_box  custom_tds_select_box">
+                                                                <!-- <select class="form-control" ng-model="currentIndex" ng-change="changeTDS()">
+                                                                <option ng-repeat="tds in tdsDetailsArray track by $index" ng-value="$index"  ng-selected="currentIndex==$index" ng-init="currentIndex = $index">{{tds.name}}</option>
+                                                        </select> -->
+                                                                <div class="dropdown tds_select">
+                                                                    <button class="dropdown-toggle" type="button"
+                                                                        id="menu1" data-toggle="dropdown">
+                                                                        <span
+                                                                            class="selectBox_value">{{tdsDetailsArray[currentIndex]["name"]}}</span>
+                                                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                                                            height="1em" viewBox="0 0 512 512">
+                                                                            <path
+                                                                                d="M233.4 406.6c12.5 12.5 32.8 12.5 45.3 0l192-192c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L256 338.7 86.6 169.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l192 192z" />
+                                                                        </svg>
+                                                                    </button>
+                                                                    <ul class="dropdown-menu" role="menu"
+                                                                        aria-labelledby="menu1">
+                                                                        <li ng-repeat="tds in tdsDetailsArray track by $index"
+                                                                            ng-model="currentIndex"
+                                                                            ng-click="changeTDS($index)"
+                                                                            role="presentation">
+                                                                            <a href="javascript:void(0)"
+                                                                                class="dropdown-item {{currentIndex === $index ? 'active':'' }}">{{tds.name}}</a>
+                                                                        </li>
+                                                                    </ul>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+
+                                                <div class="row mb-5">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">
+                                                            Amount of Payment
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value">
+                                                            <i class="fa fa-inr rupee_value" aria-hidden="true"></i>
+                                                            <input type="number" step="1" ng-model="tds_amount" min="0"
+                                                                placeholder="0" class="calculter_input"
+                                                                ng-keyup="changeValueForRange()">
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="inner_calculate_box">
+                                                <div class="tab-content mt-2">
+                                                    <div class="tab-pane active">
+                                                        <div class="show-value-inner-box">
+                                                            <p class="calculate_value_for">{{CalculatorName}}</p>
+
+                                                            <div class="calculate_value_amount">
+                                                                <i class="fa fa-inr"
+                                                                    aria-hidden="true"></i>&nbsp;{{finalResult.toLocaleString('en-IN')}}
+                                                            </div>
+
+                                                            <p class="calculate_value_details">
+                                                                Rule of TDS: {{rule_msg}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculator_text">
+                                    <style>
+                                        .calculator_text {
+                                            margin-top: 50px;
+                                        }
+
+                                        .calculator_text h3 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                        }
+
+                                        .calculator_text h4 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 600;
+                                        }
+
+                                        .calculator_text img {
+                                            max-width: 100%;
+                                            height: auto;
+                                        }
+
+                                        .calculator_text a {
+                                            font-weight: 700;
+                                            color: #155bd3 !important;
+                                        }
+
+                                        .calculator_text p,
+                                        .calculator_text ul {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                            margin-bottom: 16px;
+                                        }
+
+                                        @media (min-width:200px) and (max-width:768px) {
+                                            .calculator_text h3 {
+                                                margin: 28px 0 10px;
+                                                color: #12274B;
+                                                font-size: 22px;
+                                                line-height: 33px;
+                                                font-weight: 700;
+                                            }
+
+                                            .calculator_text h4 {
+                                                margin: 48px 0 20px;
+                                                color: #12274B;
+                                                font-weight: 600;
+                                            }
+
+                                            .calculator_text h4 {
+                                                font-size: 20px;
+                                            }
+
+                                            .calculator_text p,
+                                            .calculator_text ul {
+                                                font-size: 14px;
+                                                line-height: 24px;
+                                            }
+                                        }
+                                    </style>
+                                    <h3>What is TDS?</h3>
+                                    <p>TDS or Tax Deducted at Source is a process implemented by the Indian Government,
+                                        which is collected from salary, rent, commission etc. The person who is paying
+                                        the amount should deduct TDS from it. TDS should be deducted irrespective of the
+                                        made of payment cash, cheque credit and both the account should be linked with
+                                        PAN. The purpose of TDS may have been to reduce the chances of tax evasion by
+                                        the recipient of the income. But, for an honest taxpayer, it also brings a few
+                                        benefits.</p>
+                                    </h3>What is the TDS Calculator? </h3>
+
+                                    <p>A TDS Calculator online is a tool that will help you to calculate the TDS amount
+                                        on income. It will also help you to know whether the TDS will be deducted or
+                                        not. It will provide you with the basic insight into TDS rules. Using TDS
+                                        Calculator online is very simple and it can be used anytime and as many times
+                                        needed.</p>
+                                    <h3>Benefits of using TDS Calculator? </h3>
+
+                                    <p>There are few benefits of using TDS Calculator online, this can be helpful for
+                                        both business and individuals. The benefits are as follows</p>
+
+                                    <ol type=”a”>
+                                        <li>It allows you to calculate the exact TDS amount, which are supposed to be
+                                            deducted from the payment</li>
+                                        <li>This calculator is simple to use, and with this you will be able to get your
+                                            result quickly</li>
+                                        <li>It also helps to reduce the possible error in the calculation</li>
+                                        <li>You will also know if you are complying with tax laws and regulations</li>
+                                    </ol>
+                                    <h3> How to calculate TDS? </h3>
+
+                                    <p>The formula for average income tax rate:</p>
+
+                                    <p>Average Income tax rate = Income tax payable as per the slab rates / Total
+                                        estimated income for the financial year</p>
+
+                                    <p>For example, </p>
+
+                                    <p>If Mr Ramesh has received the salary of ₹1,00,000 in a year (these rates will
+                                        change with every financial year). </p>
+
+                                    <p>According to Section 192, the TDS on your salary based on the current year's slab
+                                        rates would be Rs. 1,42,500. After the addition of 4% education and higher
+                                        education cess, the net payable tax becomes Rs. 1,48,200.</p>
+
+                                    <p>Average Income tax rate = Rs. 1,48,200/12,00,000*100 <br />
+                                        = 12.35%</p>
+
+                                    <p>So, the TDS deducted from Mr Ramesh's salary each month would be 12.35% of 1
+                                        lakh, which is, <br />
+
+                                        = Rs. 12,350</p>
+                                    <h3>How to use ELM TDS Calculator? </h3>
+
+                                    <p>With our TDS calculator online, calculating TDS is easy and free. You only need
+                                        to follow these steps:</p>
+
+                                    <p>You need to select the Recipient first</p>
+
+                                    <p>Then select if PAN is available or not, After that select the nature of payment
+                                        from the given list. Then finally enter the amount payable at the end then click
+                                        “Calculate Now”</p>
+
+                                    <p>Enter the investment period and click on "Calculate now."</p>
+
+                                    <p>The result will appear like this-</p>
+
+                                    <img
+                                        src=%e2%80%9dhttps_/duzycfafl38re.cloudfront.net/Media/tds_calculator15052024123200.html>
+                                    <p>Although there are several TDS calculators online, it's important to use the one
+                                        which is user-friendly for accurate calculations. With Easy Earnings's online
+                                        TDS calculator, you can easily and accurately calculate your TDS.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/tds_calculator.js"></script>
+</body>
+
+
+
+</html>

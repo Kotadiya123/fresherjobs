@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <title>Home Loan Calculator- Calculate Home Loans EMI Effortlessly</title>
+    <meta name="keywords" content="Home Loan Calculator" />
+    <meta name="description"
+        content="A Home Loan calculator helps you to calculate the amount of EMI that you need to pay and also ensures that your dream home is within your reach." />
+
+    <link rel="canonical" href="home-loan-calculator.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <meta itemprop="name" content="Home Loan Calculator- Calculate Home Loans EMI Effortlessly">
+    <meta itemprop="description"
+        content="A Home Loan calculator helps you to calculate the amount of EMI that you need to pay and also ensures that your dream home is within your reach.">
+
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+
+    <link rel="stylesheet" href="site/css/calculator.css" />
+    <link rel="stylesheet" href="site/css/rzslider.css" />
+    <link rel="stylesheet" href="site/css/bootstrap-datetimepicker.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/calculator_homeloan.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/custom_slider_v2.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Financial
+                                    Calculator</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Home Loan Calculator</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-app="homeLoancalculatorApp" ng-controller="homeLoancalculatorController">
+            <div ng-show="sipStep == 1">
+                <div class="calculator_screen">
+                    <div class="custom_container" data-ng-init="changehomeLoanRateTenure()">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <style>
+                                    .calculator_left_menu_bg {
+                                        background: linear-gradient(white, #fff) padding-box, linear-gradient(to bottom, #bcdefc, rgba(255, 141, 33, .58)) border-box;
+                                        border: 2px solid transparent;
+                                        border-radius: 20px;
+                                        overflow: hidden
+                                    }
+
+                                    .calculator_left_menu {
+                                        padding: 18px 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list {
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu {
+                                        color: #404040 !important;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        line-height: 50px;
+                                        display: block;
+                                        position: relative;
+                                        padding: 0 28px;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu svg {
+                                        position: absolute;
+                                        right: 25px;
+                                        top: 50%;
+                                        transform: translateY(-50%)
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu svg path {
+                                        fill: #EE9949
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu {
+                                        background: #f9f9fd;
+                                        color: #1d458a !important;
+                                        font-weight: 500
+                                    }
+
+                                    .calculator_left_menu .left_menu_header {
+                                        color: #12274b;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        line-height: 40px;
+                                        text-transform: capitalize;
+                                        margin-bottom: 6px;
+                                        padding: 0 28px
+                                    }
+
+                                    .calc_menu_show_btn,
+                                    .calculator_left_menu .close_btn {
+                                        display: none
+                                    }
+
+                                    @media (min-width:200px) and (max-width:768px) {
+                                        .calculator_left_menu_bg {
+                                            position: fixed;
+                                            z-index: 99;
+                                            margin: 0;
+                                            width: 100%;
+                                            left: 0;
+                                            bottom: -400%;
+                                            height: auto;
+                                            top: auto;
+                                            border-radius: 0;
+                                            transition: .7s;
+                                            overflow: visible
+                                        }
+
+                                        .calculator_left_menu_bg.show {
+                                            bottom: 0;
+                                            transition: .7s;
+                                            top: 50%;
+                                            border-left: none;
+                                            border-right: none
+                                        }
+
+                                        .calculator_left_menu .close_btn {
+                                            display: inline-block;
+                                            position: absolute;
+                                            top: -16px;
+                                            right: 8px;
+                                            border: 2px solid #bcddfb;
+                                            border-radius: 100px;
+                                            background: #fff;
+                                            color: #000;
+                                            font-size: 18px;
+                                            width: 30px;
+                                            height: 30px;
+                                            line-height: 24px;
+                                            padding: 0;
+                                            z-index: 9
+                                        }
+
+                                        .calc_menu_show_btn {
+                                            display: block;
+                                            left: 0;
+                                            right: 0;
+                                            position: fixed;
+                                            bottom: 0;
+                                            background: #fff;
+                                            border: none;
+                                            font-size: 14px;
+                                            z-index: 9;
+                                            box-shadow: 0 -3px 3px rgba(0, 0, 0, .11);
+                                            color: #1d458a;
+                                            font-weight: 500;
+                                            line-height: 50px
+                                        }
+
+                                        .calc_menu_show_btn svg {
+                                            margin-bottom: 2px
+                                        }
+
+                                        .calculator_left_menu .Calculator-list {
+                                            height: 300px;
+                                            overflow-x: scroll
+                                        }
+                                    }
+                                </style>
+                                <button class="calc_menu_show_btn" onclick=showCalculatorMenu()>
+                                    Financial Calculators
+                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.3906 5.73713C11.3906 5.92577 11.3186 6.11439 11.1748 6.25822L6.64894 10.7841C6.36104 11.072 5.89425 11.072 5.60647 10.7841C5.31868 10.4963 5.31868 10.0296 5.60647 9.74167L9.61123 5.73713L5.6066 1.73257C5.31882 1.44467 5.31882 0.978024 5.6066 0.69026C5.89439 0.402217 6.36118 0.402217 6.64908 0.69026L11.175 5.21604C11.3188 5.35994 11.3906 5.54856 11.3906 5.73713Z"
+                                            fill="#EE9949" />
+                                        <path
+                                            d="M6.39062 5.73713C6.39062 5.92577 6.3186 6.11439 6.17484 6.25822L1.64894 10.7841C1.36104 11.072 0.894252 11.072 0.606465 10.7841C0.318678 10.4963 0.318678 10.0296 0.606465 9.74167L4.61123 5.73713L0.606605 1.73257C0.318818 1.44467 0.318818 0.978024 0.606605 0.69026C0.894392 0.402217 1.36118 0.402217 1.64908 0.69026L6.17498 5.21604C6.31876 5.35994 6.39062 5.54856 6.39062 5.73713Z"
+                                            fill="#EE9949" />
+                                    </svg>
+                                </button>
+                                <div class="calculator_left_menu_bg">
+                                    <div class="calculator_left_menu">
+                                        <button class="close_btn" onclick=showCalculatorMenu()>
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <p class="left_menu_header">Financial Calculators</p>
+                                        <ul class="Calculator-list">
+                                            <li>
+                                                <a href="sip-calculator.html" class="Calculator-side-menu ">SIP
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="step-up-calculator.html" class="Calculator-side-menu ">
+                                                    Step Up SIP
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="future-value-calculator.html" class="Calculator-side-menu ">
+                                                    Future
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cagr-calculator.html" class="Calculator-side-menu "> CAGR
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cost-of-delay-calculator.html" class="Calculator-side-menu ">
+                                                    Cost
+                                                    Of
+                                                    Delay Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="present-value-calculator.html" class="Calculator-side-menu ">
+                                                    Present
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="become-crorepati-calculator.html"
+                                                    class="Calculator-side-menu ">
+                                                    Become
+                                                    a Crorepati Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="emi-calculator.html" class="Calculator-side-menu "> EMI
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="apy-calculator.html" class="Calculator-side-menu "> Atal
+                                                    Pension Yojana Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="tds-calculator.html" class="Calculator-side-menu ">TDS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="retirement-calculator.html"
+                                                    class="Calculator-side-menu ">Retirement
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)"
+                                                    class="Calculator-side-menu active-side-menu">
+                                                    Home Loan Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="ppf-calculator.html" class="Calculator-side-menu "> PPF
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="car-loan-calculator.html" class="Calculator-side-menu ">
+                                                    Car Loan EMI Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="inflation-calculator.html" class="Calculator-side-menu ">
+                                                    Inflation Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="gst-calculator.html" class="Calculator-side-menu "> GST
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="nps-calculator.html" class="Calculator-side-menu "> NPS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="sukanya-samriddhi-yojana-calculator.html"
+                                                    class="Calculator-side-menu ">
+                                                    Sukanya Samriddhi Yojana
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <script>
+                                    const showCalculatorMenu = () => {
+                                        document.querySelector('.calculator_left_menu_bg').classList.toggle("show");
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="calculator_function_box">
+                                    <div class="calculator_function_banner">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-7 col-md-8">
+                                                <div class="about_calc">
+                                                    <h1 class="calculator_name">
+                                                        Home Loan EMI Calculator
+                                                    </h1>
+                                                    <p class="calc_description">
+                                                        Calculate your home loan affordability and EMIs effortlessly
+                                                        with our Home Loan Calculator, ensuring your dream home is
+                                                        within reach.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-md-4">
+                                                <div class="calc_banner_img">
+                                                    <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/home_loan_banner.webp"
+                                                        class="img-fluid"
+                                                        alt="Conceptual image of a home with financial calculations in the background"
+                                                        width="398px" height="206px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row calc_variables_graph">
+                                        <div class="col-md-6">
+                                            <div class="calc_variables">
+                                                <div class="row">
+                                                    <div class="col-12">
+                                                        <p class="topic_name">By which year do you want to buy your
+                                                            home?</p>
+                                                        <div class="select_year">
+                                                            <button
+                                                                class="year_box {{year === selectedYear ? 'active' : ''}}"
+                                                                ng-repeat="year in yearArray"
+                                                                ng-click="changeSelectYear(year)"
+                                                                ng-disabled="inflationRate < 1 || inflationRate === '' || isNaN(inflationRate) === true">
+                                                                {{year}}
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">In the locality where you wish to buy at
+                                                            what rate the prices are raising per year?</p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorInflation===true?'calculter_input small_input error_input' :'calculter_input small_input'"
+                                                                ng-model="inflationRate"
+                                                                ng-keyup="changehomeLoanRateTenure()" placeholder="0"
+                                                                maxLength="5" /><span class="year_value">%</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="type_wrong_value"
+                                                        ng-show="showErrorInflation && inflationRate < 1">
+                                                        Minimum value should be 1
+                                                    </p>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+
+                                                        <rzslider class="custom-slider"
+                                                            rz-slider-model="inflationRate_slide"
+                                                            rz-slider-options="priceSlider.options_inflationRate">
+                                                        </rzslider>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">What are the value of the home you're
+                                                            planning to buy? (as of today)</p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value">
+
+                                                            <!-- <input type="text" ng-model="homeLoanAmount"
+                                                            class="calculter_input"
+                                                            ng-keyup="changehomeLoanRateTenure();"> -->
+                                                            <input type="number" step="1"
+                                                                ng-model="totalHomeLoanAmount_num"
+                                                                ng-class="showError === true? 'calculter_input error_input': 'calculter_input'"
+                                                                ng-keyup="changeValueForRange()" placeholder="0">
+                                                            <svg width="10" height="14" viewBox="0 0 10 14" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg" class="rupee_value">
+                                                                <path
+                                                                    d="M9.37058 3.17182C9.311 3.11216 9.23473 3.08238 9.14202 3.08238H7.44181C7.32905 2.53238 7.11692 2.05495 6.8054 1.65062H9.12203C9.21498 1.65062 9.29104 1.6208 9.35084 1.56129C9.41018 1.50166 9.43999 1.42536 9.43999 1.33258V0.318171C9.43999 0.225325 9.41022 0.14916 9.35084 0.0894681C9.29097 0.0299156 9.21491 0 9.12196 0H0.849386C0.75654 0 0.680375 0.0299156 0.620683 0.0894333C0.561166 0.149125 0.53125 0.22529 0.53125 0.318136V1.64055C0.53125 1.72671 0.562733 1.80127 0.625698 1.86424C0.688664 1.9272 0.763226 1.95869 0.849386 1.95869H2.29115C3.68973 1.95869 4.578 2.3331 4.95579 3.08221H0.849386C0.75654 3.08221 0.680271 3.11199 0.620683 3.17164C0.561166 3.23137 0.53125 3.3075 0.53125 3.40035V4.41462C0.53125 4.5074 0.561026 4.58367 0.620683 4.64318C0.680375 4.70291 0.756679 4.73262 0.849386 4.73262H5.0952C4.94935 5.27632 4.60959 5.69054 4.07591 5.97559C3.5422 6.26068 2.83806 6.40322 1.96302 6.40322H0.849386C0.763226 6.40322 0.688664 6.43474 0.625698 6.49767C0.562698 6.56067 0.53125 6.63527 0.53125 6.72136V7.98426C0.53125 8.07055 0.561026 8.14345 0.620683 8.20303C1.89333 9.55526 3.54395 11.4476 5.57232 13.8805C5.63204 13.9602 5.71486 13.9999 5.82094 13.9999H7.75978C7.89912 13.9999 7.99531 13.9404 8.04817 13.8208C8.11444 13.7015 8.10145 13.5888 8.00836 13.4827C6.07301 11.1096 4.5516 9.3331 3.44459 8.15323C4.57149 8.02068 5.48626 7.65602 6.18895 7.05955C6.89153 6.46302 7.31902 5.6873 7.47159 4.73279H9.14202C9.23473 4.73279 9.31103 4.70305 9.37058 4.64336C9.43031 4.58384 9.46019 4.50757 9.46019 4.41479V3.40062C9.46019 3.30767 9.43031 3.23151 9.37058 3.17182Z"
+                                                                    fill="#64757C"></path>
+                                                            </svg>
+                                                        </div>
+                                                    </div>
+                                                    <p class="type_wrong_value" ng-show="showError">
+                                                        Minimum value should be ₹500000 (without decimal)
+                                                    </p>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+
+                                                        <rzslider class="custom-slider"
+                                                            rz-slider-model="totalHomeLoanAmount"
+                                                            rz-slider-options="priceSlider.options_homeLoanAmount">
+                                                        </rzslider>
+
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">How much can you pay on your own</p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorOwnPercent === true? 'calculter_input small_input error_input' : 'calculter_input small_input'"
+                                                                ng-model="ownPercentage"
+                                                                ng-keyup="changehomeLoanRateTenure()" placeholder="0"
+                                                                maxLength="5" /><span class="year_value">%</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="type_wrong_value"
+                                                        ng-show="showErrorOwnPercent && ownPercentage < 1">
+                                                        Minimum value should be 1
+                                                    </p>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+
+                                                        <rzslider class="custom-slider"
+                                                            rz-slider-model="ownPercentage_slide"
+                                                            rz-slider-options="priceSlider.options_own_percnt">
+                                                        </rzslider>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">Loan Tenure</p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorYear === true? 'calculter_input small_input error_input' : 'calculter_input small_input'"
+                                                                ng-model="homeLoanTenure" placeholder="0" maxLength="2"
+                                                                pattern="[0-9]+" title="please enter number only"
+                                                                required="required"
+                                                                ng-keyup="changehomeLoanRateTenure()">
+                                                            <span class="year_value">Yr</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="type_wrong_value"
+                                                        ng-show="showErrorYear || homeLoanTenure < 1">
+                                                        Minimum value should be 1
+                                                    </p>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+                                                        <rzslider class="custom-slider"
+                                                            rz-slider-model="homeLoanTenure1"
+                                                            rz-slider-options="priceSlider.options_yrs"></rzslider>
+                                                    </div>
+
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-md-8 col-8">
+                                                        <p class="topic_name">Loan Interest Rate (Annual)</p>
+                                                    </div>
+                                                    <div class="col-lg-4  col-md-4 col-4 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorRate === true?'calculter_input small_input error_input' :'calculter_input small_input'"
+                                                                ng-model="homeLoanRate"
+                                                                ng-keyup="changehomeLoanRateTenure()" placeholder="0"
+                                                                maxLength="5" /><span class="year_value">%</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="type_wrong_value"
+                                                        ng-show="showErrorRate && homeLoanRate < 1">
+                                                        Minimum value should be 1
+                                                    </p>
+
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+
+                                                        <rzslider class="custom-slider" rz-slider-model="homeLoanRate1"
+                                                            rz-slider-options="priceSlider.options_percnt">
+                                                        </rzslider>
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+
+                                            <div class="inner_calculate_box">
+                                                <ul class="nav nav-pills tab_for_calculator justify-content-center"
+                                                    role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link result-heading {{isNow? 'active' : ''}}"
+                                                            data-toggle="pill" href="#wealth_created"
+                                                            style="border-right: 1px solid #83bfb7;"
+                                                            ng-click="changeSelectTab(true)">Now</a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link  result-heading {{!isNow? 'active' : ''}}"
+                                                            data-toggle="pill" href="#sensitivity_analysis"
+                                                            ng-click="changeSelectTab(false)">Later</a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content">
+                                                    <div id="wealth_created" class="tab-pane {{isNow? 'active' : ''}}">
+                                                        <p class="calculate_value_for">
+                                                            Monthly EMI
+                                                        </p>
+                                                        <p class="calculate_value_amount">
+                                                            <svg width="22" height="29" viewBox="0 0 22 29" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M21.628 6.57026C21.4885 6.44668 21.3099 6.385 21.0928 6.385H17.1116C16.8475 5.24569 16.3508 4.25672 15.6213 3.41917H21.046C21.2636 3.41917 21.4417 3.35741 21.5818 3.23413C21.7207 3.11062 21.7905 2.95256 21.7905 2.76038V0.659074C21.7905 0.466748 21.7208 0.308977 21.5818 0.185329C21.4416 0.0619686 21.2635 0 21.0458 0H1.67464C1.45723 0 1.27888 0.0619686 1.13911 0.185257C0.999738 0.308905 0.929688 0.466676 0.929688 0.659002V3.39832C0.929688 3.57679 1.00341 3.73124 1.15085 3.86167C1.29829 3.9921 1.47289 4.05732 1.67464 4.05732H5.05069C8.32562 4.05732 10.4056 4.8329 11.2903 6.38464H1.67464C1.45723 6.38464 1.27864 6.44632 1.13911 6.5699C0.999738 6.69362 0.929688 6.85132 0.929688 7.04364V9.14466C0.929688 9.33684 0.999412 9.49483 1.13911 9.61812C1.27888 9.74184 1.45756 9.80337 1.67464 9.80337H11.6167C11.2752 10.9296 10.4796 11.7877 9.22992 12.3781C7.98018 12.9687 6.33134 13.2639 4.28234 13.2639H1.67464C1.47289 13.2639 1.29829 13.3292 1.15085 13.4596C1.00333 13.5901 0.929688 13.7446 0.929688 13.9229V16.539C0.929688 16.7177 0.999412 16.8687 1.13911 16.9922C4.11916 19.7932 7.98426 23.7131 12.7339 28.7528C12.8738 28.9178 13.0677 29 13.3161 29H17.8561C18.1824 29 18.4076 28.8768 18.5314 28.6291C18.6866 28.382 18.6562 28.1485 18.4382 27.9288C13.9064 23.0129 10.3438 19.333 7.7516 16.889C10.3904 16.6144 12.5324 15.8591 14.1778 14.6235C15.823 13.3878 16.824 11.781 17.1813 9.80373H21.0928C21.3099 9.80373 21.4886 9.74213 21.628 9.61848C21.7679 9.49519 21.8378 9.3372 21.8378 9.14502V7.04422C21.8378 6.85168 21.7679 6.69391 21.628 6.57026Z"
+                                                                    fill="#12274B"></path>
+                                                            </svg>{{homeLoanEmi|number:0 }}
+                                                        </p>
+                                                        <p class="calculate_value_details">
+                                                            On a principal loan amount of
+                                                            <span class="calculate_value_small">
+                                                                <svg width="9" height="11" viewBox="0 0 9 11"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                    style="margin-bottom:1px;">
+                                                                    <path
+                                                                        d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                        fill="#12274B"></path>
+                                                                </svg>{{homeLoanAmount.toLocaleString('en-IN')}}</span>
+                                                            at
+                                                            <span class="calculate_value_small">{{homeLoanRate < 1 ||
+                                                                    isNaN(homeLoanRate) ? 0 : homeLoanRate}}%</span>
+                                                                    for
+                                                                    <span class="calculate_value_small">{{homeLoanTenure
+                                                                        < 1 ? 0 : homeLoanTenure}} years</span>.
+                                                        </p>
+                                                        <div id="summary-box">
+                                                            <div class="mt-2">
+                                                                <canvas id="doughnut" class="chart chart-horizontal-bar"
+                                                                    chart-data="datachart" chart-labels="labels"
+                                                                    chart-colors="hchartcolors">
+                                                                </canvas>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center mt-5">
+                                                            <button type="button"
+                                                                class="btn elm-btn elm-blue-btn-primary"
+                                                                data-toggle="modal"
+                                                                data-target="#distributionModal">View
+                                                                Emi
+                                                                Distribution</button>
+                                                        </div>
+                                                    </div>
+                                                    <div id="sensitivity_analysis"
+                                                        class="tab-pane {{!isNow? 'active' : ''}}">
+                                                        <p class="calculate_value_for">
+                                                            Monthly EMI
+                                                        </p>
+                                                        <p class="calculate_value_amount">
+                                                            <svg width="22" height="29" viewBox="0 0 22 29" fill="none"
+                                                                xmlns="http://www.w3.org/2000/svg">
+                                                                <path
+                                                                    d="M21.628 6.57026C21.4885 6.44668 21.3099 6.385 21.0928 6.385H17.1116C16.8475 5.24569 16.3508 4.25672 15.6213 3.41917H21.046C21.2636 3.41917 21.4417 3.35741 21.5818 3.23413C21.7207 3.11062 21.7905 2.95256 21.7905 2.76038V0.659074C21.7905 0.466748 21.7208 0.308977 21.5818 0.185329C21.4416 0.0619686 21.2635 0 21.0458 0H1.67464C1.45723 0 1.27888 0.0619686 1.13911 0.185257C0.999738 0.308905 0.929688 0.466676 0.929688 0.659002V3.39832C0.929688 3.57679 1.00341 3.73124 1.15085 3.86167C1.29829 3.9921 1.47289 4.05732 1.67464 4.05732H5.05069C8.32562 4.05732 10.4056 4.8329 11.2903 6.38464H1.67464C1.45723 6.38464 1.27864 6.44632 1.13911 6.5699C0.999738 6.69362 0.929688 6.85132 0.929688 7.04364V9.14466C0.929688 9.33684 0.999412 9.49483 1.13911 9.61812C1.27888 9.74184 1.45756 9.80337 1.67464 9.80337H11.6167C11.2752 10.9296 10.4796 11.7877 9.22992 12.3781C7.98018 12.9687 6.33134 13.2639 4.28234 13.2639H1.67464C1.47289 13.2639 1.29829 13.3292 1.15085 13.4596C1.00333 13.5901 0.929688 13.7446 0.929688 13.9229V16.539C0.929688 16.7177 0.999412 16.8687 1.13911 16.9922C4.11916 19.7932 7.98426 23.7131 12.7339 28.7528C12.8738 28.9178 13.0677 29 13.3161 29H17.8561C18.1824 29 18.4076 28.8768 18.5314 28.6291C18.6866 28.382 18.6562 28.1485 18.4382 27.9288C13.9064 23.0129 10.3438 19.333 7.7516 16.889C10.3904 16.6144 12.5324 15.8591 14.1778 14.6235C15.823 13.3878 16.824 11.781 17.1813 9.80373H21.0928C21.3099 9.80373 21.4886 9.74213 21.628 9.61848C21.7679 9.49519 21.8378 9.3372 21.8378 9.14502V7.04422C21.8378 6.85168 21.7679 6.69391 21.628 6.57026Z"
+                                                                    fill="#12274B"></path>
+                                                            </svg>{{homeLoanEmi|number:0 }}
+                                                        </p>
+                                                        <p class="calculate_value_details">
+                                                            On a principal loan amount of
+                                                            <span class="calculate_value_small">
+                                                                <svg width="9" height="11" viewBox="0 0 9 11"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                    style="margin-bottom:1px;">
+                                                                    <path
+                                                                        d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                        fill="#12274B"></path>
+                                                                </svg>{{homeLoanAmount.toLocaleString('en-IN')}}</span>
+                                                            at
+                                                            <span class="calculate_value_small">{{homeLoanRate < 1 ? 0:
+                                                                    homeLoanRate}}%</span>
+                                                                    for
+                                                                    <span
+                                                                        class="calculate_value_small">{{homeLoanTenure}}
+                                                                        years</span>.
+                                                        </p>
+                                                        <div id="summary-box">
+                                                            <div class="mt-2">
+                                                                <canvas id="doughnut" class="chart chart-horizontal-bar"
+                                                                    chart-data="datachart" chart-labels="labels"
+                                                                    chart-colors="hchartcolors">
+                                                                </canvas>
+                                                            </div>
+                                                        </div>
+                                                        <div class="text-center mt-5">
+                                                            <button type="button"
+                                                                class="btn elm-btn elm-blue-btn-primary"
+                                                                data-toggle="modal"
+                                                                data-target="#distributionModal">View
+                                                                Emi
+                                                                Distribution</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculator_text">
+                                    <p><br></p>
+                                </div>
+                            </div>
+                            <!-----Emi Distrubution Modal Start --->
+
+                            <!-- The Modal -->
+                            <div class="modal" id="distributionModal">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+
+                                        <!-- Modal Header -->
+                                        <div class="modal-header">
+                                            <h4 class="modal-title">Emi Distribution (Impact of Rate of Return vs. Time)
+                                            </h4>
+                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                        </div>
+
+                                        <!-- Modal body -->
+                                        <div class="modal-body">
+                                            <div class="panel panel-default">
+
+                                                <div class="panel-body" style="overflow-x:auto;">
+
+                                                    <table class="table table-bordered table-responsive">
+                                                        <thead class="panel panel-default">
+                                                            <tr class="panel-heading">
+                                                                <th class="panel-title" width="10%"
+                                                                    style="text-align:center">Year</th>
+                                                                <th class="panel-title" width="15%"
+                                                                    style="text-align:center">Principal(A)</th>
+                                                                <th class="panel-title" width="15%"
+                                                                    style="text-align:center">Interest(B)</th>
+                                                                <th class="panel-title" width="20%"
+                                                                    style="text-align:center">Total (A+B)</th>
+                                                                <th class="panel-title" width="20%"
+                                                                    style="text-align:center">Outstanding</th>
+                                                                <th class="panel-title" width="20%"
+                                                                    style="text-align:center">Loan Paid To Date</th>
+
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody ng-repeat="y in yearArr">
+                                                            <tr ng-click="monthdetails(y)">
+                                                                <td style="text-align:center;cursor:pointer;"><span
+                                                                        ng-show="showYear!=y"><strong>
+                                                                            <svg xmlns="http://www.w3.org/2000/svg"
+                                                                                height="1em" viewBox="0 0 448 512">
+                                                                                <path
+                                                                                    d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z">
+                                                                                </path>
+                                                                            </svg>
+                                                                        </strong></span>
+                                                                    <span ng-show="showYear==y">
+                                                                        <strong><svg xmlns="http://www.w3.org/2000/svg"
+                                                                                height="1em" viewBox="0 0 448 512">
+                                                                                <path
+                                                                                    d="M432 256c0 17.7-14.3 32-32 32L48 288c-17.7 0-32-14.3-32-32s14.3-32 32-32l352 0c17.7 0 32 14.3 32 32z">
+                                                                                </path>
+                                                                            </svg><strong></span>
+                                                                    <strong>{{y}}</strong>
+                                                                </td>
+                                                                <td style="text-align:right">
+                                                                    {{yearDataArr[y].principal| number:0}}</td>
+                                                                <td style="text-align:right">
+                                                                    {{yearDataArr[y].interest| number:0}}</td>
+                                                                <td style="text-align:right">
+                                                                    {{yearDataArr[y].total| number:0}}</td>
+                                                                <td style="text-align:right">
+                                                                    {{yearDataArr[y].outstanding| number:0}}</td>
+                                                                <td style="text-align:right">
+                                                                    {{(((homeLoanAmount-yearDataArr[y].outstanding)*100)/homeLoanAmount)|number:2}}%
+                                                                </td>
+                                                            </tr>
+                                                            <tr ng-repeat="x in emiDistribution[y]"
+                                                                ng-show="showYear==y" style="background-color:#eee">
+                                                                <td style="text-align:center">{{monthArr[x.month-1]}}
+                                                                </td>
+                                                                <td style="text-align:right">{{x.principal| number:0}}
+                                                                </td>
+                                                                <td style="text-align:right">{{x.interest| number:0}}
+                                                                </td>
+                                                                <td style="text-align:right">{{x.total| number:0}}</td>
+                                                                <td style="text-align:right">{{x.outstanding| number:0}}
+                                                                </td>
+                                                                <td style="text-align:right">
+                                                                    {{(((homeLoanAmount-x.outstanding)*100)/homeLoanAmount)|number:2}}%
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Modal footer -->
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn elm-btn elm-blue-btn-primary"
+                                                data-dismiss="modal">Close</button>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/jquery-3.6.min.js"></script>
+    <script defer src="stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/home_loan_calculator_v2.js"></script>
+
+</body>
+
+
+</html>

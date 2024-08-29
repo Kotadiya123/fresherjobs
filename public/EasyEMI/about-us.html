@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <title>About Us</title>
+    <meta name="keywords"
+        content="sip calculator, sip return calculator, sip calculator download, sip calculator yearly, financial calculator, mf sip calculator, sip maturity calculator, yearly sip calculator" />
+    <meta name="description"
+        content="Use our SIP calculator to plan and calculate your investments. Optimize your returns with precise calculations. Start investing today and maximize your wealth." />
+
+    <link rel="canonical" href="sip-calculator.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+
+    <link rel="stylesheet" href="site/css/rzslider.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/calculator_sip.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/custom_slider_v2.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main ">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Financial
+                                    Calculator</a></li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">About Us</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-app="calculatorApp" ng-controller="calculatorController">
+            <div ng-show="sipStep == 1">
+                <section class="calculator_screen">
+                    <div class="custom_container">
+                        <div class="row">
+                            <div>
+                                <div class="calculator_text">
+                                    <style>
+                                        .calculator_text {
+                                            margin-top: 50px;
+                                        }
+
+                                        .calculator_text a {
+                                            font-weight: 700;
+                                            color: #155bd3 !important;
+                                        }
+
+                                        .calculator_text h3 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                        }
+
+                                        .calculator_text h4 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 600;
+                                        }
+
+                                        .calculator_text img {
+                                            max-width: 100%;
+                                            height: auto;
+                                        }
+
+                                        .calculator_text p,
+                                        .calculator_text ul {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                            margin-bottom: 16px;
+                                        }
+
+                                        @media (min-width:200px) and (max-width:768px) {
+                                            .calculator_text h3 {
+                                                margin: 28px 0 10px;
+                                                color: #12274B;
+                                                font-size: 22px;
+                                                line-height: 33px;
+                                                font-weight: 700;
+                                            }
+
+                                            .calculator_text h4 {
+                                                margin: 48px 0 20px;
+                                                color: #12274B;
+                                                font-weight: 600;
+                                            }
+
+                                            .calculator_text h4 {
+                                                font-size: 20px;
+                                            }
+
+                                            .calculator_text p,
+                                            .calculator_text ul {
+                                                font-size: 14px;
+                                                line-height: 24px;
+                                            }
+                                        }
+                                    </style>
+
+
+                                    <div class="calculator_text">
+                                        <h2>
+                                            About Us
+                                        </h2>
+                                        <p>Welcome to our online EMI Calculator, your go-to tool for managing your
+                                            finances with ease and confidence.
+                                            Whether you're planning a big purchase or simply want to manage your
+                                            existing loans more effectively, our calculator is designed to provide you
+                                            with accurate and quick calculations of your Equated Monthly Installment
+                                            (EMI) amounts.</p>
+                                        <p>
+                                            We are a group of IT professionals enthusiastic in creating quality free
+                                            tools and content on the Internet.
+                                            The main purpose of this website is to provide a comprehensive collection of
+                                            free online calculators for ease of public use.
+                                            This site was launched on calculators.
+                                        </p>
+                                        <p>Our mission is to empower users with the financial knowledge they need to
+                                            make informed decisions.
+                                            We understand that managing loans can be overwhelming, and that's why we've
+                                            created a user-friendly platform that simplifies the process. With just a
+                                            few clicks, you can input your loan amount, interest rate, and tenure to
+                                            instantly see your EMI amount and gain better control over your financial
+                                            planning.</p>
+                                        <p>We are committed to transparency, accuracy, and ease of use. Our calculator
+                                            is built using the latest technology to ensure that your data is processed
+                                            quickly and securely.
+                                            Whether you're a first-time borrower or a seasoned investor, our tool is
+                                            here to help you navigate the complexities of loans with clarity.</p>
+                                        <p>Thank you for choosing our EMI Calculator. We're here to support you on your
+                                            financial journey, helping you achieve your goals with confidence and peace
+                                            of mind.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <script>
+            const rangeInputs = document.querySelectorAll('input[type="range"]');
+            const min = rangeInputs[0].min
+            const max = rangeInputs[0].max
+            const val = rangeInputs[0].value / 2;
+            document.querySelector('.slider_bg').style.width = (val - min) * 100 / (max - min) + '%';
+
+            function handleInputChange(e) {
+                let target = e.target
+                const min = target.min
+                const max = target.max
+                const val = target.value
+                document.querySelector('.slider_bg').style.width = (val - min) * 100 / (max - min) + '%';
+            }
+
+            rangeInputs.forEach(input => {
+                input.addEventListener('input', handleInputChange)
+            })
+        </script>
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/sip_calculator_v2.js"></script>
+
+</body>
+
+
+</html>

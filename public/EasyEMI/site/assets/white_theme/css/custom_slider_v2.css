@@ -1,0 +1,137 @@
+.custom-slider.rzslider .rz-bar,
+.input_range_slider {
+    background: #ddeaf5;
+    height: 5px
+}
+
+.type_info_value,
+.type_wrong_value {
+    position: absolute;
+    bottom: -20px;
+    font-size: 10px;
+    font-weight: 500;
+    text-align: right;
+    width: 100%;
+    right: 15px
+}
+
+.custom-slider {
+    margin-bottom: 60px;
+    margin-top: 35px
+}
+
+.custom-slider.rzslider .rz-selection {
+    background: #0cc490
+}
+
+.custom-slider.rzslider .rz-pointer {
+    width: 16px;
+    height: 16px;
+    top: auto;
+    bottom: -6px;
+    background-color: #0cc490;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #b6bfc3
+}
+
+.custom-slider.rzslider .rz-pointer.rz-active {
+    outline: 0 !important
+}
+
+.custom-slider.rzslider .rz-bubble,
+.custom-slider.rzslider .rz-pointer:after {
+    display: none
+}
+
+.custom-slider.rzslider .rz-tick {
+    width: 1px;
+    height: 10px;
+    margin-left: 4px;
+    border-radius: 0;
+    background: #bef7ef;
+    top: -1px
+}
+
+.custom-slider.rzslider .rz-tick.rz-selected {
+    background: #5fcaba
+}
+
+.input_range_slider {
+    width: 100%;
+    outline: 0;
+    border: none;
+    border-radius: 6px;
+    appearance: none
+}
+
+.input_range_slider::-webkit-slider-thumb {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: #0cc490;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #b6bfc3;
+    position: relative;
+    z-index: 99
+}
+
+.input_range_slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    background-color: #0cc490;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px #b6bfc3;
+    position: relative;
+    z-index: 99;
+    border: none !important
+}
+
+.slider_bg {
+    position: absolute;
+    content: '';
+    height: 5px;
+    border-radius: 6px;
+    top: 35px;
+    z-index: 9;
+    left: 0;
+    background: #0cc490
+}
+
+.type_wrong_value {
+    color: red
+}
+
+.type_info_value {
+    line-height: 10px
+}
+
+.error_input {
+    color: red !important;
+}
+
+.error_input::placeholder {
+    color: red
+}
+
+.error_input::-ms-input-placeholder {
+    color: red
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+@media (min-width:200px) and (max-width:768px) {
+    .custom-slider {
+        margin-bottom: 45px !important;
+        margin-top: 30px !important
+    }
+
+    .slider_bg {
+        top: 31px
+    }
+}

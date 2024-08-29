@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en-IN" ng-app="elmSite">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+    <meta name="theme-color" content="#333">
+    <meta name="referrer" content="no-referrer-when-downgrade">
+
+    <link rel="preconnect" href="https://stackpath.bootstrapcdn.com/">
+
+    <title>Become a Crorepati Calculator | Money Saving Calculator</title>
+    <meta name="keywords" content="become a crorepati calculator, crorepati calculator" />
+    <meta name="description"
+        content="Become a Crorepati Calculator helps you calculate how much money you need to save monthly to become a crorepati." />
+
+    <link rel="canonical" href="become-crorepati-calculator.html" />
+    <link href="favicon.svg" type="image/x-icon" rel="icon" />
+
+    <link rel="stylesheet" href="stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" as="style" />
+
+    <link rel="stylesheet" href="site/css/index.html" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/calculator_become_crorepati.css" />
+    <link rel="stylesheet" href="site/assets/white_theme/css/custom_slider_v2.css" />
+
+    <link rel="stylesheet" href="mainbfeabfea.css?v=YpCF34JgaGesc6TSrIoF8lJOHeWvVf5HDOojQ4b5BVM" type="text/css" />
+</head>
+
+<body ng-cloak="">
+    <header class="layout-header">
+        <nav class="layout-header-nav">
+            <div class="logo-wrapper">
+                <a class="logo img-logo" href="index-2.html">
+                    <img src="favicon.svg" alt="Company Logo" width="30">
+                    <span class="logo-text">fresherjobs</span>
+                </a>
+            </div>
+            <div class="page-title">
+                <h1><span class="converter-icon"></span><span class="main-title js-main-title">Online Financial
+                        calculator</span></h1>
+            </div>
+            <div class="header-links">
+                <div class="user-menu">
+                    <a href="index-2.html" class="menu-item show-unauth">Home</a>
+                    <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                    <a href="career.html" class="menu-item show-unauth">Career</a>
+                    <a href="privacy-and-policy.html" class="menu-item profile-link show-auth">Privacy & Terms</a>
+                    <a href="contact-us.html" class="menu-item show-unauth">Contact Us</a>
+                </div>
+            </div>
+
+        </nav>
+    </header>
+    <main role="main ">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-12">
+                    <nav aria-label="breadcrumb" class="custom-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index-2.html">Financial Calculator</a>
+                            </li>
+                            <li class="breadcrumb-item"><a href="javascript:void(0)">Become a Crorepati Calculator</a>
+                            </li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <div ng-app="becomeApp" ng-controller="becomeController">
+
+            <div ng-show="sipStep == 1">
+                {{goalcalculateSip()}}
+                <section class="calculator_screen">
+                    <div class="custom_container">
+                        <div class="row">
+                            <div class="col-lg-3">
+                                <style>
+                                    .calculator_left_menu_bg {
+                                        background: linear-gradient(white, #fff) padding-box, linear-gradient(to bottom, #bcdefc, rgba(255, 141, 33, .58)) border-box;
+                                        border: 2px solid transparent;
+                                        border-radius: 20px;
+                                        overflow: hidden
+                                    }
+
+                                    .calculator_left_menu {
+                                        padding: 18px 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list {
+                                        list-style: none;
+                                        padding: 0;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu {
+                                        color: #404040 !important;
+                                        font-size: 14px;
+                                        font-weight: 400;
+                                        line-height: 50px;
+                                        display: block;
+                                        position: relative;
+                                        padding: 0 28px;
+                                        margin: 0
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu svg {
+                                        position: absolute;
+                                        right: 25px;
+                                        top: 50%;
+                                        transform: translateY(-50%)
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu svg path {
+                                        fill: #EE9949
+                                    }
+
+                                    .calculator_left_menu .Calculator-list li .Calculator-side-menu.active-side-menu {
+                                        background: #f9f9fd;
+                                        color: #1d458a !important;
+                                        font-weight: 500
+                                    }
+
+                                    .calculator_left_menu .left_menu_header {
+                                        color: #12274b;
+                                        font-size: 18px;
+                                        font-weight: 600;
+                                        line-height: 40px;
+                                        text-transform: capitalize;
+                                        margin-bottom: 6px;
+                                        padding: 0 28px
+                                    }
+
+                                    .calc_menu_show_btn,
+                                    .calculator_left_menu .close_btn {
+                                        display: none
+                                    }
+
+                                    @media (min-width:200px) and (max-width:768px) {
+                                        .calculator_left_menu_bg {
+                                            position: fixed;
+                                            z-index: 99;
+                                            margin: 0;
+                                            width: 100%;
+                                            left: 0;
+                                            bottom: -400%;
+                                            height: auto;
+                                            top: auto;
+                                            border-radius: 0;
+                                            transition: .7s;
+                                            overflow: visible
+                                        }
+
+                                        .calculator_left_menu_bg.show {
+                                            bottom: 0;
+                                            transition: .7s;
+                                            top: 50%;
+                                            border-left: none;
+                                            border-right: none
+                                        }
+
+                                        .calculator_left_menu .close_btn {
+                                            display: inline-block;
+                                            position: absolute;
+                                            top: -16px;
+                                            right: 8px;
+                                            border: 2px solid #bcddfb;
+                                            border-radius: 100px;
+                                            background: #fff;
+                                            color: #000;
+                                            font-size: 18px;
+                                            width: 30px;
+                                            height: 30px;
+                                            line-height: 24px;
+                                            padding: 0;
+                                            z-index: 9
+                                        }
+
+                                        .calc_menu_show_btn {
+                                            display: block;
+                                            left: 0;
+                                            right: 0;
+                                            position: fixed;
+                                            bottom: 0;
+                                            background: #fff;
+                                            border: none;
+                                            font-size: 14px;
+                                            z-index: 9;
+                                            box-shadow: 0 -3px 3px rgba(0, 0, 0, .11);
+                                            color: #1d458a;
+                                            font-weight: 500;
+                                            line-height: 50px
+                                        }
+
+                                        .calc_menu_show_btn svg {
+                                            margin-bottom: 2px
+                                        }
+
+                                        .calculator_left_menu .Calculator-list {
+                                            height: 300px;
+                                            overflow-x: scroll
+                                        }
+                                    }
+                                </style>
+                                <button class="calc_menu_show_btn" onclick=showCalculatorMenu()>
+                                    Financial Calculators
+                                    <svg width="12" height="11" viewBox="0 0 12 11" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M11.3906 5.73713C11.3906 5.92577 11.3186 6.11439 11.1748 6.25822L6.64894 10.7841C6.36104 11.072 5.89425 11.072 5.60647 10.7841C5.31868 10.4963 5.31868 10.0296 5.60647 9.74167L9.61123 5.73713L5.6066 1.73257C5.31882 1.44467 5.31882 0.978024 5.6066 0.69026C5.89439 0.402217 6.36118 0.402217 6.64908 0.69026L11.175 5.21604C11.3188 5.35994 11.3906 5.54856 11.3906 5.73713Z"
+                                            fill="#EE9949" />
+                                        <path
+                                            d="M6.39062 5.73713C6.39062 5.92577 6.3186 6.11439 6.17484 6.25822L1.64894 10.7841C1.36104 11.072 0.894252 11.072 0.606465 10.7841C0.318678 10.4963 0.318678 10.0296 0.606465 9.74167L4.61123 5.73713L0.606605 1.73257C0.318818 1.44467 0.318818 0.978024 0.606605 0.69026C0.894392 0.402217 1.36118 0.402217 1.64908 0.69026L6.17498 5.21604C6.31876 5.35994 6.39062 5.54856 6.39062 5.73713Z"
+                                            fill="#EE9949" />
+                                    </svg>
+                                </button>
+                                <div class="calculator_left_menu_bg">
+                                    <div class="calculator_left_menu">
+                                        <button class="close_btn" onclick=showCalculatorMenu()>
+                                            <span aria-hidden="true">×</span>
+                                        </button>
+                                        <p class="left_menu_header">Financial Calculators</p>
+                                        <ul class="Calculator-list">
+                                            <li>
+                                                <a href="sip-calculator.html" class="Calculator-side-menu ">SIP
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="step-up-calculator.html" class="Calculator-side-menu ">
+                                                    Step Up SIP
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="future-value-calculator.html" class="Calculator-side-menu ">
+                                                    Future
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cagr-calculator.html" class="Calculator-side-menu "> CAGR
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="cost-of-delay-calculator.html" class="Calculator-side-menu ">
+                                                    Cost
+                                                    Of
+                                                    Delay Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="present-value-calculator.html" class="Calculator-side-menu ">
+                                                    Present
+                                                    Value Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0)"
+                                                    class="Calculator-side-menu active-side-menu">
+                                                    Become
+                                                    a Crorepati Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="emi-calculator.html" class="Calculator-side-menu "> EMI
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="apy-calculator.html" class="Calculator-side-menu "> Atal
+                                                    Pension Yojana Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="tds-calculator.html" class="Calculator-side-menu ">TDS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="retirement-calculator.html"
+                                                    class="Calculator-side-menu ">Retirement
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="home-loan-calculator.html" class="Calculator-side-menu ">
+                                                    Home Loan Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="ppf-calculator.html" class="Calculator-side-menu "> PPF
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="car-loan-calculator.html" class="Calculator-side-menu ">
+                                                    Car Loan EMI Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="inflation-calculator.html" class="Calculator-side-menu ">
+                                                    Inflation Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+
+                                            <li>
+                                                <a href="gst-calculator.html" class="Calculator-side-menu "> GST
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="nps-calculator.html" class="Calculator-side-menu "> NPS
+                                                    Calculator
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a href="sukanya-samriddhi-yojana-calculator.html"
+                                                    class="Calculator-side-menu ">
+                                                    Sukanya Samriddhi Yojana
+                                                    <svg width="8" height="14" viewBox="0 0 8 14" fill="none"
+                                                        xmlns="http://www.w3.org/2000/svg">
+                                                        <path
+                                                            d="M7.26562 7.12292C7.26562 7.34301 7.18159 7.56307 7.01388 7.73086L1.73366 13.011C1.39777 13.3469 0.85319 13.3469 0.517439 13.011C0.181687 12.6753 0.181687 12.1308 0.517439 11.7949L5.18967 7.12293L0.517601 2.45094C0.18185 2.11505 0.18185 1.57063 0.517601 1.23491C0.853353 0.898858 1.39794 0.898858 1.73382 1.23491L7.01404 6.51499C7.18178 6.68287 7.26562 6.90292 7.26562 7.12292Z"
+                                                            fill="#1D458A" />
+                                                    </svg>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <script>
+                                    const showCalculatorMenu = () => {
+                                        document.querySelector('.calculator_left_menu_bg').classList.toggle("show");
+                                    }
+                                </script>
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="calculator_function_box">
+                                    <div class="calculator_function_banner">
+                                        <div class="row align-items-center">
+                                            <div class="col-lg-7 col-md-8">
+                                                <div class="about_calc">
+                                                    <h1 class="calculator_name">
+                                                        {{CalculatorName}}
+                                                    </h1>
+                                                    <p class="calc_description">
+                                                        This calculator will help you to calculate the amount you need
+                                                        to invest in order to become a crorepati by your desired age.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-5 col-md-4">
+                                                <div class="calc_banner_img">
+                                                    <img src="https://d24uab5gycr2uz.cloudfront.net/uploads/white_theme/images/calculator_page/crorepati_cals_banner.webp"
+                                                        class="img-fluid"
+                                                        alt="Become a Crorepati Calculator - Plan your path to one crore rupees"
+                                                        height="205px" width="398px">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row calc_variables_graph">
+                                        <div class="col-md-6">
+                                            <div class="calc_variables">
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-7">
+                                                        <p class="topic_name">
+                                                            Current Age
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-4 col-5 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorCurrrentAge === true?'calculter_input small_input error_input' :'calculter_input small_input'"
+                                                                ng-model="current_age" ng-change="manageCurrentAge()"
+                                                                maxLength="2"><span class="year_value">Yr</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row mb-2">
+                                                    <div class="col-lg-12">
+                                                        <rzslider class="custom-slider" rz-slider-model="current_age"
+                                                            rz-slider-options="priceSlider.options_current_age">
+                                                        </rzslider>
+
+                                                    </div>
+                                                </div>
+
+                                                <div class="row">
+                                                    <div class="col-lg-8 col-7">
+                                                        <p class="topic_name">
+                                                            Age when you want to be Crorepati
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-4 col-5 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showErrorGoalAge === true?'calculter_input small_input error_input' :'calculter_input small_input'"
+                                                                ng-model="goal_age" ng-change="manageGoalAge()"
+                                                                maxLength="2"><span class="year_value">Yr</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <rzslider class="custom-slider" rz-slider-model="goal_age"
+                                                            rz-slider-options="priceSlider.options_goal_age"></rzslider>
+                                                    </div>
+                                                </div>
+                                                <div class="row" style="position:relative;">
+                                                    <div class="col-lg-8 col-7">
+                                                        <p class="topic_name">
+                                                            Expected annual rate of return
+                                                        </p>
+                                                    </div>
+                                                    <div class="col-lg-4 col-5 m-auto">
+                                                        <div class="input_value text-right">
+                                                            <input type="text"
+                                                                ng-class="showRateError === true ?  'calculter_input small_input error_input' :'calculter_input small_input'"
+                                                                ng-model="anualRateGoal" ng-change="manageRate()"
+                                                                placeholder="0" maxLength="5" /><span
+                                                                class="year_value">%</span>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="type_wrong_value"
+                                                        ng-show="showRateError && anualRateGoal < 1">
+                                                        Minimum value should be 1
+                                                    </p>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-lg-12">
+                                                        <rzslider class="custom-slider"
+                                                            rz-slider-model="anualRateGoal_slide"
+                                                            rz-slider-options="priceSlider.options_percnt"></rzslider>
+                                                    </div>
+
+                                                </div>
+                                                <p class="text-center" ng-if="showError === true " style="color: red;">
+                                                    The age you want to become a crorepati cannot be less than your
+                                                    current age.</p>
+
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="inner_calculate_box">
+                                                <ul class="nav nav-pills tab_for_calculator" role="tablist">
+                                                    <li class="nav-item">
+                                                        <a class="nav-link active result-heading" data-toggle="pill"
+                                                            href="#wealth_created"
+                                                            style="border-right: 1px solid #83bfb7;">
+                                                            Monthly SIP
+                                                        </a>
+                                                    </li>
+                                                    <li class="nav-item">
+                                                        <a class="nav-link  result-heading" data-toggle="pill"
+                                                            href="#sensitivity_analysis">
+                                                            One Time Investment
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <div class="tab-content mt-2">
+                                                    <div id="wealth_created" class="tab-pane active">
+                                                        <div class="show-value-inner-box">
+                                                            <p class="calculate_value_for">{{CalculatorName}}</p>
+
+                                                            <div class="calculate_value_amount">
+                                                                <svg width="22" height="29" viewBox="0 0 22 29"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M21.628 6.57026C21.4885 6.44668 21.3099 6.385 21.0928 6.385H17.1116C16.8475 5.24569 16.3508 4.25672 15.6213 3.41917H21.046C21.2636 3.41917 21.4417 3.35741 21.5818 3.23413C21.7207 3.11062 21.7905 2.95256 21.7905 2.76038V0.659074C21.7905 0.466748 21.7208 0.308977 21.5818 0.185329C21.4416 0.0619686 21.2635 0 21.0458 0H1.67464C1.45723 0 1.27888 0.0619686 1.13911 0.185257C0.999738 0.308905 0.929688 0.466676 0.929688 0.659002V3.39832C0.929688 3.57679 1.00341 3.73124 1.15085 3.86167C1.29829 3.9921 1.47289 4.05732 1.67464 4.05732H5.05069C8.32562 4.05732 10.4056 4.8329 11.2903 6.38464H1.67464C1.45723 6.38464 1.27864 6.44632 1.13911 6.5699C0.999738 6.69362 0.929688 6.85132 0.929688 7.04364V9.14466C0.929688 9.33684 0.999412 9.49483 1.13911 9.61812C1.27888 9.74184 1.45756 9.80337 1.67464 9.80337H11.6167C11.2752 10.9296 10.4796 11.7877 9.22992 12.3781C7.98018 12.9687 6.33134 13.2639 4.28234 13.2639H1.67464C1.47289 13.2639 1.29829 13.3292 1.15085 13.4596C1.00333 13.5901 0.929688 13.7446 0.929688 13.9229V16.539C0.929688 16.7177 0.999412 16.8687 1.13911 16.9922C4.11916 19.7932 7.98426 23.7131 12.7339 28.7528C12.8738 28.9178 13.0677 29 13.3161 29H17.8561C18.1824 29 18.4076 28.8768 18.5314 28.6291C18.6866 28.382 18.6562 28.1485 18.4382 27.9288C13.9064 23.0129 10.3438 19.333 7.7516 16.889C10.3904 16.6144 12.5324 15.8591 14.1778 14.6235C15.823 13.3878 16.824 11.781 17.1813 9.80373H21.0928C21.3099 9.80373 21.4886 9.74213 21.628 9.61848C21.7679 9.49519 21.8378 9.3372 21.8378 9.14502V7.04422C21.8378 6.85168 21.7679 6.69391 21.628 6.57026Z"
+                                                                        fill="#12274B"></path>
+                                                                </svg>{{monthlyinvestment.toLocaleString('en-IN')}}
+                                                                <span>Per Month</span>
+                                                            </div>
+
+                                                            <p class="calculate_value_details">
+                                                                You have to invest
+                                                                <span class="calculate_value_small">
+                                                                    <svg width="9" height="11" viewBox="0 0 9 11"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        style="margin-bottom:1px;">
+                                                                        <path
+                                                                            d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                            fill="#12274B"></path>
+                                                                    </svg>{{monthlyinvestment.toLocaleString('en-IN')}}</span>
+                                                                per month for
+                                                                <span class="calculate_value_small"> {{totalYearGoal}}
+                                                                    {{totalYearGoal > 1 ? 'years':'year'}}</span> in
+                                                                order to become Crorepati.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                    <div id="sensitivity_analysis" class="tab-pane fade">
+                                                        <div class="show-value-inner-box">
+                                                            <p class="calculate_value_for">{{CalculatorName}}</p>
+                                                            <div class="calculate_value_amount">
+                                                                <svg width="22" height="29" viewBox="0 0 22 29"
+                                                                    fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                                    <path
+                                                                        d="M21.628 6.57026C21.4885 6.44668 21.3099 6.385 21.0928 6.385H17.1116C16.8475 5.24569 16.3508 4.25672 15.6213 3.41917H21.046C21.2636 3.41917 21.4417 3.35741 21.5818 3.23413C21.7207 3.11062 21.7905 2.95256 21.7905 2.76038V0.659074C21.7905 0.466748 21.7208 0.308977 21.5818 0.185329C21.4416 0.0619686 21.2635 0 21.0458 0H1.67464C1.45723 0 1.27888 0.0619686 1.13911 0.185257C0.999738 0.308905 0.929688 0.466676 0.929688 0.659002V3.39832C0.929688 3.57679 1.00341 3.73124 1.15085 3.86167C1.29829 3.9921 1.47289 4.05732 1.67464 4.05732H5.05069C8.32562 4.05732 10.4056 4.8329 11.2903 6.38464H1.67464C1.45723 6.38464 1.27864 6.44632 1.13911 6.5699C0.999738 6.69362 0.929688 6.85132 0.929688 7.04364V9.14466C0.929688 9.33684 0.999412 9.49483 1.13911 9.61812C1.27888 9.74184 1.45756 9.80337 1.67464 9.80337H11.6167C11.2752 10.9296 10.4796 11.7877 9.22992 12.3781C7.98018 12.9687 6.33134 13.2639 4.28234 13.2639H1.67464C1.47289 13.2639 1.29829 13.3292 1.15085 13.4596C1.00333 13.5901 0.929688 13.7446 0.929688 13.9229V16.539C0.929688 16.7177 0.999412 16.8687 1.13911 16.9922C4.11916 19.7932 7.98426 23.7131 12.7339 28.7528C12.8738 28.9178 13.0677 29 13.3161 29H17.8561C18.1824 29 18.4076 28.8768 18.5314 28.6291C18.6866 28.382 18.6562 28.1485 18.4382 27.9288C13.9064 23.0129 10.3438 19.333 7.7516 16.889C10.3904 16.6144 12.5324 15.8591 14.1778 14.6235C15.823 13.3878 16.824 11.781 17.1813 9.80373H21.0928C21.3099 9.80373 21.4886 9.74213 21.628 9.61848C21.7679 9.49519 21.8378 9.3372 21.8378 9.14502V7.04422C21.8378 6.85168 21.7679 6.69391 21.628 6.57026Z"
+                                                                        fill="#12274B"></path>
+                                                                </svg>{{oneinvestment | customcurrency}}
+                                                                <span>One Time</span>
+                                                            </div>
+                                                            <p class="calculate_value_details">You have to invest <span
+                                                                    class="calculate_value_small">
+                                                                    <svg width="9" height="11" viewBox="0 0 9 11"
+                                                                        fill="none" xmlns="http://www.w3.org/2000/svg"
+                                                                        style="margin-bottom:1px;">
+                                                                        <path
+                                                                            d="M7.93738 2.49217C7.89056 2.44529 7.83063 2.4219 7.75779 2.4219H6.42192C6.33331 1.98974 6.16664 1.61462 5.92188 1.29692H7.74209C7.81512 1.29692 7.87488 1.2735 7.92186 1.22674C7.96849 1.17989 7.99191 1.11994 7.99191 1.04704V0.249994C7.99191 0.177042 7.96852 0.117198 7.92186 0.0702971C7.87483 0.0235053 7.81506 0 7.74203 0H1.24215C1.1692 0 1.10936 0.0235053 1.06246 0.0702697C1.01569 0.117171 0.992188 0.177015 0.992188 0.249966V1.28902C0.992188 1.35671 1.01692 1.4153 1.0664 1.46477C1.11587 1.51425 1.17445 1.53898 1.24215 1.53898H2.37496C3.47385 1.53898 4.17178 1.83317 4.46861 2.42176H1.24215C1.1692 2.42176 1.10928 2.44516 1.06246 2.49203C1.01569 2.53896 0.992188 2.59878 0.992188 2.67173V3.46866C0.992188 3.54156 1.01558 3.60149 1.06246 3.64825C1.10936 3.69518 1.16931 3.71852 1.24215 3.71852H4.57815C4.46355 4.14572 4.1966 4.47118 3.77728 4.69515C3.35794 4.91915 2.80468 5.03115 2.11715 5.03115H1.24215C1.17445 5.03115 1.11587 5.05592 1.0664 5.10536C1.0169 5.15486 0.992188 5.21348 0.992188 5.28112V6.2734C0.992188 6.34121 1.01558 6.39848 1.06246 6.4453C2.06239 7.50778 3.35931 8.99463 4.95303 10.9063C4.99995 10.9688 5.06503 11 5.14837 11H6.67174C6.78122 11 6.8568 10.9533 6.89834 10.8593C6.95041 10.7656 6.94021 10.677 6.86706 10.5937C5.34643 8.72904 4.15104 7.33322 3.28124 6.40617C4.16666 6.30203 4.88541 6.0155 5.43752 5.54685C5.98955 5.07814 6.32543 4.46864 6.44531 3.71866H7.75779C7.83063 3.71866 7.89059 3.69529 7.93738 3.64839C7.98431 3.60162 8.00778 3.5417 8.00778 3.4688V2.67195C8.00778 2.59891 7.98431 2.53907 7.93738 2.49217Z"
+                                                                            fill="#12274B"></path>
+                                                                    </svg>{{oneinvestment | customcurrency}}
+                                                                </span>today in order to become Crorepati after <span
+                                                                    class="calculate_value_small">{{totalYearGoal}}
+                                                                    {{totalYearGoal > 1? 'years': 'year'}}.</span></p>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="calculator_text">
+                                    <style>
+                                        .calculator_text {
+                                            margin-top: 50px;
+                                        }
+
+                                        .calculator_text h3 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 700;
+                                            font-size: 24px;
+                                        }
+
+                                        .calculator_text h4 {
+                                            margin: 48px 0 20px;
+                                            color: #12274B;
+                                            font-weight: 600;
+                                        }
+
+                                        .calculator_text img {
+                                            max-width: 100%;
+                                            height: auto;
+                                        }
+
+                                        .calculator_text a {
+                                            font-weight: 700;
+                                            color: #155bd3 !important;
+                                        }
+
+                                        .calculator_text p,
+                                        .calculator_text ul {
+                                            font-size: 14px;
+                                            line-height: 24px;
+                                            margin-bottom: 16px;
+                                        }
+
+                                        @media (min-width:200px) and (max-width:768px) {
+                                            .calculator_text h3 {
+                                                margin: 28px 0 10px;
+                                                color: #12274B;
+                                                font-size: 22px;
+                                                line-height: 33px;
+                                                font-weight: 700;
+                                            }
+
+                                            .calculator_text h4 {
+                                                margin: 48px 0 20px;
+                                                color: #12274B;
+                                                font-weight: 600;
+                                            }
+
+                                            .calculator_text h4 {
+                                                font-size: 20px;
+                                            }
+
+                                            .calculator_text p,
+                                            .calculator_text ul {
+                                                font-size: 14px;
+                                                line-height: 24px;
+                                            }
+                                        }
+                                    </style>
+                                    <h3>Crorepati Calculator For Investment Planning</h3>
+                                    <h3>What is Crorepati Calculator? </h3>
+                                    <p>With Easy Earnings Become a Crorepati Calculator is where you can calculate the
+                                        sip investment amount you need to invest per month to achieve the goal of
+                                        becoming a crorepati till the time of retirement. It is evident that discipline
+                                        and planning helps to achieve the personal goal. So, this Crorepati Calculator
+                                        will help you to aim your goal by calculating your desired amount.</p>
+                                    <h3>How to get 1cr in 5 years</h3>
+                                    <p>Depending upon the risk taking ability if you invest in sip or lumpsum you can
+                                        achieve the goal of 1 cr in 5 years. </p>
+                                    <p>If we assume a 10% annual rate of return then you have to invest ₹1,28,070 per
+                                        month for the 5 years to achieve the goal of 1cr.</p>
+                                    <p>But, if we are planning to do a lumpsum investment, you have to invest ₹62.09 Lac
+                                        today in order to become Crorepati.</p>
+                                    <p>In conclusion, it is better to start early and stay disciplined to achieve the
+                                        goal.</p>
+                                    <h3>Rules That Will Help You Become Crorepati</h3>
+                                    <p>The new age investors means in the current generation everyone has the dream to
+                                        become Crorepati in early age. So if you are 25 years in age or below and start
+                                        investing approx ₹13000 for 20 years till you become 45 years old with an
+                                        interest rate of 10% you can become a crorepati easily. But however to achieve
+                                        the target you have to stay consistent and disciplined throughout this given
+                                        period of time. Also you can increase the amount of investment over years as per
+                                        your convenience.</p>
+                                    <h3>8-4-3 rule in SIP?</h3>
+                                    <p>The 8-4-3 rule for SIP means that if you invest ₹30,000 monthly into an SIP with
+                                        a return of 12% per annum, then your portfolio will add ₹50 lacs in the first 8
+                                        years, ₹50 lacs in the next 4 years to become Rs 1 cr in total value and adds
+                                        further ₹50 lacs in the next 3 yrs to reach ₹1.5 cr.</p>
+                                    <h3>15 15 15 rule in SIP?</h3>
+                                    <p>The 15-15-15 rule in SIP has 3 parts in it:</p>
+                                    <p>One is the investment amount which is ₹15,000 per month. Second is the tenure,
+                                        which has to be continued for 15 years. Third one is the return, which is should
+                                        be around 15%.</p>
+                                    <p>If you follow these steps, the investment amount, the tenure and if your
+                                        portfolio generate 15% return then you will become crorepati at the end of this
+                                        period.</p>
+                                    <h3>7 5 3 1 rule in SIP?</h3>
+                                    <p>7-5-3-1 rule should have </p>
+                                    <p>
+                                        <b>A.</b> 7+ year investment time frame, as the equity market does well over 7+
+                                        year timeframes. <br />
+                                        <b>B.</b> Diversify the equity portfolio using a 5 finger strategy, meaning
+                                        different cap size, investment style, geography help to strengthen the
+                                        portfolio. <br />
+                                        <b>C.</b> Prepare for the 3 common points of failure, like when the markets are
+                                        down don’t panic, don’t worry about the lower return etc. and the last one.
+                                        <br />
+                                        <b>D.</b> Increase your sip amount after every 1 year, even a small amount
+                                        change every year makes a lot of difference.
+                                    </p>
+
+                                    <p>Follow this 7-5-3-1 rule for a long term wealth creation.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+        </div>
+
+    </main>
+    <footer class="footer-area">
+        <div class="container-fluid pl-0 pr-0 overflow-hidden">
+            <div class="custom_container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="logo-wrapper">
+                            <a class="logo img-logo" href="index-2.html">
+                                <img src="ic_icon.svg" type="image/x-icon" rel="icon" width="60" height="60">
+                            </a>
+                        </div>
+                        <div class="counter-wrapper" dir="ltr">
+                            <hr>
+                            <h4>fresherjobs</h4>
+                            <p>Online Financial Calculator</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Company
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="about-us.html" class="menu-item show-unauth">About Us</a>
+                                    </li>
+                                    <li>
+                                        <a href="privacy-and-policy.html">Privacy & Terms</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-headding">
+                                    Join us
+                                </p>
+                                <ul class="footer-menu">
+                                    <li>
+                                        <a href="career.html">Career</a>
+                                    </li>
+                                    <li>
+                                        <a href="contact-us.html">Contact Us</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-3 col-6">
+                                <p class="footer-menu">
+                                    Interactive calculators to help you get your EMI Amount, SIP Investment, Pension
+                                    Amount & much more in an effortless and trouble-free way.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12"
+                        style="border-top: 1px solid rgb(173 201 224 / 12%);border-bottom: 1px solid rgb(173 201 224 / 12%);padding: 10px 15px;margin: 20px 0px;margin-bottom: 10px;">
+                        <div class="row">
+                            <div class="col-lg-6 col-12 text-center text-md-left">
+
+                                <p class="footer-text">
+                                    Copyright © 2024 fresherjobs All rights reserved
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="site/assets/js/angular/angular.min.js"></script>
+    <script src="site/assets/js/angular/angular-animate.min.js"></script>
+    <script src="site/assets/js/angular/angular-sanitize.min.js"></script>
+    <script src="site/js/library/rzslider.js"></script>
+    <script src="site/js/library/Chart.min.js"></script>
+    <script src="site/js/library/angular-chart.min.js"></script>
+    <script src="site/js/library/zingchart-angularjs.js"></script>
+    <script src="site/assets/js/site_files/become_crorepati_v2.js"></script>
+</body>
+
+
+</html>

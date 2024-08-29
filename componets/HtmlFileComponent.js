@@ -6,7 +6,7 @@ const HtmlFileComponent = () => {
     return (
         <div style={{ width: '100%', height: '100vh' }}>
             <iframe 
-                src="/MathCalc/public/index.html" 
+                src="/EasyEMI/index.html" 
                 style={{ width: '100%', height: '100%', border: 'none' }}
                 title="My HTML File"
             ></iframe>
